@@ -1,0 +1,112 @@
+body{
+     font-family: "Poppins";
+}
+h1{
+    margin: 0;
+    padding: 0;
+}
+
+
+.mainContainer {
+    background-color: #F4FEFF;
+    width: 100%;
+    min-height: 100vh;
+}
+.container{
+    margin: 0 auto;
+    padding: 50px 40px;
+}
+.Logo{
+    display: flex;
+}
+.headerSection{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 15px;
+}
+.bodySection {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    padding: 50px 40px;
+}
+.textSection{
+    width: 50%;
+    padding: 0 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.logoName{
+    margin-left: 15px;
+    color: #192F68;
+    font-weight: bold;
+    font-size: 23px;
+}
+.icon i {
+    color: #192F68; 
+    font-size: 25px;
+    padding-top: 3px;
+
+}
+.registerBtn{
+    border-radius: 15px;
+    border: none;
+    background-color: #007299;
+    color: #ffff;
+    padding: 10px 20px;
+    font-weight: 700;
+}
+.subContent p {
+    color: #C4C4C4;
+    padding: 25px 0;
+    line-height: 2;
+}
+.imageSection{
+    width: 50%;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 75px;
+}
+.insideimage{
+    position: absolute;
+    top: 35px;
+    left: 170px;
+    background-color: #007299;
+    border: 7px solid #ffff;
+    border-radius: 79px;
+border-bottom-left-radius: 0;
+border-bottom-right-radius: 0;
+}
+.outerimage img{
+        
+        border-radius: 100px;
+        
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+        height: 434px;
+}
+.login{
+
+    border-radius: 15px;
+    border: none;
+    background-color: #007299;
+    color: #ffff;
+    padding: 10px 40px;
+    font-weight: 700;
+}
+.loginBtn{
+    display: flex;
+}
+.first_line ,.last_line{
+    color: #172048;
+    font-weight: 800;
+    line-height: 1.5;
+}
+.second_line{
+    font-weight: 800;
+    color: #007299;
+    line-height: 1.5;
+}

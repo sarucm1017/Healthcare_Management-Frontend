@@ -1,0 +1,19 @@
+.Verify_btn a{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+.btn_Verify{
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    background-color: black;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 8px 0px;
+}
+.Verify_btn{
+    margin: 45px 0 190px 0;
+}
