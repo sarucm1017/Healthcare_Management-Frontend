@@ -1,58 +1,119 @@
 import React from "react";
 import "./register.css";
-import  doctorImage from "./doctorsoption.png";
+import doctorImage from "./doctorsoption.png";
 import patientImage from "./patientOption.png";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { userRegister } from "../../../Redux/Slices/UserSlice";
 
 const Register = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const error = useSelector((state) => state.user.error);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const onSubmit = async (data) => {
+    try {
+      const response = await dispatch(
+        userRegister({
+          name: data.name,
+          email: data.email,
+          password: data.password,
+        })
+      );
+
+      if (!response.error) {
+        navigate("/otpVerify");
+      } else {
+        navigate("/register");
+      }
+    } catch (error) {
+      console.error("Error fetching user info", error);
+    }
+  };
+
   return (
     <>
       <div className="container-fluid">
         <div className="fullcontainer">
           <div className="Logo">
             <div className="icon">
-              <i class="fa-solid fa-hand-holding-medical"></i>
+              <i className="fa-solid fa-hand-holding-medical"></i>
             </div>
             <div className="logoName">MedicalCare</div>
           </div>
           <div className="col-md-12 commoncontainer">
             <div className="col-md-5 register_form">
               <div className="form_for_register">
-               <form action="">
-               <div className="heading_section">
-                  <h3>Register</h3>
-                </div>
-                <div className="Body_section">
-                  <div className="form_input">
-                    <label htmlFor="inputForms"> Name</label>
-                    <input
-                      id="inputForms"
-                      type="text"
-                      className="form-control inputs"
-                    />
-                    <label htmlFor="email"> Email</label>
-                    <input
-                      id="email"
-                      type="text"
-                      className="form-control inputs"
-                    />
-                    <label htmlFor="password">Password</label>
-                    <input
-                      id="password"
-                      type="text"
-                      className="form-control inputs"
-                    />
+                <form action="" onSubmit={handleSubmit(onSubmit)} noValidate>
+                  <div className="heading_section">
+                    <h3>Register</h3>
                   </div>
-                  <div className="form_btn">
-                    <a href=""><button className="register_btn">Register</button></a>
+                  <div className="Body_section">
+                    <div className="form_input">
+                      <label htmlFor="inputForms">Name</label>
+                      <input
+                        id="inputForms"
+                        type="text"
+                        className="form-control inputs"
+                        {...register("name", {
+                          pattern: {
+                            value: /^[A-Za-z]+$/,
+                            message: "Invalid name format",
+                          },
+                          required: "name is required",
+                        })}
+                      />
+                      <p className="error">{errors.username?.message}</p>
+                      <label htmlFor="email"> Email</label>
+                      <input
+                        id="email"
+                        type="text"
+                        className="form-control inputs"
+                        {...register("email", {
+                          pattern: {
+                            value: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
+                            message: "Invalid email format",
+                          },
+                          required: "Email is required",
+                        })}
+                      />
+                      <p className="error">{errors.email?.message}</p>
+                      <label htmlFor="password">Password</label>
+                      <input
+                        id="password"
+                        type="text"
+                        className="form-control inputs"
+                        {...register("password", {
+                          required: {
+                            value: true,
+                            message: "Password is required",
+                          },
+                        })}
+                      />
+                      <p className="error">{errors.password?.message}</p>
+                      {error && <p className="error">{error}</p>}
+                    </div>
+                    <div className="form_btn">
+                      <a href="">
+                        <button className="register_btn">Register</button>
+                      </a>
+                    </div>
                   </div>
-                </div>
-               </form>
-                  <div className="form_btn">
-                  <a href=""><button className="google_oauth">
+                </form>
+                <div className="form_btn">
+                  <a href="">
+                    <button className="google_oauth">
                       <i class="fa-brands fa-google"></i>Sign up with Google
-                    </button></a>
-                  </div>
-                
+                    </button>
+                  </a>
+                </div>
+
                 <div className="footer_section">
                   <div className="content_section">
                     <p>Already have an account?</p>
@@ -69,26 +130,36 @@ const Register = () => {
         <div className="overlay"></div>
       </div>
 
-     <div className="popup_container">
-      <div className="popup">
-        <div className="options">
-          <div className="header_section">
-            <p>To proceed with your registration
-            please select your role</p>
-          </div>
-          <div className="center-section">
-            <div className="optionFordoctor">
-              <div><a href=""><img src={doctorImage} alt="" /> </a></div>
-              <div><p>Doctor</p></div>
+      <div className="popup_container">
+        <div className="popup">
+          <div className="options">
+            <div className="header_section">
+              <p>To proceed with your registration please select your role</p>
             </div>
-            <div className="optionForpatient">
-              <div><a href=""></a><img src={patientImage} alt="" /></div>
-              <div><p>Patient</p></div>
+            <div className="center-section">
+              <div className="optionFordoctor">
+                <div>
+                  <a href="">
+                    <img src={doctorImage} alt="" />{" "}
+                  </a>
+                </div>
+                <div>
+                  <p>Doctor</p>
+                </div>
+              </div>
+              <div className="optionForpatient">
+                <div>
+                  <a href=""></a>
+                  <img src={patientImage} alt="" />
+                </div>
+                <div>
+                  <p>Patient</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-     </div>
     </>
   );
 };
