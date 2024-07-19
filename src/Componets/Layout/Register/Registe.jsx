@@ -109,7 +109,7 @@ const Register = () => {
                 <div className="form_btn">
                   <a href="">
                     <button className="google_oauth">
-                      <i class="fa-brands fa-google"></i>Sign up with Google
+                      <i className="fa-brands fa-google"></i>Sign up with Google
                     </button>
                   </a>
                 </div>

@@ -20,10 +20,12 @@ export const userRegister = createAsyncThunk("userRegister", async (data , {reje
 
  export const userOtp = createAsyncThunk("userOtp" , async (data , {rejectWithValue}) => {
     try {
-        const response = await axios.post(`http://localhost:5001/users/otpVerify` , data)
+        console.log("Sending OTP data:", data); // Add this log
+        const response = await axios.post(`http://localhost:5001/users/otpVerify`, data , { withCredentials: true },)
         return response.data;
     } catch (error) {
         if(error.response) {
+            console.error("Error response:", error.response); // Add this log
             const errorMsg = error.response.data.error || "An unexpected error occurred " ;
             return rejectWithValue(errorMsg);
         }
