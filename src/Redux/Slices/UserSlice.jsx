@@ -1,11 +1,12 @@
 import axios from "axios";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import Cookies from 'js-cookie';
 
 
-export const userRegister = createAsyncThunk("userRegister", async (data , {rejectWithValue}) => {
+
+export const userRegister = createAsyncThunk("userRegister", async (userdata , {rejectWithValue}) => {
     try {
-        const response = await axios.post(`http://localhost:5001/users/register` , data)
+        const response = await axios.post(
+            `http://localhost:5001/users/register` , userdata)
         return response.data;
     } catch (error) {
         if(error.response) {
@@ -18,10 +19,11 @@ export const userRegister = createAsyncThunk("userRegister", async (data , {reje
     }
 });
 
- export const userOtp = createAsyncThunk("userOtp" , async (data , {rejectWithValue}) => {
+ export const verifyOtp = createAsyncThunk("verifyOtp" , async (otpdata , {rejectWithValue}) => {
     try {
-        console.log("Sending OTP data:", data); // Add this log
-        const response = await axios.post(`http://localhost:5001/users/otpVerify`, data , { withCredentials: true },)
+       
+        const response = await axios.post(
+            `http://localhost:5001/users/otpVerify`, otpdata);
         return response.data;
     } catch (error) {
         if(error.response) {
@@ -37,14 +39,13 @@ export const userRegister = createAsyncThunk("userRegister", async (data , {reje
 
 
 const userSlice = createSlice({
-    name: "user",
+    name: "data",
     initialState:{
+        data: [],
         error: '',
         loading: false,
     },
-    reducers: {
-
-    },
+    reducers: {},
     extraReducers: (builder) =>{
 
         builder
@@ -59,14 +60,14 @@ const userSlice = createSlice({
             state.loading = false;
             state.error = action.payload || "error occurred"
         })
-        .addCase(userOtp.pending, (state) => {
+        .addCase(verifyOtp.pending, (state) => {
             state.loading = true;
             state.error = '';
         })
-        .addCase(userOtp.fulfilled, (state,action) => {
+        .addCase(verifyOtp.fulfilled, (state,action) => {
             state.loading = false;
         })
-        .addCase(userOtp.rejected, (state,action) =>{
+        .addCase(verifyOtp.rejected, (state,action) =>{
             state.loading = false;
             state.error = action.payload || "error occurred"
         })

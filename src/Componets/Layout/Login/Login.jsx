@@ -9,7 +9,7 @@ const Login = () => {
         <div className="fullcontainer">
           <div className="Logo">
             <div className="icon">
-              <i class="fa-solid fa-hand-holding-medical"></i>
+              <i className="fa-solid fa-hand-holding-medical"></i>
             </div>
             <div className="logoName">MedicalCare</div>
           </div>
@@ -51,7 +51,7 @@ const Login = () => {
               <div className="form_btn">
                 <a href="">
                   <button className="google_oauth">
-                    <i class="fa-brands fa-google"></i>Sign up with Google
+                    <i className="fa-brands fa-google"></i>Sign up with Google
                   </button>
                 </a>
               </div>

@@ -1,7 +1,5 @@
 import React from "react";
 import "./register.css";
-import doctorImage from "./doctorsoption.png";
-import patientImage from "./patientOption.png";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
@@ -28,7 +26,7 @@ const Register = () => {
       );
 
       if (!response.error) {
-        navigate("/otpVerify");
+        navigate("/otpVerify", { state:{ email: data.email } });
       } else {
         navigate("/register");
       }
@@ -61,6 +59,7 @@ const Register = () => {
                         id="inputForms"
                         type="text"
                         className="form-control inputs"
+                        autoComplete="off"
                         {...register("name", {
                           pattern: {
                             value: /^[A-Za-z]+$/,
@@ -75,6 +74,7 @@ const Register = () => {
                         id="email"
                         type="text"
                         className="form-control inputs"
+                        autoComplete="off"
                         {...register("email", {
                           pattern: {
                             value: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
@@ -101,7 +101,7 @@ const Register = () => {
                     </div>
                     <div className="form_btn">
                       <a href="">
-                        <button className="register_btn">Register</button>
+                        <button type="submit" className="register_btn">Register</button>
                       </a>
                     </div>
                   </div>
@@ -130,36 +130,7 @@ const Register = () => {
         <div className="overlay"></div>
       </div>
 
-      <div className="popup_container">
-        <div className="popup">
-          <div className="options">
-            <div className="header_section">
-              <p>To proceed with your registration please select your role</p>
-            </div>
-            <div className="center-section">
-              <div className="optionFordoctor">
-                <div>
-                  <a href="">
-                    <img src={doctorImage} alt="" />{" "}
-                  </a>
-                </div>
-                <div>
-                  <p>Doctor</p>
-                </div>
-              </div>
-              <div className="optionForpatient">
-                <div>
-                  <a href=""></a>
-                  <img src={patientImage} alt="" />
-                </div>
-                <div>
-                  <p>Patient</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+     
     </>
   );
 };
