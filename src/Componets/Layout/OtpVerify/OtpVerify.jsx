@@ -8,6 +8,7 @@ import { verifyOtp } from "../../../Redux/Slices/UserSlice";
 const OtpVerify = () => {
   const { register, handleSubmit, setValue, formState: { errors } } = useForm();
   const error = useSelector((state) => state.user.error);
+  const role = useSelector((state) => state.user.role); 
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
@@ -28,7 +29,7 @@ const OtpVerify = () => {
       }));
      
       if (!response.error) {
-        navigate("/login");
+        navigate("/popup");
       } else {
        navigate("/otpVerify")
        

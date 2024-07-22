@@ -1,0 +1,94 @@
+.form_details_section{
+    display: flex;
+}
+.form_section{
+    display: flex;
+    flex-direction: column;
+    padding: 30px 25px;
+    border-radius: 30px;
+    margin: 10px 20px;
+    background-color: #9b979791;
+    
+}
+.form_Fileds{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.form_heading h4{
+    display: flex;
+    justify-content: center;
+    font-weight: 800;
+    padding-bottom: 10px;
+    color: #031F85;
+}
+.form_Fileds input{
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid black;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-bottom: 10px;
+}
+
+.form_Fileds label{
+    font-size: 15px;
+    font-weight: 600;
+}
+.form_compliance{
+    padding: 30px 25px;
+    border-radius: 30px;
+    margin: 10px 20px;
+    background-color: #9b979791;
+}
+.compliance_section{
+    display: flex;
+    gap: 10px;
+    padding-top: 10px;
+
+}
+.compliance_section p{
+    margin: 0 !important;
+}
+.legal_heading h4{
+    font-weight: 800;
+    color: #031F85;
+}
+.compliance_section p{
+    font-size: 13px;
+    font-weight: 600;
+}
+.from_submission{
+    display: flex;
+    justify-content: flex-end;
+}
+.from_submission button{
+    padding: 8px 21px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background-color: blue;
+    font-weight: 700;
+}
+.legal_main{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+body::-webkit-scrollbar{
+    display: none;
+}
+/* /////////////////////////////// */
+
+.form-main_section{
+    display: flex;
+}
+.doctors_from_heading{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 15px;
+}
+.doctors_from_heading h4{
+    font-weight: 800;
+    color: #031F85;
+}

@@ -129,13 +129,26 @@
 .popup{
     display: flex;
     justify-content: center;
+    padding-bottom: 65px;
+border-radius: 20px;
+box-shadow: 10px 10px 5px rgb(142, 160, 167);
 }
 .center-section{
     display: flex;
     justify-content: center;
-    gap: 10pc;
+    gap: 7pc;
     margin-top: 6pc;
 }
 .header_section{
     margin-top: 4pc;
+}
+.optionFordoctor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.optionForpatient{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

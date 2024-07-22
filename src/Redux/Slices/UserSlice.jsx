@@ -38,14 +38,37 @@ export const userRegister = createAsyncThunk("userRegister", async (userdata , {
  });
 
 
+ export const userlogin = createAsyncThunk("userlogin" , async (credentials, thunkAPI) => {
+
+    try {
+        
+        const response = await axios.post(`http://localhost:5001/users/userlogin`, credentials);
+        return response.data;
+
+    } catch (error) {
+        
+        return thunkAPI.rejectWithValue(error.response.data);
+    }
+ })
+
+
 const userSlice = createSlice({
     name: "data",
     initialState:{
         data: [],
+        role: null,
+        token: null,
         error: '',
         loading: false,
     },
-    reducers: {},
+    reducers: {
+        setRole(state, action) {
+            state.role = action.payload;
+          },
+          clearRole(state) {
+            state.role = null;
+          },
+    },
     extraReducers: (builder) =>{
 
         builder
@@ -71,11 +94,22 @@ const userSlice = createSlice({
             state.loading = false;
             state.error = action.payload || "error occurred"
         })
+        .addCase(userlogin.pending, (state) => {
+            state.loading = true;
+            state.error = '';
+        })
+        .addCase(userlogin.fulfilled, (state,action) => {
+            state.loading = false;
+        })
+        .addCase(userlogin.rejected, (state,action) =>{
+            state.loading = false;
+            state.error = action.payload || "error occurred"
+        })
 
     }
 })
 
 
 
-
+export const { setRole, clearRole } = userSlice.actions;
 export default userSlice.reducer;
