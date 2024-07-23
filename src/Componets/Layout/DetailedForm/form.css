@@ -67,7 +67,7 @@
     border: none;
     border-radius: 10px;
     color: white;
-    background-color: blue;
+    background-color: blue !important;
     font-weight: 700;
 }
 .legal_main{
@@ -91,4 +91,16 @@ body::-webkit-scrollbar{
 .doctors_from_heading h4{
     font-weight: 800;
     color: #031F85;
+}
+.form-submission{
+    display: flex;
+    justify-content: flex-end;
+}
+.form-submission button{
+    padding: 8px 21px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background-color: blue !important;
+    font-weight: 700;
 }
