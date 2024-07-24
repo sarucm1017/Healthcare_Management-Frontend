@@ -10,6 +10,7 @@ const store = configureStore({
         user : UserSlice,
         patient: PatientSlice,
         doctor: DoctorSlice,
+        
 
     },
 })

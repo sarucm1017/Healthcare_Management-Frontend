@@ -34,7 +34,7 @@ const PatientSlice = createSlice({
     builder
       .addCase(submitPatientForm.pending, (state) => {
         state.loading = true;
-        state.error = '';
+        state.error = null;
       })
       .addCase(submitPatientForm.fulfilled, (state, action) => {
         state.loading = false;

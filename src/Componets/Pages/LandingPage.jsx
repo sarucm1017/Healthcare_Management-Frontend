@@ -17,7 +17,7 @@ const LandingPage = () => {
             </div>
             <div className="RegisterSection">
               
-                <a href="/register"><button className="registerBtn">Register</button></a>
+                <a href="/popup"><button className="registerBtn">Register</button></a>
              
             </div>
           </div>

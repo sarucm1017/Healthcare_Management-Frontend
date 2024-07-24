@@ -10,10 +10,15 @@ const Popup = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const handleRoleClick = (role) => {
- 
-    dispatch(setRole(role)); 
-    navigate("/login");
+  // const handleRoleClick = (role) => {
+  //   localStorage.setItem('userRole', role); // Store role in localStorage
+  //   dispatch(setRole(role)); 
+  //   navigate("/login");
+  // };
+  const handleRoleSelect = (role) => {
+    dispatch(setRole(role));
+    navigate("/register");
+  
   };
 
 
@@ -26,7 +31,7 @@ const Popup = () => {
               <p>To proceed with your registration please select your role</p>
             </div>
             <div className="center-section">
-              <div className="optionFordoctor" onClick={() => handleRoleClick('doctor')}>
+              <div className="optionFordoctor" onClick={() => handleRoleSelect("doctor")}>
                 <div>
                   <a href="">
                     <img src={doctorImage} alt="" />{" "}
@@ -36,7 +41,7 @@ const Popup = () => {
                   <p>Doctor</p>
                 </div>
               </div>
-              <div className="optionForpatient" onClick={() => handleRoleClick('patient')}>
+              <div className="optionForpatient" onClick={() => handleRoleSelect("patient")}>
                 <div>
                   <a href=""></a>
                   <img src={patientImage} alt="" />
