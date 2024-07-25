@@ -1,49 +1,39 @@
-import React, { useState } from "react";
+import React, { useState , useEffect} from "react";
 import "./form.css";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { useForm } from 'react-hook-form';
 import { submitDoctorForm } from "../../../Redux/Slices/DoctorSlice";
 
-
 const DoctorsForm = () => {
-  const [formData, setFormData] = useState({
-    specialization: "",
-    qualification: "",
-    medicalLicenseNumber: "",
-    yearsOfExperience: "",
-    boardCertification: "",
-    currentlyWorkingHospitalName: "",
-    workPlaceContactNumber: "",
-    consultationHours: "",
-    availableDays: "",
-    residencyProgram: "",
-    professionalMembership: "",
-    agreeTerms: false,
-    consentDataProcessing: false,
-  });
-
+  const { register, handleSubmit, formState: { errors } } = useForm();
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  // const user = useSelector((state) => state.user.data);
+  const email = useSelector((state) => state.user.email);
   const { loading, error } = useSelector((state) => state.doctor);
 
-  const handleChange = (e) => {
-    const { id, value, type, checked } = e.target;
-    setFormData({ 
-      ...formData, 
-      [id]: type === 'checkbox' ? checked : value 
-    });
-  };
+  useEffect(() => {
+    console.log("User email:", email); // Check the user data here
+  }, [email]);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (formData.agreeTerms && formData.consentDataProcessing) {
-      dispatch(submitDoctorForm(formData)).then((response) => {
-        if (!response.error) {
-          navigate("/doctorsDashboard");
-        }
-      });
-    } else {
-      alert("Please agree to the terms and consent to data processing.");
+  const onSubmit = async (data) => {
+
+    if (!email) {
+      console.error("User email is not available.");
+      return;
+    }
+    console.log("Submitting Data:", { ...data, userEmail: email });
+
+    try {
+      const response = await dispatch(submitDoctorForm({ ...data,  userEmail: email }));
+      if (!response.error) {
+        navigate('/login');
+      } else {
+        console.error("Error saving doctor data:", response.error);
+      }
+    } catch (error) {
+      console.error("Error saving doctor data:", error);
     }
   };
 
@@ -52,7 +42,7 @@ const DoctorsForm = () => {
       <div className="container-fluid">
         <div className="fullcontainer">
           <div className="main_container">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit(onSubmit)}>
               <div className="col-md-12 form_details_section_doctors">
                 <div>
                   <div className="doctors_from_heading">
@@ -66,119 +56,103 @@ const DoctorsForm = () => {
                           <input
                             id="specialization"
                             type="text"
-                            value={formData.specialization}
-                            onChange={handleChange}
+                            {...register('specialization', { required: true })}
                           />
+                          {errors.specialization && <p className="error">This field is required</p>}
                         </div>
                         <div className="form_Fileds">
                           <label htmlFor="qualification">Qualification</label>
                           <input
                             id="qualification"
                             type="text"
-                            value={formData.qualification}
-                            onChange={handleChange}
+                            {...register('qualification', { required: true })}
                           />
+                          {errors.qualification && <p className="error">This field is required</p>}
                         </div>
                         <div className="form_Fileds">
-                          <label htmlFor="medicalLicenseNumber">
-                            Medical License Number
-                          </label>
+                          <label htmlFor="medicalLicenseNumber">Medical License Number</label>
                           <input
                             id="medicalLicenseNumber"
                             type="text"
-                            value={formData.medicalLicenseNumber}
-                            onChange={handleChange}
+                            {...register('medicalLicenseNumber', { required: true })}
                           />
+                          {errors.medicalLicenseNumber && <p className="error">This field is required</p>}
                         </div>
                         <div className="form_Fileds">
-                          <label htmlFor="yearsOfExperience">
-                            Years of Experience
-                          </label>
+                          <label htmlFor="yearsOfExperience">Years of Experience</label>
                           <input
                             id="yearsOfExperience"
                             type="number"
-                            value={formData.yearsOfExperience}
-                            onChange={handleChange}
+                            {...register('yearsOfExperience', { required: true })}
                           />
+                          {errors.yearsOfExperience && <p className="error">This field is required</p>}
                         </div>
                         <div className="form_Fileds">
-                          <label htmlFor="boardCertification">
-                            Board Certification
-                          </label>
+                          <label htmlFor="boardCertification">Board Certification</label>
                           <input
                             id="boardCertification"
                             type="text"
-                            value={formData.boardCertification}
-                            onChange={handleChange}
+                            {...register('boardCertification', { required: true })}
                           />
+                          {errors.boardCertification && <p className="error">This field is required</p>}
                         </div>
                         <div className="form_Fileds">
-                          <label htmlFor="currentlyWorkingHospitalName">
-                            Currently Working Hospital Name
-                          </label>
+                          <label htmlFor="currentlyWorkingHospitalName">Currently Working Hospital Name</label>
                           <input
                             id="currentlyWorkingHospitalName"
                             type="text"
-                            value={formData.currentlyWorkingHospitalName}
-                            onChange={handleChange}
+                            {...register('currentlyWorkingHospitalName', { required: true })}
                           />
+                          {errors.currentlyWorkingHospitalName && <p className="error">This field is required</p>}
                         </div>
                       </div>
                     </div>
                     <div className="col-md-6">
                       <div className="form_section">
                         <div className="form_Fileds">
-                          <label htmlFor="workPlaceContactNumber">
-                            Work Place Contact Number
-                          </label>
+                          <label htmlFor="workPlaceContactNumber">Work Place Contact Number</label>
                           <input
                             id="workPlaceContactNumber"
                             type="text"
-                            value={formData.workPlaceContactNumber}
-                            onChange={handleChange}
+                            {...register('workPlaceContactNumber', { required: true })}
                           />
+                          {errors.workPlaceContactNumber && <p className="error">This field is required</p>}
                         </div>
                         <div className="form_Fileds">
-                          <label htmlFor="consultationHours">
-                            Consultation Hours
-                          </label>
+                          <label htmlFor="consultationHours">Consultation Hours</label>
                           <input
                             id="consultationHours"
                             type="text"
-                            value={formData.consultationHours}
-                            onChange={handleChange}
+                            {...register('consultationHours', { required: true })}
                           />
+                          {errors.consultationHours && <p className="error">This field is required</p>}
                         </div>
                         <div className="form_Fileds">
                           <label htmlFor="availableDays">Available Days</label>
                           <input
                             id="availableDays"
                             type="text"
-                            value={formData.availableDays}
-                            onChange={handleChange}
+                            {...register('availableDays', { required: true })}
                           />
+                          {errors.availableDays && <p className="error">This field is required</p>}
                         </div>
                         <div className="form_Fileds">
-                          <label htmlFor="residencyProgram">
-                            Residency Program
-                          </label>
+                          <label htmlFor="residencyProgram">Residency Program</label>
                           <input
                             id="residencyProgram"
                             type="text"
-                            value={formData.residencyProgram}
-                            onChange={handleChange}
+                            {...register('residencyProgram', { required: true })}
                           />
+                          {errors.residencyProgram && <p className="error">This field is required</p>}
                         </div>
                         <div className="form_Fileds">
-                          <label htmlFor="professionalMembership">
-                            Professional Membership
-                          </label>
+                          <label htmlFor="professionalMembership">Professional Membership</label>
                           <input
                             id="professionalMembership"
                             type="text"
-                            value={formData.professionalMembership}
-                            onChange={handleChange}
+                            {...register('professionalMembership', { required: true })}
                           />
+                          {errors.professionalMembership && <p className="error">This field is required</p>}
                         </div>
                       </div>
                     </div>
@@ -197,19 +171,19 @@ const DoctorsForm = () => {
                           <input
                             type="checkbox"
                             id="agreeTerms"
-                            checked={formData.agreeTerms}
-                            onChange={handleChange}
+                            {...register('agreeTerms', { required: true })}
                           />
                           <p>I Agree to the Terms and Conditions</p>
+                          {errors.agreeTerms && <p className="error">This field is required</p>}
                         </div>
                         <div className="compliance_section">
                           <input
                             type="checkbox"
                             id="consentDataProcessing"
-                            checked={formData.consentDataProcessing}
-                            onChange={handleChange}
+                            {...register('consentDataProcessing', { required: true })}
                           />
                           <p>I Consent to the Processing of my data</p>
+                          {errors.consentDataProcessing && <p className="error">This field is required</p>}
                         </div>
                       </div>
                       <div className="form-submission">
@@ -233,3 +207,8 @@ const DoctorsForm = () => {
 };
 
 export default DoctorsForm;
+
+
+
+
+

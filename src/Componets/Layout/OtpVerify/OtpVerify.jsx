@@ -7,7 +7,7 @@ import { verifyOtp } from "../../../Redux/Slices/UserSlice";
 
 const OtpVerify = () => {
   const { register, handleSubmit, setValue, formState: { errors } } = useForm();
-  const error = useSelector((state) => state.user.error);
+  const { error, loading } = useSelector((state) => state.user);
   const role = useSelector((state) => state.user.role); 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -29,11 +29,15 @@ const OtpVerify = () => {
       }));
      
       if (!response.error) {
-        navigate("/popup");
-      } else {
-       navigate("/otpVerify")
-       
-      }
+        if (role === "doctor") {
+            navigate("/doctorsForm");
+        } else if (role === "patient") {
+            navigate("/patientForm");
+        }
+    } else {
+        console.error("OTP Verification error:", response.error);
+    }
+   
     } catch (error) {
       console.error("Error during OTP verification:", error);
     }

@@ -10,12 +10,9 @@ const Popup = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  // const handleRoleClick = (role) => {
-  //   localStorage.setItem('userRole', role); // Store role in localStorage
-  //   dispatch(setRole(role)); 
-  //   navigate("/login");
-  // };
+
   const handleRoleSelect = (role) => {
+    console.log("Selected Role in Popup:", role); 
     dispatch(setRole(role));
     navigate("/register");
   
@@ -33,9 +30,9 @@ const Popup = () => {
             <div className="center-section">
               <div className="optionFordoctor" onClick={() => handleRoleSelect("doctor")}>
                 <div>
-                  <a href="">
-                    <img src={doctorImage} alt="" />{" "}
-                  </a>
+                  <a href=""></a>
+                    <img src={doctorImage} alt="" />
+                  
                 </div>
                 <div>
                   <p>Doctor</p>

@@ -4,11 +4,11 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 // Async thunk for submitting patient form
 export const submitDoctorForm = createAsyncThunk(
   "submitDoctorForm",
-  async (formData, { rejectWithValue }) => {
+  async ({ formData, role }, { rejectWithValue }) => {
     try {
       const response = await axios.post(
         "http://localhost:5001/doctor/forms",
-        formData
+        { ...formData, role }
       );
       return response.data;
     } catch (error) {
@@ -26,10 +26,18 @@ const DoctorSlice = createSlice({
   name: "doctor",
   initialState: {
     data: {},
+    role: null,
     error: '',
     loading: false,
   },
-  reducers: {},
+  reducers: {
+    setRole(state, action) {
+      state.role = action.payload;
+    },
+    clearRole(state) {
+      state.role = null;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(submitDoctorForm.pending, (state) => {
@@ -47,5 +55,6 @@ const DoctorSlice = createSlice({
   }
 });
 
+export const { setRole, clearRole } = DoctorSlice.actions;
 export default DoctorSlice.reducer;
 
