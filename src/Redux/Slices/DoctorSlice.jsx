@@ -4,15 +4,19 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 // Async thunk for submitting patient form
 export const submitDoctorForm = createAsyncThunk(
   "submitDoctorForm",
-  async ({ formData, role }, { rejectWithValue }) => {
+  async (payload, { rejectWithValue }) => {
+    console.log("Sending payload:", payload);
     try {
       const response = await axios.post(
         "http://localhost:5001/doctor/forms",
-        { ...formData, role }
+        payload
       );
       return response.data;
+
     } catch (error) {
+      console.error("Axios error details:", error); 
       if (error.response) {
+        console.error("Response error data:", error.response.data);
         const errorMsg = error.response.data.error || "An unexpected error occurred";
         return rejectWithValue(errorMsg);
       } else {
@@ -41,14 +45,17 @@ const DoctorSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(submitDoctorForm.pending, (state) => {
+        console.log("submitDoctorForm pending");
         state.loading = true;
         state.error = '';
       })
       .addCase(submitDoctorForm.fulfilled, (state, action) => {
+        console.log("submitDoctorForm fulfilled");
         state.loading = false;
         state.data = action.payload;
       })
       .addCase(submitDoctorForm.rejected, (state, action) => {
+        console.log("submitDoctorForm re");
         state.loading = false;
         state.error = action.payload || "error occurred";
       });

@@ -11,9 +11,9 @@ const Register = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-   // Adjust state path if needed
+ 
   const role = useSelector((state) => state.user.role) ;
-  console.log("Selected Role:", role);// Adjust state path if needed
+  console.log("Selected Role:", role);
   const error = useSelector((state) => state.user.error);
   const dispatch = useDispatch();
   const navigate = useNavigate();

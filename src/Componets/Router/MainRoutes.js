@@ -21,12 +21,12 @@ const MainRoutes = () => {
         <Routes>
             <Route path ="/" element = {<LandingPage/>}></Route>
             <Route path ="/register" element = {<Register/>}></Route>
-            <Route path ="/login" element = {<Login/>}></Route>
             <Route path ="/setpassword" element = {<SetPassword/>}></Route>
             <Route path ="/otpVerify" element = {<OtpVerify/>}></Route>
             <Route path ="/popup" element = {<Popup/>}></Route>
             <Route path ="/patientForm" element = {<PatientForm/>}></Route>
             <Route path ="/doctorsForm" element = {<DoctorsForm/>}></Route>
+            <Route path="/login" element = {<Login/>}></Route>
             <Route path ="/doctorsDashboard" element = {<DoctorsDashboard/>}></Route>
             <Route path ="/patientsDashboard" element = {<PatientsDashboard/>}></Route>
         </Routes>

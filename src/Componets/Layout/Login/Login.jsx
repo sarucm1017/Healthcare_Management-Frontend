@@ -20,7 +20,7 @@ const Login = () => {
       }));
 
       if (response.meta.requestStatus === 'fulfilled') {
-        // Wait for role to be updated
+       
         setTimeout(() => {
           if (role === 'patient') {
             navigate("/patientForm");

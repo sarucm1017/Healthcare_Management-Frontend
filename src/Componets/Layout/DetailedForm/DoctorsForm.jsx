@@ -9,7 +9,6 @@ const DoctorsForm = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  // const user = useSelector((state) => state.user.data);
   const email = useSelector((state) => state.user.email);
   const { loading, error } = useSelector((state) => state.doctor);
 
@@ -18,17 +17,19 @@ const DoctorsForm = () => {
   }, [email]);
 
   const onSubmit = async (data) => {
-
-    if (!email) {
+     if (!email) {
       console.error("User email is not available.");
       return;
     }
-    console.log("Submitting Data:", { ...data, userEmail: email });
+    const payload = { ...data, userEmail: email };
+    console.log("Submitting Data:", payload);
 
     try {
-      const response = await dispatch(submitDoctorForm({ ...data,  userEmail: email }));
+      const response = await dispatch(submitDoctorForm(payload));
       if (!response.error) {
-        navigate('/login');
+        console.log("Navigating to login");
+        navigate("/login");
+        // setTimeout(() => navigate("/login"), 0);
       } else {
         console.error("Error saving doctor data:", response.error);
       }

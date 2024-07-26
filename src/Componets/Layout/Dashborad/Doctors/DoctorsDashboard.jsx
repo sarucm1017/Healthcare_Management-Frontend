@@ -6,7 +6,7 @@ const DoctorsDashboard = () => {
     <>
       <div className="container-fluid">
         <div className="col-md-12 full_container">
-          <div className="col-md-3">
+          <div className="col-md-2 side_section">
             <div className="Logo main">
               <div className="icon">
                 <i className="fa-solid fa-hand-holding-medical"></i>
@@ -59,9 +59,71 @@ const DoctorsDashboard = () => {
           <div></div>
           </div>
           
-          <div className="col-md-9">
+          <div className="col-md-10">
             <div className="main_home">
-                <h1>fjvgfhd</h1>
+                <div className="main_navbar">
+                  <div className="semi_profile">
+                    <div className="profile_img">
+                      <img src="" alt="" />
+                    </div>
+                    <div className="title">
+                      <div className="name">Dr.Sonna</div>
+                      <div className="depart">Cardiologist</div>
+                    </div>
+                  </div>
+                  <div className="searchbar">
+                    <input type="text" />
+                  </div>
+                </div>
+                <div className="col-md-12 second_section">
+                  <div className="col-md-4 information_box">
+                    <div className="icon_head">
+                    <div className="icon_box">
+                    <i class="fa-solid fa-hospital-user"></i>
+                    </div>
+                    </div>
+                    <div className="information">
+                      <p>
+                        Total Patients 200+
+                      </p>
+                    </div>
+                  </div>
+                  <div className="col-md-4 information_box">
+                  <div className="icon_head">
+                    <div className="icon_box">
+                    <i class="fa-solid fa-hospital-user"></i>
+                    </div>
+                    </div>
+                    <div className="information">
+                      <p>
+                        Total Patients 200+
+                      </p>
+                    </div>
+                  </div>
+                  <div className="col-md-4 information_box">
+                  <div className="icon_head">
+                    <div className="icon_box">
+                    <i class="fa-solid fa-hospital-user"></i>
+                    </div>
+                    </div>
+                    <div className="information">
+                      <p>
+                        Total Patients 200+
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="center_section">
+                  <div className="col-md-12">
+                  <div className="col-md-5">
+
+                  </div>  
+                  <div className="col-md-7">
+
+                  </div>
+
+                  </div>
+                </div>
             </div>
           </div>
         </div>
