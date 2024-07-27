@@ -22,7 +22,7 @@
 }
 .main_home{
     background-color: #D7E4FF;
-    padding: 10px 29px 10px 10px;
+    padding: 5px 29px 5px 10px;
 }
 .main_navbar{
     display: flex;
@@ -52,7 +52,9 @@
     justify-content: space-around;
     background-color: white;
     padding: 25px 5px;
-    margin: 20px 10px;
+    margin: 5px 10px;
+    width: 31.333333% !important;
+    border-radius: 15px;
 }
 .icon_box i{
     font-size: 35px;
@@ -60,4 +62,94 @@
 .second_section{
     display: flex;
     justify-content: space-around;
+}
+.section_heading{
+
+    text-align: center;
+}
+.section_heading h4{
+    font-size: 20px;
+    font-weight: 700;
+    color: #031F85;
+}
+.today_appointments{
+    background-color: white;
+    padding: 15px 20px;
+    margin: 10px;
+    border-radius: 15px;
+}
+.info_box{
+    display: flex;
+}
+.time_info{
+    background-color: #e3cece9a;
+    padding: 3px 10px;
+    border-radius: 15px;
+}
+.time_info p{
+    font-size: 11px;
+    font-weight: 600;
+    color: #504040b3;
+    margin-bottom: 0 !important;
+    padding: 6px;
+}
+.main_info h5{
+    font-size: 14px;
+    font-weight: 700;
+    color: #5F5B5B;
+}
+.main_info p{
+    font-size: 12px;
+    font-weight: 500;
+    color: #666161;
+}
+.main_info_box{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.content_section{
+    display: flex;
+}
+.next_appointment{
+    background-color: white;
+    padding: 15px 20px;
+    margin: 10px;
+    border-radius: 15px;
+}
+.maininfo_box{
+    display: flex;
+    justify-content: space-around;
+}
+.info-box h5{
+    font-size: 14px;
+    font-weight: 700;
+    color: #5F5B5B;
+}
+.info-box  p{
+    font-size: 12px;
+    font-weight: 500;
+    color: #666161;
+}
+.medical-info p{
+    font-size: 12px;
+    font-weight: 500;
+    color: #666161;
+    margin-bottom: 0 !important;
+    padding: 5px 8px;
+}
+.medical-info{
+    background-color: #e3cece9a;
+    padding: 5px 10px;
+    border-radius: 15px
+}
+.main_info_box{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+    padding-left: 60px;
+}
+.medical-info_btns{
+    display: flex;
+    gap: 50px;
 }
