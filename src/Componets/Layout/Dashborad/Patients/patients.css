@@ -1,0 +1,142 @@
+.welcome_section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #192f681f;
+    border-radius: 15px;
+}
+.image_content_section{
+max-width: 40%;
+}
+.image_content_section img{
+    width: 100%;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}.contents_section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    padding-left: 15px;
+}
+.main_content h4 {
+    font-size: 17px;
+    font-weight: 700;
+    color: #031F85;
+}
+.sub_content p{
+font-size: 14px;
+font-weight: 400;
+color:#666161;
+}
+.vital_section{
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff66;
+    padding: 20px 10px;
+    margin: 12px 0;
+    border-radius: 15px;
+}
+.vitral_infomation{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.body_information h5{
+    font-size: 12px;
+    font-weight: 700;
+    color: #544E4E;
+}
+.body_information p {
+    font-size: 10px;
+    font-weight: 500;
+    color: #544E4E;
+}
+.body_information{
+    background-color: white;
+    padding: 10px 19px;
+    text-align: center;
+    box-shadow: 1px 1px 1px 1px #b0babd;
+    border-radius: 10px;
+}
+.appointment_section{
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff66;
+    padding: 11px 10px;
+    margin: 12px 0;
+    border-radius: 15px;
+}
+.table_section{
+    background-color: #ffffff9c;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    box-shadow:1px 1px 1px 1px #b0babd;
+}
+.table_heading {
+    font-size: 13px;
+    font-weight: 700;
+    color: #544E4E;
+}
+.table_body {
+    font-size: 10px;
+    font-weight: 500;
+    color: #544E4E;
+}
+th , td {
+    padding: 7px 0px;
+}
+.semi_reports{
+    background-color: #ffffff9c;
+    padding: 10px 10px;
+    margin: 1px 10px;  
+    border-radius: 15px; 
+}
+.report_head_section{
+    display: flex;
+    justify-content: space-around;
+    padding: 5px 0px;
+}
+.page_main_section{
+    display: flex;
+}
+.reports_section{
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 10px;
+    margin: 10px 0px;
+    border-radius: 12px;
+    box-shadow: 0px 1px 1px 0px gray;
+    background-color: white;
+}
+.report_name_section{
+    display: flex;
+    gap: 12px;
+}
+.report_title p {
+
+    font-size: 17px;
+    font-weight: 700;
+    color: #031F85;
+}
+.report_icon i {
+    color: #031F85;
+}
+.report_name p {
+    color: #031F85;
+    font-size: 14px;
+    font-weight: 500;
+}
+.report_time p {
+    color: #031F85;
+    font-size: 14px;
+    font-weight: 500;
+}
+.section_icon i{
+    color: #031F85;
+    font-size: 14px;
+    font-weight: 500;
+}

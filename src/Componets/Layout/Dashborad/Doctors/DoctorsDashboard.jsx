@@ -18,46 +18,68 @@ const DoctorsDashboard = () => {
                 <div className="menu_icon">
                   <i class="fa-solid fa-house"></i>
                 </div>
-                <div className="menu_title">Overview</div>
+                <div className="menu_title">
+                  <p>Overview</p>
+                </div>
               </div>
               <div className="menu Appointments">
                 <div className="menu_icon">
                   <i class="fa-solid fa-file-medical"></i>
                 </div>
-                <div className="menu_title">Appointments</div>
+                <div className="menu_title">
+                  <p>Appointments</p>
+                </div>
               </div>
               <div className="menu Message">
                 <div className="menu_icon">
                   <i class="fa-solid fa-message"></i>
                 </div>
-                <div className="menu_title">Message</div>
+                <div className="menu_title">
+                  <p>Message</p>
+                </div>
               </div>
               <div className="menu Profile">
                 <div className="menu_icon">
                   <i class="fa-solid fa-user"></i>
                 </div>
-                <div className="menu_title">Profile</div>
+                <div className="menu_title">
+                  <p>Profile</p>
+                </div>
               </div>
               <div className="menu Reports">
                 <div className="menu_icon">
                   <i class="fa-solid fa-chart-simple"></i>
                 </div>
-                <div className="menu_title">Reports</div>
+                <div className="menu_title">
+                  <p>Reports</p>
+                </div>
               </div>
               <div className="menu Settings">
                 <div className="menu_icon">
                   <i class="fa-solid fa-gear"></i>
                 </div>
-                <div className="menu_title">Settings</div>
+                <div className="menu_title">
+                  <p>Settings</p>
+                </div>
               </div>
               <div className="menu Logout">
                 <div className="menu_icon">
                   <i class="fa-solid fa-right-from-bracket"></i>
                 </div>
-                <div className="menu_title">Logout</div>
+                <div className="menu_title">
+                  <p>Logout</p>
+                </div>
               </div>
             </div>
-            <div></div>
+            <div>
+              <div className="helpcenter">
+                <h4>Help Center</h4>
+                <p>Having Trouble</p>
+              </div>
+              <div className="icon_class">
+              <i class="fa-solid fa-handshake-angle"></i>
+              </div>
+            </div>
           </div>
 
           <div className="col-md-10">
@@ -68,8 +90,8 @@ const DoctorsDashboard = () => {
                     <img src="" alt="" />
                   </div>
                   <div className="title">
-                    <div className="name">Dr.Sonna</div>
-                    <div className="depart">Cardiologist</div>
+                    Dr.Sonna
+                    Cardiologist
                   </div>
                 </div>
                 <div className="searchbar">
@@ -160,7 +182,24 @@ const DoctorsDashboard = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="new_appointments"></div>
+                    <div className="new_appointments">
+                      <div className="section_heading">
+                        <h4>New  Appointment</h4>
+                      </div>
+                      <div className="request_info">
+                        <div className="profile_img"></div>
+                        <div className="info_request">
+                        <h5>Ms. Mia</h5>
+                        <p>Checkup</p>
+                        </div>
+                        <div className="time_info">
+                        <p>On going</p>
+                        </div>
+                      </div>
+                      <div className="see_all_btn">
+
+                      </div>
+                    </div>
                   </div>
                   <div className="col-md-7 appoiintment_section">
                     <div className="next_appointment">
@@ -195,7 +234,7 @@ const DoctorsDashboard = () => {
                             <p>56 kg</p>
                           </div>
                         </div>
-                        <div className="maininfo_box">
+                        <div className="maininformation_box">
                           <div className="info-box">
                             <h5>Last appointment date</h5>
                             <p>10 June 2024</p>
@@ -218,7 +257,7 @@ const DoctorsDashboard = () => {
                           </div>
                           </div>
                         </div>
-                        <div className="maininfo_box">
+                        <div className="maininfo_lastbox">
                           <div className="medical-info">
                             <p> <i class="fa-solid fa-phone"></i> +91 9870987234</p>
                           </div>

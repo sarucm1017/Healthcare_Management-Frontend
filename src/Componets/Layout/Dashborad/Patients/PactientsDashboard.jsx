@@ -1,13 +1,287 @@
 import React from "react";
-
+import "./patients.css";
+import welcomeimage from "./welcome image.png";
 
 const PatientsDashboard = () => {
-    return(
-        <>
-        <h1>patient</h1>
-        </>
-    )
-}
+  return (
+    <>
+      <div className="container-fluid">
+        <div className="col-md-12 full_container">
+          <div className="col-md-2 side_section">
+            <div className="Logo main">
+              <div className="icon">
+                <i className="fa-solid fa-hand-holding-medical"></i>
+              </div>
+              <div className="logoName">MedicalCare</div>
+            </div>
+            <div className="dashboard_menu">
+              <div className="menu overview">
+                <div className="menu_icon">
+                  <i class="fa-solid fa-house"></i>
+                </div>
+                <div className="menu_title">
+                  <p>Overview</p>
+                </div>
+              </div>
+              <div className="menu Appointments">
+                <div className="menu_icon">
+                  <i class="fa-solid fa-file-medical"></i>
+                </div>
+                <div className="menu_title">
+                  <p>Appointments</p>
+                </div>
+              </div>
+              <div className="menu Message">
+                <div className="menu_icon">
+                  <i class="fa-solid fa-message"></i>
+                </div>
+                <div className="menu_title">
+                  <p>Message</p>
+                </div>
+              </div>
+              <div className="menu Profile">
+                <div className="menu_icon">
+                  <i class="fa-solid fa-user"></i>
+                </div>
+                <div className="menu_title">
+                  <p>Profile</p>
+                </div>
+              </div>
+              <div className="menu Reports">
+                <div className="menu_icon">
+                  <i class="fa-solid fa-chart-simple"></i>
+                </div>
+                <div className="menu_title">
+                  <p>Reports</p>
+                </div>
+              </div>
+              <div className="menu Settings">
+                <div className="menu_icon">
+                  <i class="fa-solid fa-gear"></i>
+                </div>
+                <div className="menu_title">
+                  <p>Settings</p>
+                </div>
+              </div>
+              <div className="menu Logout">
+                <div className="menu_icon">
+                  <i class="fa-solid fa-right-from-bracket"></i>
+                </div>
+                <div className="menu_title">
+                  <p>Logout</p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div className="helpcenter">
+                <h4>Help Center</h4>
+                <p>Having Trouble</p>
+              </div>
+              <div className="icon_class">
+                <i class="fa-solid fa-handshake-angle"></i>
+              </div>
+            </div>
+          </div>
 
+          <div className="col-md-10">
+            <div className="main_home">
+              <div className="navbar">
+                <div className="navbar_content">
+                  <h4>Good Morning Amal</h4>
+                  <p>How are you feeling </p>
+                </div>
+                <div className="navbar_topend">
+                  <div className="search_bar"></div>
+                  <div className="profile"></div>
+                </div>
+              </div>
+              <div className="col-md-12 page_main_section">
+                <div className="col-md-8">
+                  <div className="col-md-12 ">
+                    <div className="welcome_section">
+                      <div className="contents_section">
+                        <div className="main_content">
+                          <h4>Find best doctors with Medical Care</h4>
+                        </div>
+                        <div className="sub_content">
+                          <p>
+                            Appoint the Doctor and get finest medical service{" "}
+                          </p>
+                        </div>
+                      </div>
+                      <div className="image_content_section">
+                        <img src={welcomeimage} alt="" />
+                      </div>
+                    </div>
+                    <div className="vital_section">
+                      <div className="section_heading">
+                        <h4>Vitals</h4>
+                      </div>
+                      <div className="vitral_infomation">
+                        <div className="body_information">
+                          <h5>Temparature</h5>
+                          <p>36.2 c</p>
+                        </div>
+                        <div className="body_information">
+                          <h5>pluse</h5>
+                          <p> 80 bpm</p>
+                        </div>
+                        <div className="body_information">
+                          <h5>body pressure</h5>
+                          <p>80/70 mm/hg</p>
+                        </div>
+                        <div className="body_information">
+                          <h5>Breathing rate</h5>
+                          <p>15 Breath/m</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="appointment_section">
+                      <div className="section_heading">
+                        <h4> Appointments</h4>
+                      </div>
+                      <div className="table_section">
+                        <table>
+                          <thead className="table_heading">
+                            <tr>
+                              <th>Doctor's Name</th>
+                              <th>Specialisation</th>
+                              <th>Date</th>
+                              <th>Time</th>
+                              <th>Status</th>
+                            </tr>
+                            <tr></tr>
+                          </thead>
+                          <tbody  className="table_body">
+                            <tr>
+                              <td>
+                                <div className="profile_section">
+                                  <div className="prf_image"></div>
+                                  <div className="name_section">
+                                    <p>Ranvir</p>
+                                  </div>
+                                </div>
+                              </td>
+                              <td>
+                                <p>Cardiologist</p>
+                              </td>
+                              <td>
+                                <p>12/2/2024</p>
+                              </td>
+                              <td>
+                                <p>12:30pm</p>
+                              </td>
+                              <td>
+                                <p>Active</p>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div className="profile_section">
+                                  <div className="prf_image"></div>
+                                  <div className="name_section">
+                                    <p>Ranvir</p>
+                                  </div>
+                                </div>
+                              </td>
+                              <td>
+                                <p>Cardiologist</p>
+                              </td>
+                              <td>
+                                <p>12/2/2024</p>
+                              </td>
+                              <td>
+                                <p>12:30pm</p>
+                              </td>
+                              <td>
+                                <p>Active</p>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div className="profile_section">
+                                  <div className="prf_image"></div>
+                                  <div className="name_section">
+                                    <p>Ranvir</p>
+                                  </div>
+                                </div>
+                              </td>
+                              <td>
+                                <p>Cardiologist</p>
+                              </td>
+                              <td>
+                                <p>12/2/2024</p>
+                              </td>
+                              <td>
+                                <p>12:30pm</p>
+                              </td>
+                              <td>
+                                <p>Active</p>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-4">
+                  <div className="semi_reports">
+                    <div className="report_head_section">
+                      <div className="report_title">
+                        <p>Reports</p>
+                      </div>
+                      <div className="report_icon">
+                      <i class="fa-solid fa-chart-simple"></i>
+                      </div>
+                    </div>
+                    <div className="reports_section">
+                      <div className="report_name_section">
+                        <div className="section_icon"><i class="fa-regular fa-file-lines"></i></div>
+                        <div className="report_name"><p>Glucose</p></div>
+                      </div>
+                      <div className="report_time"><p>2/10/2024</p> </div>
+                    </div>
+                    <div className="reports_section">
+                      <div className="report_name_section">
+                        <div className="section_icon"><i class="fa-regular fa-file-lines"></i></div>
+                        <div className="report_name"><p>Glucose</p></div>
+                      </div>
+                      <div className="report_time"><p>2/10/2024</p> </div>
+                    </div>
+                    <div className="reports_section">
+                      <div className="report_name_section">
+                        <div className="section_icon"><i class="fa-regular fa-file-lines"></i></div>
+                        <div className="report_name"><p>Glucose</p></div>
+                      </div>
+                      <div className="report_time"><p>2/10/2024</p> </div>
+                    </div>
+                    <div className="reports_section">
+                      <div className="report_name_section">
+                        <div className="section_icon"><i class="fa-regular fa-file-lines"></i></div>
+                        <div className="report_name"><p>Glucose</p></div>
+                      </div>
+                      <div className="report_time"><p>2/10/2024</p> </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div>
+                      <div></div>
+                      <div></div>
+                    </div>
+                    <div>
+                      
+                    </div>
+                    <div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
 
 export default PatientsDashboard;

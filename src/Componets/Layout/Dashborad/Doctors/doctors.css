@@ -1,3 +1,6 @@
+p{
+    margin-bottom: 0 !important;
+}
 .Logo.main{
     margin: 20px 15px;
 }
@@ -22,7 +25,7 @@
 }
 .main_home{
     background-color: #D7E4FF;
-    padding: 5px 29px 5px 10px;
+    padding: 3px 29px 2px 10px;
 }
 .main_navbar{
     display: flex;
@@ -64,8 +67,8 @@
     justify-content: space-around;
 }
 .section_heading{
-
     text-align: center;
+    padding-bottom: 4px;
 }
 .section_heading h4{
     font-size: 20px;
@@ -80,6 +83,8 @@
 }
 .info_box{
     display: flex;
+    justify-content: space-around;
+    padding: 7px 0px;
 }
 .time_info{
     background-color: #e3cece9a;
@@ -107,6 +112,9 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
+    padding-left: 60px;
+    padding-bottom: 3px;
+    padding-top: 8px;
 }
 .content_section{
     display: flex;
@@ -120,6 +128,7 @@
 .maininfo_box{
     display: flex;
     justify-content: space-around;
+    padding: 10px 0;
 }
 .info-box h5{
     font-size: 14px;
@@ -133,8 +142,8 @@
 }
 .medical-info p{
     font-size: 12px;
-    font-weight: 500;
-    color: #666161;
+    font-weight: 700;
+    color: #031f85cc;
     margin-bottom: 0 !important;
     padding: 5px 8px;
 }
@@ -147,9 +156,108 @@
     display: flex;
     flex-direction: column;
     padding-bottom: 10px;
-    padding-left: 60px;
+   
 }
 .medical-info_btns{
     display: flex;
     gap: 50px;
 }
+.pro_name h5{
+
+    font-size: 14px;
+    font-weight: 700;
+    color: #031f85cc;
+}
+.pro_name p {
+    font-size: 12px;
+    font-weight: 500;
+    color: #666161;  
+}
+.maininfo_lastbox{
+    display: flex;
+    justify-content:flex-end;
+    gap: 10px;
+}
+.maininformation_box{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 62px;
+}
+.new_appointments{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 11px 20px;
+    margin: 8px;
+    border-radius: 15px;
+
+}
+.new_appointment_heading{
+    text-align: center;
+}
+.request_info{
+    display: flex;
+    justify-content: space-around;
+}
+.info_request{
+    display: flex;
+    flex-direction: column;
+}
+.info_request p{
+    font-size: 12px;
+    font-weight: 500;
+    color: #666161;  
+}
+.info_request h5{
+    font-size: 14px;
+    font-weight: 700;
+    color: #5F5B5B;
+}
+.menu_title p{
+    font-size: 15px;
+    font-weight: 700;
+    color: #031F85;
+}
+.menu_icon i{
+    font-size: 15px;
+    color: #031F85;
+}
+.helpcenter{
+    background-color: #031F85;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 10px 50px 10px;
+    color: white;
+   
+}
+.icon_class{
+    width: 60px;
+    background-color: #031F85;
+    position: absolute;
+    bottom: 22%;
+    left: 7%;
+    padding: 6px 10px;
+    text-align: center;
+    border-radius: 50pc;
+    border: 5px solid white;
+    font-size: 24px;
+    color: white;
+}
+.title h4{
+    font-size: 20px;
+    font-weight: 700;
+    color: #031F85;
+}
+.title p{
+    font-size: 15px;
+    font-weight: 600;
+    color: #1E1AE4;
+}
+.information{
+    font-size: 16px;
+    font-weight: 700;
+    color: #031F85;
+}
+
