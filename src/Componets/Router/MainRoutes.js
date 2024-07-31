@@ -10,6 +10,8 @@ import DoctorsDashboard from "../Layout/Dashborad/Doctors/DoctorsDashboard";
 import PatientsDashboard from "../Layout/Dashborad/Patients/PactientsDashboard";
 import PatientForm from "../Layout/DetailedForm/PatientForm";
 import DoctorsForm from "../Layout/DetailedForm/DoctorsForm";
+import AppointmentSectionPatient from "../Layout/AppointmentSection/Patients/AppointmentSectionPatient";
+import BookAppointmentSection from "../Layout/AppointmentSection/Patients/BookAppointmentSection";
 
 
 
@@ -29,6 +31,9 @@ const MainRoutes = () => {
             <Route path="/login" element = {<Login/>}></Route>
             <Route path ="/doctorsDashboard" element = {<DoctorsDashboard/>}></Route>
             <Route path ="/patientsDashboard" element = {<PatientsDashboard/>}></Route>
+            <Route path ="/appointmentSectionPatient" element = {<AppointmentSectionPatient/>}></Route>
+            <Route path ="/bookappointmentPatient" element = {<BookAppointmentSection/>}></Route>
+
         </Routes>
         </>
     )

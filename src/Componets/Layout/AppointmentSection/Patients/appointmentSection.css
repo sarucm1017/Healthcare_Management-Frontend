@@ -1,0 +1,142 @@
+.nav_bar_section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 10px;
+}
+.left_section{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;  
+}
+.left_section i {
+    font-size: 35px;
+    color: #031F85;
+}
+.title_part h4{
+    font-size: 30px;
+    font-weight: 700;
+    color: #031F85;
+}
+.body_headSection{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 7px 10px;
+    align-items: center;
+}
+.classification_all{
+    display: flex;
+    gap: 30px;
+    background-color: white;
+    padding: 15px 20px;
+    border-radius: 15px;
+    box-shadow: 1px 2px 1px 0px gray;
+}
+.classification{
+    padding: 10px 20px ;
+    font-size: 15px;
+    font-weight: 600;
+}
+.classification.all{
+    padding: 10px 40px;
+    background-color: #059b05cc;
+    border-radius: 10px;
+    color: white;
+}
+.classification.active{
+    padding: 10px 30px;
+}
+.mainblue_btn button{
+    padding: 15px 20px;
+    border-radius: 15px;
+    box-shadow: 1px 2px 1px 0px gray;
+    border: none;
+    background-color: #031F85;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+}
+.body_contnet_section{
+    padding: 10px 10px;
+    background-color: white;
+    border-radius: 15px;
+    margin: 10px 18px;
+}
+.table_content{
+  
+    background-color: wheat;
+    border-radius: 12px;
+}
+.table_header, .table_body_content{
+    padding: 18px 48px;
+    text-align: center;
+}
+.body_contnet_section table{
+    width: 100%;
+}
+.table_style tbody tr{
+    padding: 10px 0px;
+}
+.main_home{
+    min-height: 100vh;
+}
+/* ///////////////////////////////////////// */
+.body_content_section{
+    background-color: white;
+}
+.semi_profile_section{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 10px 10px;
+    margin: 10px 10px;
+    border: 1px solid black;
+}
+.semi_profile_topsection{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.semi_profile_bottomsection{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+.sub_title_depart p{
+    color: #7C89BA;
+    font-size: 15px;
+    font-weight: 600;
+}
+.price{
+    display: flex;
+    gap: 10px;
+}
+.value_head p{
+    color: #7C89BA;
+    font-size: 13px;
+    font-weight: 600;
+}
+.value_range p{
+    color: #031F85;
+    font-size: 13px;
+    font-weight: 600;
+}
+.profile_name{
+    display: flex;
+    flex-direction: column;
+}
+.location{
+    display: flex;
+    gap: 5px;
+}
+.checkAvailability{
+    display: flex;
+}
+.profilename_section p{
+    font-size: 15px;
+    font-weight: 800;
+}
+
