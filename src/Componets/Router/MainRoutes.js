@@ -12,6 +12,7 @@ import PatientForm from "../Layout/DetailedForm/PatientForm";
 import DoctorsForm from "../Layout/DetailedForm/DoctorsForm";
 import AppointmentSectionPatient from "../Layout/AppointmentSection/Patients/AppointmentSectionPatient";
 import BookAppointmentSection from "../Layout/AppointmentSection/Patients/BookAppointmentSection";
+import CheckAvailability from "../Layout/AppointmentSection/Patients/CheckAvailability";
 
 
 
@@ -33,7 +34,7 @@ const MainRoutes = () => {
             <Route path ="/patientsDashboard" element = {<PatientsDashboard/>}></Route>
             <Route path ="/appointmentSectionPatient" element = {<AppointmentSectionPatient/>}></Route>
             <Route path ="/bookappointmentPatient" element = {<BookAppointmentSection/>}></Route>
-
+            <Route path ="/checkAvailability" element = {<CheckAvailability/>}></Route>
         </Routes>
         </>
     )

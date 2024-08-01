@@ -83,7 +83,12 @@
 }
 /* ///////////////////////////////////////// */
 .body_content_section{
-    background-color: white;
+    background-color: #F6F4F4;
+    border-radius: 15px;
+    padding: 10px 10px
+}
+.main_profile_section{
+display: flex;
 }
 .semi_profile_section{
     display: flex;
@@ -91,13 +96,16 @@
     background-color: white;
     padding: 10px 10px;
     margin: 10px 10px;
-    border: 1px solid black;
+    border-radius:10px;
+    width: 48%;
 }
 .semi_profile_topsection{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #C4C4C4;
 }
 .semi_profile_bottomsection{
     display: flex;
@@ -134,9 +142,137 @@
 }
 .checkAvailability{
     display: flex;
+    gap: 5px;
+    align-items: center;
 }
 .profilename_section p{
     font-size: 15px;
     font-weight: 800;
 }
+.profilename_section{
+    padding-bottom: 5px;
+}
+.location i{
+    font-size: 15px;
+    color: #C4C4C4;
+}
+.location p  {
+    font-size: 10px;
+    font-weight: 500;
+}
+.check_btn  button{
+    padding: 10px 5px;
+    border: none;
+    background-color:#031F85;
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 10px;
+}
+.check_msg i{
+    font-size: 23px;
+    padding-top: 13px;
+    color: #C4C4C4;
+}
 
+/* ///////////////////////////////////////////////// */
+.main_top_section{
+    padding: 18px 10px;
+    background-color: white;
+    border-radius: 10px;
+}
+.name_dep{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.nameof_doc p{
+    font-size: 17px;
+    font-weight: 700;
+    color: #031F85;
+}
+.nameof_dept p{
+    font-size: 12px;
+    font-weight: 600;
+    color: blue;
+}
+/* /////////////////////// */
+
+.calendar {
+    width: 93%;
+    text-align: center;
+    padding: 20px 35px;
+    margin: 20px 1px;
+    background-color: white;
+    border-radius: 10px;
+}
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .days {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .day {
+    flex: 1;
+    padding: 10px;
+    font-size: 10px;
+    font-weight: 600;
+    color: #031F85;
+  }
+  
+  .cells {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .cell {
+    width: 14.28%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  .header h5 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #031F85;
+  }
+  .clanderBtn{
+    display: flex;
+    gap: 15px;
+  }
+  .calendar button{
+    border: none;
+    border-radius: 17px;
+    width: 35px;
+    height: 35px;
+    background-color: #031F85;
+    color: white;
+  }
+  /* //////////////////////// */
+  .content_box-section{
+    display: flex;
+  }
+  .time_sections{
+    display: flex;
+  }
+  .time_each_section{
+    width: 22%;
+    padding: 10px;
+    background-color:#e8dddd94;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+  }
+  .time_section_main{
+    padding: 20px 20px;
+    margin: 20px 13px;
+    background-color: white;
+    border-radius: 10px;
+  }

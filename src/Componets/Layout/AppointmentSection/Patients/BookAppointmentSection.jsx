@@ -22,7 +22,7 @@ const BookAppointmentSection = () => {
                 <div className="right_section"></div>
               </div>
               <div className="body_content_section">
-                <div className="col-md-12">
+                <div className="col-md-12 main_profile_section">
                   <div className="col-md-6 semi_profile_section">
                     <div className="semi_profile_topsection">
                       <div className="sub_title_depart">
@@ -51,16 +51,280 @@ const BookAppointmentSection = () => {
                         </div>
                       </div>
                       <div className="checkAvailability">
-                        <div>
+                        <div className="check_msg">
                           <i class="fa-solid fa-message"></i>
                         </div>
-                        <div>
+                        <div className="check_btn">
                           <button>Check Availability</button>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div className="col-md-6"></div>
+                  <div className="col-md-6 semi_profile_section">
+                  <div className="semi_profile_topsection">
+                      <div className="sub_title_depart">
+                        <p>Cardiologist</p>
+                      </div>
+                      <div className="price">
+                        <div className="value_head">
+                          <p>Price</p>
+                        </div>
+                        <div className="value_range">
+                          <p>500Rs - 2000Rs</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="semi_profile_bottomsection">
+                      <div>
+                        <div className="profileimage_tag"></div>
+                        <div className="profile_name">
+                          <div className="profilename_section">
+                            <p>Dr.Arya</p>
+                          </div>
+                          <div className="location">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <p>Thrissur , Kerala</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="checkAvailability">
+                        <div className="check_msg">
+                          <i class="fa-solid fa-message"></i>
+                        </div>
+                        <div className="check_btn">
+                          <button>Check Availability</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-12 main_profile_section">
+                  <div className="col-md-6 semi_profile_section">
+                    <div className="semi_profile_topsection">
+                      <div className="sub_title_depart">
+                        <p>Cardiologist</p>
+                      </div>
+                      <div className="price">
+                        <div className="value_head">
+                          <p>Price</p>
+                        </div>
+                        <div className="value_range">
+                          <p>500Rs - 2000Rs</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="semi_profile_bottomsection">
+                      <div>
+                        <div className="profileimage_tag"></div>
+                        <div className="profile_name">
+                          <div className="profilename_section">
+                            <p>Dr.Arya</p>
+                          </div>
+                          <div className="location">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <p>Thrissur , Kerala</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="checkAvailability">
+                        <div className="check_msg">
+                          <i class="fa-solid fa-message"></i>
+                        </div>
+                        <div className="check_btn">
+                          <button>Check Availability</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-6 semi_profile_section">
+                  <div className="semi_profile_topsection">
+                      <div className="sub_title_depart">
+                        <p>Cardiologist</p>
+                      </div>
+                      <div className="price">
+                        <div className="value_head">
+                          <p>Price</p>
+                        </div>
+                        <div className="value_range">
+                          <p>500Rs - 2000Rs</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="semi_profile_bottomsection">
+                      <div>
+                        <div className="profileimage_tag"></div>
+                        <div className="profile_name">
+                          <div className="profilename_section">
+                            <p>Dr.Arya</p>
+                          </div>
+                          <div className="location">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <p>Thrissur , Kerala</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="checkAvailability">
+                        <div className="check_msg">
+                          <i class="fa-solid fa-message"></i>
+                        </div>
+                        <div className="check_btn">
+                          <button>Check Availability</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-12 main_profile_section">
+                  <div className="col-md-6 semi_profile_section">
+                    <div className="semi_profile_topsection">
+                      <div className="sub_title_depart">
+                        <p>Cardiologist</p>
+                      </div>
+                      <div className="price">
+                        <div className="value_head">
+                          <p>Price</p>
+                        </div>
+                        <div className="value_range">
+                          <p>500Rs - 2000Rs</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="semi_profile_bottomsection">
+                      <div>
+                        <div className="profileimage_tag"></div>
+                        <div className="profile_name">
+                          <div className="profilename_section">
+                            <p>Dr.Arya</p>
+                          </div>
+                          <div className="location">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <p>Thrissur , Kerala</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="checkAvailability">
+                        <div className="check_msg">
+                          <i class="fa-solid fa-message"></i>
+                        </div>
+                        <div className="check_btn">
+                          <button>Check Availability</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-6 semi_profile_section">
+                  <div className="semi_profile_topsection">
+                      <div className="sub_title_depart">
+                        <p>Cardiologist</p>
+                      </div>
+                      <div className="price">
+                        <div className="value_head">
+                          <p>Price</p>
+                        </div>
+                        <div className="value_range">
+                          <p>500Rs - 2000Rs</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="semi_profile_bottomsection">
+                      <div>
+                        <div className="profileimage_tag"></div>
+                        <div className="profile_name">
+                          <div className="profilename_section">
+                            <p>Dr.Arya</p>
+                          </div>
+                          <div className="location">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <p>Thrissur , Kerala</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="checkAvailability">
+                        <div className="check_msg">
+                          <i class="fa-solid fa-message"></i>
+                        </div>
+                        <div className="check_btn">
+                          <button>Check Availability</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-12 main_profile_section">
+                  <div className="col-md-6 semi_profile_section">
+                    <div className="semi_profile_topsection">
+                      <div className="sub_title_depart">
+                        <p>Cardiologist</p>
+                      </div>
+                      <div className="price">
+                        <div className="value_head">
+                          <p>Price</p>
+                        </div>
+                        <div className="value_range">
+                          <p>500Rs - 2000Rs</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="semi_profile_bottomsection">
+                      <div>
+                        <div className="profileimage_tag"></div>
+                        <div className="profile_name">
+                          <div className="profilename_section">
+                            <p>Dr.Arya</p>
+                          </div>
+                          <div className="location">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <p>Thrissur , Kerala</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="checkAvailability">
+                        <div className="check_msg">
+                          <i class="fa-solid fa-message"></i>
+                        </div>
+                        <div className="check_btn">
+                          <button>Check Availability</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-6 semi_profile_section">
+                  <div className="semi_profile_topsection">
+                      <div className="sub_title_depart">
+                        <p>Cardiologist</p>
+                      </div>
+                      <div className="price">
+                        <div className="value_head">
+                          <p>Price</p>
+                        </div>
+                        <div className="value_range">
+                          <p>500Rs - 2000Rs</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="semi_profile_bottomsection">
+                      <div>
+                        <div className="profileimage_tag"></div>
+                        <div className="profile_name">
+                          <div className="profilename_section">
+                            <p>Dr.Arya</p>
+                          </div>
+                          <div className="location">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <p>Thrissur , Kerala</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="checkAvailability">
+                        <div className="check_msg">
+                          <i class="fa-solid fa-message"></i>
+                        </div>
+                        <div className="check_btn">
+                          <button>Check Availability</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
