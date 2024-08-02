@@ -3,6 +3,7 @@
     flex-direction: row;
     justify-content: space-between;
     padding: 10px 10px;
+    padding-top: 20px;
 }
 .left_section{
     display: flex;
@@ -10,11 +11,11 @@
     gap: 20px;  
 }
 .left_section i {
-    font-size: 35px;
+    font-size: 28px;
     color: #031F85;
 }
 .title_part h4{
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 700;
     color: #031F85;
 }
