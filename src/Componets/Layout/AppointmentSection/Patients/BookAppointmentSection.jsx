@@ -55,7 +55,7 @@ const BookAppointmentSection = () => {
                           <i class="fa-solid fa-message"></i>
                         </div>
                         <div className="check_btn">
-                          <button>Check Availability</button>
+                          <a href="/checkAvailability"><button>Check Availability</button></a>
                         </div>
                       </div>
                     </div>

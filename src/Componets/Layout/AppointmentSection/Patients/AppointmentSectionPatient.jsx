@@ -31,7 +31,7 @@ const AppointmentSectionPatient = () => {
                         <div className="classification cancled">Cancled</div>
                     </div>
                     <div className="mainblue_btn">
-                        <button className="main_btn">Book Appointment</button>
+                        <a href="/bookappointmentPatient"><button className="main_btn">Book Appointment</button></a>
                     </div>
                 </div>
                 <div className="body_contnet_section">

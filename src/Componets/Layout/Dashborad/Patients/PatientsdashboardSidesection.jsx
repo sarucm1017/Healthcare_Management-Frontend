@@ -13,12 +13,12 @@ const PatientsdashboardSidesection = () => {
         <div className="dashboard_menu">
           <div className="menu overview">
             <i class="fa-solid fa-house"></i>
-            <p>Overview</p>
+            <a href="/patientsDashboard"><p>Overview</p></a>
           </div>
           <div className="menu Appointments">
             <i class="fa-solid fa-file-medical"></i>
 
-            <p>Appointments</p>
+           <a href="/appointmentSectionPatient"> <p>Appointments</p></a>
           </div>
           <div className="menu Message">
             <i class="fa-solid fa-message"></i>
