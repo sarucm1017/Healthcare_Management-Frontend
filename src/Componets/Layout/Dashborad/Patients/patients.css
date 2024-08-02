@@ -2,6 +2,16 @@
     padding: 10px 0;
     margin: 10px 7px;
 }
+.navbar_content h4{
+    font-size: 20px;
+    font-weight: 700;
+    color: #031F85;
+}
+.navbar_content p {
+    font-size: 14px;
+    font-weight: 500;
+    color: #544E4E;
+}
 
 
 .welcome_section{
@@ -152,4 +162,53 @@ th , td {
 }
 .dashbordCalendar{
     padding: 10px 10px;
+}
+.dashboard_menu .menu:hover{
+  background-color: #031F85;
+  color: white;
+  cursor: pointer;
+
+} 
+.helpcenter_section{
+    background-color: #031F85;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 28px 10px 50px 10px;
+    color: white;
+    margin-top: 55px;
+}
+.icon_class_helpCenter{
+    width: 60px;
+    background-color: #031F85;
+    position: absolute;
+    bottom: 18%;
+    left: 7%;
+    padding: 6px 10px;
+    text-align: center;
+    border-radius: 50pc;
+    border: 5px solid white;
+    font-size: 24px;
+    color: white;
+}
+
+
+.dashboard_menu .menu:hover i,
+.dashboard_menu .menu:hover p {
+  color: white;
+}
+
+.menu{
+    margin: 10px;
+    padding: 5px 0;
+}
+.menu i {
+    color: #031F85;
+    font-size: 17px;
+}
+.menu p{
+    color: #031F85;
+    font-size: 15px; 
+    font-weight: 700;
 }
