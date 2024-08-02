@@ -1,6 +1,6 @@
 import React from "react";
-import doctorImage from "../Layout/Register/patientOption.png";
-import patientImage from "../Layout/Register/doctorsoption.png";
+import patientImage from "../Layout/Register/patientOption.png";
+import doctorImage from "../Layout/Register/doctorsoption.png";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setRole } from "../../Redux/Slices/UserSlice";

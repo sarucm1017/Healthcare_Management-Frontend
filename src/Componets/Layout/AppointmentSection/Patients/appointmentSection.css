@@ -206,6 +206,12 @@ display: flex;
     background-color: white;
     border-radius: 10px;
 }
+.calendar.dashbord_calendar{
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 21px 35px !important;
+
+}
   .header {
     display: flex;
     justify-content: space-between;
@@ -253,12 +259,41 @@ display: flex;
     background-color: #031F85;
     color: white;
   }
+  .cell {
+    
+    padding: 8px;
+    text-align: center;
+  }
+  
+  .cell.today {
+    background-color: blue; 
+    color: white;          
+    border-radius: 50%;  
+  }
+
+
+  .coming_appointment{
+    background-color: #031F85;
+    padding: 10px 10px;
+    color: white;
+    margin: 7px 5px;
+    border-radius: 10px;
+  }
+  .coming_appointment p{
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .coming_appointment h5 {
+    font-size: 17px;
+    font-weight: 600;
+  }
   /* //////////////////////// */
   .content_box-section{
     display: flex;
   }
   .time_sections{
     display: flex;
+    padding: 5px 0;
   }
   .time_each_section{
     width: 22%;
@@ -272,7 +307,36 @@ display: flex;
   }
   .time_section_main{
     padding: 20px 20px;
-    margin: 20px 13px;
+    margin: 20px 18px;
     background-color: white;
     border-radius: 10px;
+  }
+  .availability_footer_section{
+    display: flex;
+    justify-content: space-around;
+  }
+  .footerleft_section{
+    padding: 13px 49px;
+    background-color: #cccccc75;
+    border-radius: 10px
+  }
+  .footerright_section{
+    padding: 13px 49px;
+    background-color: #031F85;
+    border-radius: 10px;
+    color: white;
+  }
+  .footerleft_section p{
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .footerright_section p {
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .body_content_section.bodysection{
+    min-height: 88vh;
+  }
+  .box_scetion_bodySection{
+    width: 49% !important;
   }

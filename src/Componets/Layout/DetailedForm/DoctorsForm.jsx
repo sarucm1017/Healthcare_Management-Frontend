@@ -1,4 +1,4 @@
-import React, { useState , useEffect} from "react";
+import React, { useEffect } from "react";
 import "./form.css";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -13,7 +13,7 @@ const DoctorsForm = () => {
   const { loading, error } = useSelector((state) => state.doctor);
 
   useEffect(() => {
-    console.log("User email:", email); // Check the user data here
+    console.log("User email:", email);
   }, [email]);
 
   const onSubmit = async (data) => {
@@ -25,11 +25,10 @@ const DoctorsForm = () => {
     console.log("Submitting Data:", payload);
 
     try {
-      const response = await dispatch(submitDoctorForm(payload));
+      const response = await dispatch(submitDoctorForm(payload)).unwrap();
       if (!response.error) {
-        console.log("Navigating to login");
-        navigate("/login");
-        // setTimeout(() => navigate("/login"), 0);
+        
+        navigate("/doctorsDashboard");
       } else {
         console.error("Error saving doctor data:", response.error);
       }

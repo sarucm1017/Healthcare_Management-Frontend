@@ -6,15 +6,14 @@ import { useForm } from "react-hook-form";
 import { submitPatientForm } from "../../../Redux/Slices/PatientSlice";
 
 const PatientForm = () => {
-  const {
-    register, handleSubmit, formState: { errors }} = useForm();
+  const {register, handleSubmit, formState: { errors }} = useForm();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const email = useSelector((state) => state.user.email);
   const { loading, error } = useSelector((state) => state.patient);
 
   useEffect(() => {
-    console.log("User email:", email); // Check the user data here
+    console.log("User email:", email);
   }, [email]);
 
   const onSubmit = async (data) => {
@@ -28,9 +27,8 @@ const PatientForm = () => {
     try {
       const response = await dispatch(submitPatientForm(payload));
       if (!response.error) {
-        console.log("Navigating to login");
-        navigate("/login");
-        // setTimeout(() => navigate("/login"), 0);
+  
+        navigate("/patientsDashboard");
       } else {
         console.error("Error saving patient data:", response.error);
       }

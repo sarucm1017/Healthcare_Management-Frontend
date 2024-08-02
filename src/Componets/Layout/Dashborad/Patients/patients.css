@@ -1,12 +1,19 @@
+.navbar{
+    padding: 10px 0;
+    margin: 10px 7px;
+}
+
+
 .welcome_section{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     background-color: #192f681f;
     border-radius: 15px;
+    margin-bottom: 10px;
 }
 .image_content_section{
-max-width: 40%;
+max-width: 30%;
 }
 .image_content_section img{
     width: 100%;
@@ -33,9 +40,9 @@ color:#666161;
 .vital_section{
     display: flex;
     flex-direction: column;
-    background-color: #ffffff66;
-    padding: 20px 10px;
-    margin: 12px 0;
+    background-color: #ffffff;
+    padding: 17px 10px;
+    margin: 15px 0;
     border-radius: 15px;
 }
 .vitral_infomation{
@@ -63,26 +70,25 @@ color:#666161;
 .appointment_section{
     display: flex;
     flex-direction: column;
-    background-color: #ffffff66;
-    padding: 11px 10px;
-    margin: 12px 0;
+    background-color: #ffffff;
+    padding: 15px 10px;
     border-radius: 15px;
 }
 .table_section{
-    background-color: #ffffff9c;
-    padding: 10px;
+    background-color: rgb(13 110 253 / 13%);;
+    padding: 13px 10px;
     display: flex;
     flex-direction: column;
     border-radius: 12px;
     box-shadow:1px 1px 1px 1px #b0babd;
 }
 .table_heading {
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 700;
-    color: #544E4E;
+    color: #091f6e;
 }
 .table_body {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     color: #544E4E;
 }
@@ -91,9 +97,10 @@ th , td {
 }
 .semi_reports{
     background-color: #ffffff9c;
-    padding: 10px 10px;
-    margin: 1px 10px;  
-    border-radius: 15px; 
+    padding: 12px 10px;
+    margin: 0px 10px;
+    border-radius: 15px;
+    margin-bottom: 8px;
 }
 .report_head_section{
     display: flex;
@@ -106,8 +113,8 @@ th , td {
 .reports_section{
     display: flex;
     justify-content: space-between;
-    padding: 12px 10px;
-    margin: 10px 0px;
+    padding: 14px 10px;
+    margin: 13px 0px;
     border-radius: 12px;
     box-shadow: 0px 1px 1px 0px gray;
     background-color: white;
@@ -139,4 +146,10 @@ th , td {
     color: #031F85;
     font-size: 14px;
     font-weight: 500;
+}
+.body_information.extra{
+    padding: 10px 40px;
+}
+.dashbordCalendar{
+    padding: 10px 10px;
 }

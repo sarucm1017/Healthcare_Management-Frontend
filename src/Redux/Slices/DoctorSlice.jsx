@@ -8,8 +8,7 @@ export const submitDoctorForm = createAsyncThunk(
     console.log("Sending payload:", payload);
     try {
       const response = await axios.post(
-        "http://localhost:5001/doctor/forms",
-        payload
+        "http://localhost:5001/doctor/forms", payload
       );
       return response.data;
 
@@ -47,7 +46,7 @@ const DoctorSlice = createSlice({
       .addCase(submitDoctorForm.pending, (state) => {
         console.log("submitDoctorForm pending");
         state.loading = true;
-        state.error = '';
+        state.error = null;
       })
       .addCase(submitDoctorForm.fulfilled, (state, action) => {
         console.log("submitDoctorForm fulfilled");
@@ -55,7 +54,7 @@ const DoctorSlice = createSlice({
         state.data = action.payload;
       })
       .addCase(submitDoctorForm.rejected, (state, action) => {
-        console.log("submitDoctorForm re");
+        console.log("submitDoctorForm rejected");
         state.loading = false;
         state.error = action.payload || "error occurred";
       });

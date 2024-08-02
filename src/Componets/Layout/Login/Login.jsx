@@ -20,30 +20,26 @@ const Login = () => {
       }));
 
       if (response.meta.requestStatus === 'fulfilled') {
+        const role = response.payload.role;
        
-        setTimeout(() => {
-          if (role === 'patient') {
-            navigate("/patientForm");
-          } else if (role === 'doctor') {
-            navigate("/doctorsForm");
-          } else {
-            navigate("/popup");
-          }
-        }, 100); // Small delay to ensure role is updated
+        if (role === 'patient') {
+          navigate("/patientsDashboard");
+        } else if (role === 'doctor') {
+          navigate("/doctorsDashboard");
+        }
       } else {
+        console.error("Login failed:", response.payload);
         navigate("/login");
       }
     } catch (error) {
       console.error("Error during login:", error);
     }
   };
-
-  // React to changes in role
   useEffect(() => {
     if (role === 'patient') {
-      navigate("/patientForm");
+      navigate("/patientsDashboard");
     } else if (role === 'doctor') {
-      navigate("/doctorsForm");
+      navigate("/doctorsDashboard");
     }
   }, [role, navigate]);
 

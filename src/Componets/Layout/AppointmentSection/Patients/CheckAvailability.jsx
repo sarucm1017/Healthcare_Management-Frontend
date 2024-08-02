@@ -22,7 +22,7 @@ const CheckAvailability = () => {
                 </div>
                 <div className="right_section"></div>
               </div>
-              <div className="body_content_section">
+              <div className="body_content_section bodysection">
                 <div className="col-md-12 main_top_section">
                   <div className="image_profile"></div>
                   <div className="name_dep">
@@ -36,59 +36,60 @@ const CheckAvailability = () => {
                   </div>
                 </div>
                 <div className="col-md-12 content_box-section">
-                  <div className="col-md-6">
+                  <div className="col-md-6 box_scetion_bodySection">
                     <Calendar />
                   </div>
-                  <div className="col-md-6 time_section_main">
+                  <div className="col-md-6 time_section_main box_scetion_bodySection">
                     <div className="time_sections">
                       <div className="time_each_section">
-                        <p>10 Pm</p>
+                        <p>8.00 AM</p>
                       </div>
                       <div className="time_each_section">
-                        <p>10 Pm</p>
+                        <p>9.00 AM</p>
                       </div>
                       <div className="time_each_section">
-                        <p>10 Pm</p>
+                        <p>10.00 AM</p>
                       </div>
                       <div className="time_each_section">
-                        <p>10 Pm</p>
+                        <p>11.00 AM</p>
                       </div>
                     </div>
                     <div className="time_sections">
                       <div className="time_each_section">
-                        <p>10 Pm</p>
+                        <p>12.00 PM</p>
                       </div>
                       <div className="time_each_section">
-                        <p>10 Pm</p>
+                        <p>2.00 PM</p>
                       </div>
                       <div className="time_each_section">
-                        <p>10 Pm</p>
+                        <p>3.00 PM</p>
                       </div>
                       <div className="time_each_section">
-                        <p>10 Pm</p>
+                        <p>4.00 PM</p>
                       </div>
                     </div>
                     <div className="time_sections">
                       <div className="time_each_section">
-                        <p>10 Pm</p>
+                        <p>5.00 PM</p>
                       </div>
                       <div className="time_each_section">
-                        <p>10 Pm</p>
+                        <p>6.00 PM</p>
                       </div>
                       <div className="time_each_section">
-                        <p>10 Pm</p>
+                        <p>7.00 Pm</p>
                       </div>
                       <div className="time_each_section">
-                        <p>10 Pm</p>
+                        <p>8.00 Pm</p>
                       </div>
+                    
                     </div>
                   </div>
                 </div>
-                <div>
-                    <div>
+                <div className="availability_footer_section">
+                    <div className="footerleft_section">
                         <p>Total Price</p>
                     </div>
-                    <div>
+                    <div className="footerright_section">
                         <p>Proceed To Pay</p>
                     </div>
                   </div>

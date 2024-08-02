@@ -2,6 +2,7 @@ import React from "react";
 import "./patients.css";
 import welcomeimage from "./welcome image.png";
 import PatientsdashboardSidesection from "./PatientsdashboardSidesection";
+import DashboardCalendar from "../../AppointmentSection/Patients/DashboardCalendarPatient";
 
 const PatientsDashboard = () => {
   return (
@@ -49,7 +50,7 @@ const PatientsDashboard = () => {
                           <h5>Temparature</h5>
                           <p>36.2 c</p>
                         </div>
-                        <div className="body_information">
+                        <div className="body_information extra">
                           <h5>pluse</h5>
                           <p> 80 bpm</p>
                         </div>
@@ -146,6 +147,7 @@ const PatientsDashboard = () => {
                                 <p>Active</p>
                               </td>
                             </tr>
+                           
                           </tbody>
                         </table>
                       </div>
@@ -201,27 +203,9 @@ const PatientsDashboard = () => {
                         <p>2/10/2024</p>{" "}
                       </div>
                     </div>
-                    <div className="reports_section">
-                      <div className="report_name_section">
-                        <div className="section_icon">
-                          <i class="fa-regular fa-file-lines"></i>
-                        </div>
-                        <div className="report_name">
-                          <p>Glucose</p>
-                        </div>
-                      </div>
-                      <div className="report_time">
-                        <p>2/10/2024</p>{" "}
-                      </div>
-                    </div>
                   </div>
-                  <div>
-                    <div>
-                      <div></div>
-                      <div></div>
-                    </div>
-                    <div></div>
-                    <div></div>
+                  <div className="dashbordCalendar">
+                    <DashboardCalendar/>
                   </div>
                 </div>
               </div>

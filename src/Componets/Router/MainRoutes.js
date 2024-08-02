@@ -7,16 +7,12 @@ import SetPassword from "../Layout/SetPassword/SetPassword";
 import OtpVerify from "../Layout/OtpVerify/OtpVerify";
 import Popup from "../Pages/Popup";
 import DoctorsDashboard from "../Layout/Dashborad/Doctors/DoctorsDashboard";
-import PatientsDashboard from "../Layout/Dashborad/Patients/PactientsDashboard";
+import PatientsDashboard from "../Layout/Dashborad/Patients/PatientsDashboard";
 import PatientForm from "../Layout/DetailedForm/PatientForm";
 import DoctorsForm from "../Layout/DetailedForm/DoctorsForm";
 import AppointmentSectionPatient from "../Layout/AppointmentSection/Patients/AppointmentSectionPatient";
 import BookAppointmentSection from "../Layout/AppointmentSection/Patients/BookAppointmentSection";
 import CheckAvailability from "../Layout/AppointmentSection/Patients/CheckAvailability";
-
-
-
-
 
 const MainRoutes = () => {
     return (

@@ -23,7 +23,7 @@ export const verifyOtp = createAsyncThunk("user/verifyOtp", async (otpdata, { re
         return response.data;
     } catch (error) {
         if (error.response) {
-            console.error("Error response:", error.response); // For debugging
+            console.error("Error response:", error.response); 
             const errorMsg = error.response.data.error || "An unexpected error occurred";
             return rejectWithValue(errorMsg);
         } else {
@@ -37,7 +37,9 @@ export const userlogin = createAsyncThunk("user/login", async (credentials, thun
         const response = await axios.post(`http://localhost:5001/users/userlogin`, credentials);
         return response.data;
     } catch (error) {
-        return thunkAPI.rejectWithValue(error.response?.data || "An unexpected error occurred");
+       
+        const errorMessage = error.response?.data?.message || "An unexpected error occurred";
+        return thunkAPI.rejectWithValue(errorMessage);
     }
 });
 
@@ -97,8 +99,10 @@ const UserSlice = createSlice({
             })
             .addCase(userlogin.fulfilled, (state, action) => {
                 state.loading = false;
-                state.token = action.payload.token; // Set token from login response
-                state.email = action.payload.email; // Set email from login response
+                state.token = action.payload.token; 
+                state.email = action.payload.email;
+                state.role = action.payload.role; 
+                state.data = action.payload;
             })
             .addCase(userlogin.rejected, (state, action) => {
                 state.loading = false;
