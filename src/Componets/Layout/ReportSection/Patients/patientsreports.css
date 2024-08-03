@@ -1,6 +1,10 @@
 .home_bodySection{
     background-color: aliceblue;
 }
+.content_body_section{
+    display: flex;
+    justify-content: space-between;
+}
 
 .single_reports{
     display: flex;
@@ -8,4 +12,29 @@
     padding: 10px 10px;
     background-color: white;
     border-radius: 10px;
+    width: 48% !important;
+}
+.top_section{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    margin: 10px;
+}
+.bottom_section{
+    display: flex;
+    justify-content: flex-end;
+}
+.top_section_leftside p{
+    font-size: 13px;
+    font-weight: 600;
+    color: #7C89BA;
+}
+.top_section_rightside a  {
+    text-decoration: none;
+    padding: 10px 25px;
+    background-color: darkblue;
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 8px;
 }
