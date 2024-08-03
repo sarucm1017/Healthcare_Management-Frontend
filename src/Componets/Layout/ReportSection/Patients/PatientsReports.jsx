@@ -1,4 +1,5 @@
 import React from "react";
+import  "./patientsreports.css"
 import PatientsdashboardSidesection from "../../Dashborad/Patients/PatientsdashboardSidesection";
 
 const PatientReport = () => {
@@ -22,14 +23,20 @@ const PatientReport = () => {
               </div>
               <div className="home_bodySection">
                 <div className="col-md-12">
-                  <div className="col-md-6">
+                  <div className="col-md-6 single_reports">
                     <div className="top_section">
-                      <div></div>
-                      <div></div>
+                      <div className="top_section_leftside">
+                        <p>Health Information</p>
+                      </div>
+                      <div className="top_section_rightside">
+                        <a href="">Details</a>
+                      </div>
                     </div>
                     <div className="bottom_section">
-                      <div></div>
-                      <div></div>
+                      <div className="bottom-section-rightside">
+                        <p>By</p>
+                        <p>Dr.Arya</p>
+                      </div>
                     </div>
                   </div>
                   <div className="col-md-6"></div>
