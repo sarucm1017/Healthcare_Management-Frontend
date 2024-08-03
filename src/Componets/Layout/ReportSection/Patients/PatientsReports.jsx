@@ -21,7 +21,12 @@ const PatientReport = () => {
                 <div className="right_section"></div>
               </div>
               <div className="home_bodySection">
-
+                <div className="col-md-12">
+                  <div className="col-md-6">
+                    
+                  </div>
+                  <div className="col-md-6"></div>
+                </div>
               </div>
             </div>
           </div>
