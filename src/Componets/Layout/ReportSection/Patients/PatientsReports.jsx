@@ -13,10 +13,10 @@ const PatientReport = () => {
               <div className="nav_bar_section">
                 <div className="left_section">
                   <div className="icon_part">
-                    <i class="fa-solid fa-file-medical"></i>
+                    <i class="fa-solid fa-chart-simple"></i>
                   </div>
                   <div className="title_part">
-                    <h4>Book Appointment</h4>
+                    <h4>Report</h4>
                   </div>
                 </div>
                 <div className="right_section"></div>
