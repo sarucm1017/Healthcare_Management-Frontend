@@ -56,6 +56,108 @@ const PatientReport = () => {
                     </div>
                   </div>
                 </div>
+                <div className="col-md-12 content_body_section">
+                  <div className="col-md-6 single_reports">
+                    <div className="top_section">
+                      <div className="top_section_leftside">
+                        <p>Health Information</p>
+                      </div>
+                      <div className="top_section_rightside">
+                        <a href="">Details</a>
+                      </div>
+                    </div>
+                    <div className="bottom_section">
+                      <div className="bottom-section-rightside">
+                        <p>By</p>
+                        <p>Dr.Arya</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-6 single_reports">
+                  <div className="top_section">
+                      <div className="top_section_leftside">
+                        <p>Health Information</p>
+                      </div>
+                      <div className="top_section_rightside">
+                        <a href="">Details</a>
+                      </div>
+                    </div>
+                    <div className="bottom_section">
+                      <div className="bottom-section-rightside">
+                        <p>By</p>
+                        <p>Dr.Arya</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-12 content_body_section">
+                  <div className="col-md-6 single_reports">
+                    <div className="top_section">
+                      <div className="top_section_leftside">
+                        <p>Health Information</p>
+                      </div>
+                      <div className="top_section_rightside">
+                        <a href="">Details</a>
+                      </div>
+                    </div>
+                    <div className="bottom_section">
+                      <div className="bottom-section-rightside">
+                        <p>By</p>
+                        <p>Dr.Arya</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-6 single_reports">
+                  <div className="top_section">
+                      <div className="top_section_leftside">
+                        <p>Health Information</p>
+                      </div>
+                      <div className="top_section_rightside">
+                        <a href="">Details</a>
+                      </div>
+                    </div>
+                    <div className="bottom_section">
+                      <div className="bottom-section-rightside">
+                        <p>By</p>
+                        <p>Dr.Arya</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-12 content_body_section">
+                  <div className="col-md-6 single_reports">
+                    <div className="top_section">
+                      <div className="top_section_leftside">
+                        <p>Health Information</p>
+                      </div>
+                      <div className="top_section_rightside">
+                        <a href="">Details</a>
+                      </div>
+                    </div>
+                    <div className="bottom_section">
+                      <div className="bottom-section-rightside">
+                        <p>By</p>
+                        <p>Dr.Arya</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-6 single_reports">
+                  <div className="top_section">
+                      <div className="top_section_leftside">
+                        <p>Health Information</p>
+                      </div>
+                      <div className="top_section_rightside">
+                        <a href="">Details</a>
+                      </div>
+                    </div>
+                    <div className="bottom_section">
+                      <div className="bottom-section-rightside">
+                        <p>By</p>
+                        <p>Dr.Arya</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
