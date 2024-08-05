@@ -16,6 +16,7 @@ import CheckAvailability from "../Layout/AppointmentSection/Patients/CheckAvaila
 import PatientReport from "../Layout/ReportSection/Patients/PatientsReports";
 import ReportDetailsPatient from "../Layout/ReportSection/Patients/ReportDetailsPatient"
 import PatientProfile from "../Layout/ProfileSection/patient/PatientProfile";
+import PatientProfileEdit from "../Layout/ProfileSection/patient/PatientProfileEdit";
 
 const MainRoutes = () => {
     return (
@@ -37,6 +38,7 @@ const MainRoutes = () => {
             <Route path ="/patientReport" element = {<PatientReport/>}></Route>
             <Route path ="/reportDetailsPatient" element = {<ReportDetailsPatient/>}></Route>
             <Route path ="/patientProfile" element = {<PatientProfile/>}></Route>
+            <Route path ="/patientProfileEdit" element = {<PatientProfileEdit/>}></Route>
         </Routes>
         </>
     )

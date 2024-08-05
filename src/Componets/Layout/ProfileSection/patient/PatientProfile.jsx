@@ -1,6 +1,7 @@
 import React from "react";
 import PatientsdashboardSidesection from "../../Dashborad/Patients/PatientsdashboardSidesection";
 import "./patientProfile.css";
+import defaultimage from "./defaultimage.jpg"
 
 const PatientProfile = () => {
     return(
@@ -24,12 +25,15 @@ const PatientProfile = () => {
               <div className="main_section">
                 <div className="col-md-12 profilefullSection">
                     <div className="profileHeader">
-                        <div className="profileimage-navbarSection">
-                            <div></div>
-                            <div><p>Amal</p></div>
+                        <div className="profileimage-navbarSection col-md-6">
+                            <div className="profileImage_box">
+                                <img src={defaultimage} alt="" />
+                            </div>
+                            <div className="profile_name"><p>Amal</p></div>
                         </div>
-                        <div className="btn_foredit">
-                            <div>edit</div>
+                        <div className="btn_foredit col-md-6">
+                        <i class="fa-solid fa-pen"></i>
+                           <p>Edit</p>
                         </div>
                     </div>
                     <div className="profileBottom">
@@ -69,7 +73,7 @@ const PatientProfile = () => {
                     <div className="profile_maininput">
                       <p>Current Medications</p>
                       <div className="profile_inputBox"><p></p></div>
-                    </div>
+                     </div>
                     <div className="profile_maininput">
                       <p>Allergies</p>
                       <div className="profile_inputBox"><p></p></div>
