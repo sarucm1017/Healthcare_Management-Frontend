@@ -20,9 +20,60 @@ const ReportDetails = () => {
                 </div>
                 <div className="right_section"></div>
               </div>
-              <div className="home_bodySection">
-                <div className="col-md-12 content_body_section">
-                  <div className="body_content-section"></div>
+              <div className="">
+                <div className="col-md-12 content-body-section">
+                  <div className=" col-md-6 body_content-section">
+                    <div>
+                      <p>Blood Group</p>
+                      <div className="report_inputBox"><p></p></div>
+                    </div>
+                    <div>
+                      <p>Pulse Rate</p>
+                      <div className="report_inputBox"><p></p></div>
+                    </div>
+                    <div>
+                      <p>Breathing Rate</p>
+                      <div className="report_inputBox"><p></p></div>
+                    </div>
+                    <div>
+                      <p>Body Temperature</p>
+                      <div className="report_inputBox"><p></p></div>
+                    </div>
+                    <div>
+                      <p>Blood Pressure</p>
+                      <div className="report_inputBox"><p></p></div>
+                    </div>
+                    <div>
+                      <p>Oxygen Saturation</p>
+                      <div className="report_inputBox"><p></p></div>
+                    </div>
+                  </div>
+                  <div className=" col-md-6 body_content-section">
+                    <div>
+                      <p>Blood Group</p>
+                      <div className="report_inputBox"><p></p></div>
+                    </div>
+                    <div>
+                      <p>Pulse Rate</p>
+                      <div className="report_inputBox"><p></p></div>
+                    </div>
+                    <div>
+                      <p>Breathing Rate</p>
+                      <div className="report_inputBox"><p></p></div>
+                    </div>
+                    <div>
+                      <p>Body Temperature</p>
+                      <div className="report_inputBox"><p></p></div>
+                    </div>
+                    <div>
+                      <p>Blood Pressure</p>
+                      <div className="report_inputBox"><p></p></div>
+                    </div>
+                    <div>
+                      <p>Oxygen Saturation</p>
+                      <div className="report_inputBox"><p></p></div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

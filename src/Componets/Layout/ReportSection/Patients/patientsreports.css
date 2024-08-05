@@ -50,9 +50,18 @@
     font-weight: 600;
 }
 /* ////////////////////////////////// */
-
+.content-body-section{
+    display: flex;
+    padding: 22px 45px;
+    min-height: 87vh;
+    background-color: #ffffffbd;
+}
+.report_inputBox{
+    padding: 15px 0;
+    border-bottom: 1px solid;
+}
 
 .body_content-section{
-    background-color: #FFFFFF;
-    min-height: 87vh;
+    
+   
 }
