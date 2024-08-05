@@ -7,7 +7,19 @@
 display: flex;
 }
 .chatSection{
+  
+}
+.eachChat-people{
     padding: 29px 10px;
-    border-bottom: 1px solid;
     border-top: 1px solid;
+}
+.head_searchSection{
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 0;
+}
+.head_searchSection input {
+    padding: 3px;
+    border-radius: 10px;
+    border: 1px solid #9b97972e;
 }
