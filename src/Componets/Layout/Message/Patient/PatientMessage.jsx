@@ -13,7 +13,7 @@ const PatientMessage = () => {
               <div className="nav_bar_section">
                 <div className="left_section">
                   <div className="icon_part">
-                  <i class="fa-solid fa-user"></i>
+                  <i class="fa-solid fa-message"></i>
                   </div>
                   <div className="title_part">
                     <h4>Message</h4>
@@ -22,8 +22,19 @@ const PatientMessage = () => {
                 <div className="right_section"></div>
               </div>
               <div className="main_section">
-                <div className="col-md-12 profilefullSection">
-                    
+                <div className="col-md-12">
+                   <div className="col-md-4">
+                    <div className="head_searchSection">
+                        <input type="text" />
+                    </div>
+                    <div className="classification-section">
+                        <div><p>All chat</p></div>
+                    </div>
+                    <div className="chatSection">
+                        
+                    </div>
+                    </div> 
+                   <div className="col-md-7"></div> 
                 </div>
               </div>
             </div>

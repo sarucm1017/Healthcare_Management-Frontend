@@ -13,41 +13,39 @@ const PatientsdashboardSidesection = () => {
         <div className="dashboard_menu">
           <div className="menu overview">
             <i class="fa-solid fa-house"></i>
-            <a href="/patientsDashboard"><p>Overview</p></a>
+            <a href="/patientsDashboard">
+              <p>Overview</p>
+            </a>
           </div>
           <div className="menu Appointments">
             <i class="fa-solid fa-file-medical"></i>
-
-           <a href="/appointmentSectionPatient"> <p>Appointments</p></a>
+            <a href="/appointmentSectionPatient">
+              <p>Appointments</p>
+            </a>
           </div>
           <div className="menu Message">
             <i class="fa-solid fa-message"></i>
-
             <p>Message</p>
           </div>
           <div className="menu Profile">
             <i class="fa-solid fa-user"></i>
-
             <p>Profile</p>
           </div>
           <div className="menu Reports">
             <i class="fa-solid fa-chart-simple"></i>
-
             <p>Reports</p>
           </div>
           <div className="menu Settings">
             <i class="fa-solid fa-gear"></i>
-
             <p>Settings</p>
           </div>
           <div className="menu Logout">
             <i class="fa-solid fa-right-from-bracket"></i>
-
             <p>Logout</p>
           </div>
         </div>
         <div className="helpcenter_section">
-          <div >
+          <div>
             <h4>Help Center</h4>
             <p>Having Trouble</p>
           </div>
