@@ -20,7 +20,7 @@ const ReportDetails = () => {
                 </div>
                 <div className="right_section"></div>
               </div>
-              <div className="">
+              <div className="main_section">
                 <div className="col-md-12 content-body-section">
                   <div className=" col-md-5 body_content-section">
                     <div className="report_maininput">
@@ -50,27 +50,27 @@ const ReportDetails = () => {
                   </div>
                   <div className=" col-md-5 body_content-section">
                   <div className="report_maininput">
-                      <p>Blood Group</p>
+                      <p>Height</p>
                       <div className="report_inputBox"><p></p></div>
                     </div>
                     <div className="report_maininput">
-                      <p>Pulse Rate</p>
+                      <p>Weight</p>
                       <div className="report_inputBox"><p></p></div>
                     </div>
                     <div className="report_maininput">
-                      <p>Breathing Rate</p>
+                      <p>Diagnosis</p>
                       <div className="report_inputBox"><p></p></div>
                     </div>
                     <div className="report_maininput">
-                      <p>Body Temperature</p>
+                      <p>Symptoms</p>
                       <div className="report_inputBox"><p></p></div>
                     </div>
                     <div className="report_maininput">
-                      <p>Blood Pressure</p>
+                      <p>Current Medications</p>
                       <div className="report_inputBox"><p></p></div>
                     </div>
                     <div className="report_maininput">
-                      <p>Oxygen Saturation</p>
+                      <p>Prescribed Treatment</p>
                       <div className="report_inputBox"><p></p></div>
                     </div>
                   </div>

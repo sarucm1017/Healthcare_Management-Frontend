@@ -57,11 +57,20 @@
     background-color: #ffffffbd;
     justify-content: space-around;
     border-radius: 15px;
+    box-shadow: 1px 1px 4px 0px gray;;
 
+}
+.main_section{
+    padding: 0px 30px;
+}
+.report_maininput p{
+    color: #9B9797;
+    font-size: 12px;
+    font-weight: 600;
 }
 .report_inputBox{
     padding: 15px 0;
-    border-bottom: 1px solid;
+    border-bottom: 1px solid #9B9797;
 }
 .report_maininput{
     padding: 15px 0;
