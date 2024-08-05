@@ -1,5 +1,7 @@
 .home_bodySection{
-    background-color: aliceblue;
+    background-color: #F6F4F4;
+    min-height: 87vh;
+    border-radius: 15px;
 }
 .content_body_section{
     display: flex;
@@ -46,4 +48,11 @@
 .bottom-section-rightside p{
     font-size: 15px;
     font-weight: 600;
+}
+/* ////////////////////////////////// */
+
+
+.body_content-section{
+    background-color: #FFFFFF;
+    min-height: 87vh;
 }

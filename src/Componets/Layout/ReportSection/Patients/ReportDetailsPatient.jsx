@@ -21,7 +21,9 @@ const ReportDetails = () => {
                 <div className="right_section"></div>
               </div>
               <div className="home_bodySection">
-                <div className="col-md-12 content_body_section"></div>
+                <div className="col-md-12 content_body_section">
+                  <div className="body_content-section"></div>
+                </div>
               </div>
             </div>
           </div>
