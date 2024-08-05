@@ -1,0 +1,39 @@
+.profilefullSection{
+    display: flex;
+    flex-direction: column;
+    min-height: 87vh;
+    background-color: #ffffff86;
+    border-radius: 15px;
+}
+.profileHeader{
+    display: flex;
+    justify-content: space-between;
+}
+.profileimage-navbarSection{
+    padding: 10px 10px;
+}
+.profile_maininput p{
+    color: #9B9797;
+    font-size: 12px;
+    font-weight: 600;
+}
+.profile_inputBox{
+    padding: 10px 0;
+    border-bottom: 1px solid #9B9797;
+}
+.profile_maininput{
+    padding: 15px 0;
+}
+.profileBottom{
+    display: flex;
+    justify-content:space-around
+}
+.profile-heading{
+    display: flex;
+    justify-content: center;
+}
+.profile-heading h5{
+    font-size: 20px;
+    color: #031F85;
+    font-weight: 700;
+}
