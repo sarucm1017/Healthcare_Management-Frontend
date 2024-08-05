@@ -1,4 +1,13 @@
 .chating_peopele{
     background-color: white;
     min-height: 87vh;
+    padding: 15px 15px;
+}
+.eachChat-people{
+display: flex;
+}
+.chatSection{
+    padding: 29px 10px;
+    border-bottom: 1px solid;
+    border-top: 1px solid;
 }

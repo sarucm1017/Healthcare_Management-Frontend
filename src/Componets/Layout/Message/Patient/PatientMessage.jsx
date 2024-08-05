@@ -33,7 +33,7 @@ const PatientMessage = () => {
                       </div>
                     </div>
                     <div className="chatSection">
-                        <div>
+                        <div className="eachChat-people">
                             <div> <img src="" alt="" /></div>
                             <div><p>Dr.Ariya</p></div>
                             <div><p>11</p></div>
