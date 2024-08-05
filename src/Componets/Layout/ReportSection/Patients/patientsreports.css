@@ -52,13 +52,19 @@
 /* ////////////////////////////////// */
 .content-body-section{
     display: flex;
-    padding: 22px 45px;
+    padding: 22px 30px;
     min-height: 87vh;
     background-color: #ffffffbd;
+    justify-content: space-around;
+    border-radius: 15px;
+
 }
 .report_inputBox{
     padding: 15px 0;
     border-bottom: 1px solid;
+}
+.report_maininput{
+    padding: 15px 0;
 }
 
 .body_content-section{
