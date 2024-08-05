@@ -38,8 +38,17 @@ const PatientMessage = () => {
                             <div><p>Dr.Ariya</p></div>
                             <div><p>11</p></div>
                         </div>
-                        <div></div>
-                        <div></div>
+                        <div className="eachChat-people">
+                            <div> <img src="" alt="" /></div>
+                            <div><p>Dr.Ariya</p></div>
+                            <div><p>11</p></div>
+                        </div>
+                        <div className="eachChat-people">
+                            <div> <img src="" alt="" /></div>
+                            <div><p>Dr.Ariya</p></div>
+                            <div><p>11</p></div>
+                        </div>
+                        
                     </div>
                   </div>
                   <div className="col-md-7"></div>
