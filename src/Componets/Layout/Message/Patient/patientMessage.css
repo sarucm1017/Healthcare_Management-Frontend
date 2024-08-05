@@ -23,3 +23,15 @@ display: flex;
     border-radius: 10px;
     border: 1px solid #9b97972e;
 }
+.Dp_image{
+    width: 15%;
+}
+.Dp_image img{
+    width: 100%;
+    border-radius: 50%;
+}
+.profile_dp{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}

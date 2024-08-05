@@ -1,6 +1,7 @@
 import React from "react";
 import PatientsdashboardSidesection from "../../Dashborad/Patients/PatientsdashboardSidesection";
 import "./patientMessage.css";
+import defaultImage from "./defaultimage.jpg"
 
 const PatientMessage = () => {
   return (
@@ -27,15 +28,17 @@ const PatientMessage = () => {
                     <div className="head_searchSection">
                       <input type="text" />
                     </div>
-                    <div className="classification-section">
+                    {/* <div className="classification-section">
                       <div>
                         <p>All chat</p>
                       </div>
-                    </div>
+                    </div> */}
                     <div className="chatSection">
                         <div className="eachChat-people">
-                            <div> <img src="" alt="" /></div>
-                            <div><p>Dr.Ariya</p></div>
+                           <div className="profile_dp">
+                           <div className="Dp_image"> <img src= {defaultImage} /></div>
+                           <div><p>Dr.Ariya</p></div>
+                           </div>
                             <div><p>11</p></div>
                         </div>
                         <div className="eachChat-people">
