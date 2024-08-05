@@ -15,6 +15,7 @@ import BookAppointmentSection from "../Layout/AppointmentSection/Patients/BookAp
 import CheckAvailability from "../Layout/AppointmentSection/Patients/CheckAvailability";
 import PatientReport from "../Layout/ReportSection/Patients/PatientsReports";
 import ReportDetailsPatient from "../Layout/ReportSection/Patients/ReportDetailsPatient"
+import PatientProfile from "../Layout/ProfileSection/patient/PatientProfile";
 
 const MainRoutes = () => {
     return (
@@ -35,6 +36,7 @@ const MainRoutes = () => {
             <Route path ="/checkAvailability" element = {<CheckAvailability/>}></Route>
             <Route path ="/patientReport" element = {<PatientReport/>}></Route>
             <Route path ="/reportDetailsPatient" element = {<ReportDetailsPatient/>}></Route>
+            <Route path ="/patientProfile" element = {<PatientProfile/>}></Route>
         </Routes>
         </>
     )
