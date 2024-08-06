@@ -25,8 +25,14 @@ const PatientsDashboard = ({userId}) => {
             <div className="main_home">
               <div className="navbar">
                 <div className="navbar_content">
-                  <h4>Good Morning Amal</h4>
-                  <p>How are you feeling </p>
+                {status === 'loading' ? (
+                    <h4>Loading...</h4>
+                  ) : error ? (
+                    <h4>Error: {error}</h4>
+                  ) : (
+                    <h4>Good Morning {patient ? patient.name : 'Patient'}</h4>
+                  )}
+                  <p>How are you feeling</p>
                 </div>
                 <div className="navbar_topend">
                   <div className="search_bar"></div>
