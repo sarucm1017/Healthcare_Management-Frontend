@@ -10,9 +10,6 @@
 .eachChat-people{
 display: flex;
 }
-.chatSection{
-  
-}
 .eachChat-people{
     padding: 29px 10px;
     border-top: 1px solid #9b97972e;
@@ -38,4 +35,40 @@ display: flex;
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+
+/* /////////////////////////////// */
+.messageSection_main{
+    display: flex;
+    justify-content: space-around;
+}
+.img_section{
+    width: 8%;
+}
+.img_section img {
+    width: 100%;
+    border-radius: 50%;
+}
+.chatingSection{
+    background-color: white;
+    min-height: 83vh;
+    padding: 15px 15px;
+    margin-top: 15px;
+    border-radius: 15px;
+}
+.chat_headerSection{
+    display: flex;
+    align-items: center;
+    gap: 15px
+}
+.name-Section h6{
+    font-size: 15px;
+    font-weight: 700;
+    color: #031F85;
+}
+.name-Section p {
+    font-size: 12px;
+    font-weight: 500;
+    color: #cbc2c2;
 }

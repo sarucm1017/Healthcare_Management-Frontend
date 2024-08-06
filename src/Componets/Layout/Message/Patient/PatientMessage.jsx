@@ -23,7 +23,7 @@ const PatientMessage = () => {
                 <div className="right_section"></div>
               </div>
               <div className="main_section">
-              <div className="col-md-12">
+              <div className="col-md-12 messageSection_main">
                   <div className="col-md-4 chating_peopele">
                     <div className="head_searchSection">
                       <input type="text" />
@@ -60,7 +60,19 @@ const PatientMessage = () => {
                         
                     </div>
                   </div>
-                  <div className="col-md-7"></div>
+                  <div className="col-md-7 chatingSection">
+                    <div className="chat_headerSection">
+                      <div className="img_section">
+                        <img src= {defaultImage} alt="" />
+                      </div>
+                      <div className="name-Section">
+                        <h6>Dr.Arya</h6>
+                        <p>online</p>
+                      </div>
+                    </div>
+                    <div></div>
+                    <div></div>
+                  </div>
                 </div>
               </div>
             </div>
