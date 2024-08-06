@@ -35,10 +35,6 @@ const PatientsdashboardSidesection = () => {
             <i class="fa-solid fa-chart-simple"></i>
             <p>Reports</p>
           </div>
-          <div className="menu Settings">
-            <i class="fa-solid fa-gear"></i>
-            <p>Settings</p>
-          </div>
           <div className="menu Logout">
             <i class="fa-solid fa-right-from-bracket"></i>
             <p>Logout</p>

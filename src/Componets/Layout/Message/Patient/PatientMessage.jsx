@@ -42,13 +42,24 @@ const PatientMessage = () => {
                             <div><p>11</p></div>
                         </div>
                         <div className="eachChat-people">
-                            <div> <img src="" alt="" /></div>
-                            <div><p>Dr.Ariya</p></div>
+                        <div className="profile_dp">
+                           <div className="Dp_image"> <img src= {defaultImage} /></div>
+                           <div><p>Dr.Ariya</p></div>
+                           </div>
                             <div><p>11</p></div>
                         </div>
                         <div className="eachChat-people">
-                            <div> <img src="" alt="" /></div>
-                            <div><p>Dr.Ariya</p></div>
+                        <div className="profile_dp">
+                           <div className="Dp_image"> <img src= {defaultImage} /></div>
+                           <div><p>Dr.Ariya</p></div>
+                           </div>
+                            <div><p>11</p></div>
+                        </div>
+                        <div className="eachChat-people">
+                        <div className="profile_dp">
+                           <div className="Dp_image"> <img src= {defaultImage} /></div>
+                           <div><p>Dr.Ariya</p></div>
+                           </div>
                             <div><p>11</p></div>
                         </div>
                         

@@ -175,9 +175,9 @@ th , td {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 49px 10px 29px 10px;
+    padding: 50px 10px 34px 10px;
     color: white;
-    margin-top: 38px;
+    margin-top: 90px;
 }
 .helpcenter_section h4{
     font-size: 15px;
@@ -191,8 +191,8 @@ th , td {
     width: 60px;
     background-color: #031F85;
     position: absolute;
-    bottom: 13%;
-    left: 7%;
+    bottom: 15%;
+    left: 6%;
     padding: 6px 10px;
     text-align: center;
     border-radius: 50pc;
