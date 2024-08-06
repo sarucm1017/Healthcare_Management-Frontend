@@ -11,7 +11,7 @@ p{
     display: flex;
     flex-direction: column;
     margin: 20px 0px;
-    padding-left: 30px;
+    padding-left: 25px;
 
 }
 .menu{
@@ -260,5 +260,23 @@ p{
     font-size: 16px;
     font-weight: 700;
     color: #031F85;
+}
+.helpcenter_container{
+    background-color: #031F85;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 10px 34px 10px;
+    color: white;
+    margin-top: 32px;
+}
+.helpcenter_container  h4{
+    font-size: 15px;
+    font-weight: 500;
+}
+.helpcenter_container p {
+    font-size: 10px;
+    font-weight: 400;
 }
 

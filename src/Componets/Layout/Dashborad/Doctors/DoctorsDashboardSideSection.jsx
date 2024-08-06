@@ -44,7 +44,7 @@ const DoctorsDashboardSideSection = () => {
            <a href="/"> <p>Logout</p></a>
           </div>
         </div>
-        <div className="helpcenter_section">
+        <div className="helpcenter_container">
           <div>
             <h4>Help Center</h4>
             <p>Having Trouble</p>
