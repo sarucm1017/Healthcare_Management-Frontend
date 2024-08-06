@@ -29,7 +29,7 @@ const PatientProfile = () => {
                             <div className="profileImage_box">
                                 <img src={defaultimage} alt="" />
                             </div>
-                            <div className="profile_name"><p>Amal</p></div>
+                            <div className="profile_name_section"><p>Amal</p></div>
                         </div>
                         <div className="btn_foredit col-md-6">
                         <i class="fa-solid fa-pen"></i>

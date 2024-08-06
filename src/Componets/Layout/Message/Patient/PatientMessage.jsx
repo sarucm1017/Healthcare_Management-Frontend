@@ -23,16 +23,11 @@ const PatientMessage = () => {
                 <div className="right_section"></div>
               </div>
               <div className="main_section">
-                <div className="col-md-12">
+              <div className="col-md-12">
                   <div className="col-md-4 chating_peopele">
                     <div className="head_searchSection">
                       <input type="text" />
                     </div>
-                    {/* <div className="classification-section">
-                      <div>
-                        <p>All chat</p>
-                      </div>
-                    </div> */}
                     <div className="chatSection">
                         <div className="eachChat-people">
                            <div className="profile_dp">

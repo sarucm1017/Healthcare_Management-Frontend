@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 10px 10px;
+    padding: 15px 10px;
     
 }
 .left_section{
@@ -23,7 +23,7 @@
     display: flex;
     justify-content: space-between;
     padding: 10px;
-    margin: 7px 10px;
+    margin: 0px 10px;
     align-items: center;
 }
 .classification_all{
@@ -86,7 +86,7 @@
 .body_content_section{
     background-color: #F6F4F4;
     border-radius: 15px;
-    padding: 10px 10px
+    padding: 0px 10px
 }
 .main_profile_section{
 display: flex;
