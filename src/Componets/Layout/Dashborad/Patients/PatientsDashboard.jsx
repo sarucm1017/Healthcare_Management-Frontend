@@ -11,10 +11,15 @@ const PatientsDashboard = ({userId}) => {
   const {patient, status, error} = useSelector((state) => state.patient);
 
   useEffect(() => {
+    console.log('User ID in Component:', userId);
     if(userId){
       dispatch(fetchPatientData(userId))
     }
   }, [dispatch, userId])
+
+  useEffect(() => {
+    console.log('Patient Data:', patient);
+  }, [patient]);
   return (
     <>
       <div className="container-fluid">
@@ -30,7 +35,7 @@ const PatientsDashboard = ({userId}) => {
                   ) : error ? (
                     <h4>Error: {error}</h4>
                   ) : (
-                    <h4>Good Morning {patient ? patient.name : 'Patient'}</h4>
+                    <h4>Good Morning {patient ? patient.userName : 'Patient'}</h4>
                   )}
                   <p>How are you feeling</p>
                 </div>
