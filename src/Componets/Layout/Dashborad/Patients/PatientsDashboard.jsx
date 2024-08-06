@@ -1,10 +1,20 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "./patients.css";
 import welcomeimage from "./welcome image.png";
 import PatientsdashboardSidesection from "./PatientsdashboardSidesection";
 import DashboardCalendar from "../../AppointmentSection/Patients/DashboardCalendarPatient";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchPatientData } from "../../../../Redux/Slices/PatientSlices/DashboardSlice";
 
-const PatientsDashboard = () => {
+const PatientsDashboard = ({userId}) => {
+  const dispatch = useDispatch();
+  const {patient, status, error} = useSelector((state) => state.patient);
+
+  useEffect(() => {
+    if(userId){
+      dispatch(fetchPatientData(userId))
+    }
+  }, [dispatch, userId])
   return (
     <>
       <div className="container-fluid">
