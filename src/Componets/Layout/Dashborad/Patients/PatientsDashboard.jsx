@@ -16,7 +16,8 @@ const PatientsDashboard = () => {
   useEffect(() => {
     console.log('User ID in Component:', userId);
     if(userId){
-      dispatch(fetchPatientData(userId))
+      const token = localStorage.getItem('token');
+      dispatch(fetchPatientData({ userId, token }));
     }
   }, [dispatch, userId])
 
