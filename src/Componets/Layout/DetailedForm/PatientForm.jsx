@@ -11,6 +11,7 @@ const PatientForm = () => {
   const navigate = useNavigate();
   const email = useSelector((state) => state.user.email);
   const { loading, error } = useSelector((state) => state.patient);
+  const userId = useSelector((state) => state.user.userId);
 
   useEffect(() => {
     console.log("User email:", email);
