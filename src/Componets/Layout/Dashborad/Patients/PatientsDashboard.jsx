@@ -4,20 +4,20 @@ import welcomeimage from "./welcome image.png";
 import PatientsdashboardSidesection from "./PatientsdashboardSidesection";
 import DashboardCalendar from "../../AppointmentSection/Patients/DashboardCalendarPatient";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from 'react-router-dom';
-import { fetchPatientData } from "../../../../Redux/Slices/PatientSlices/DashboardSlice";
+
 
 const PatientsDashboard = () => {
-  const { userId } = useParams();
+  const userId = localStorage.getItem('userId');
   const dispatch = useDispatch();
   const {patient, status, error} = useSelector((state) => state.patient);
+  const { data } = useSelector((state) => state.user);
   console.log('state.patient:', patient);
 
   useEffect(() => {
     console.log('User ID in Component:', userId);
     if(userId){
       const token = localStorage.getItem('token');
-      dispatch(fetchPatientData({ userId, token }));
+     
     }
   }, [dispatch, userId])
 
@@ -39,7 +39,7 @@ const PatientsDashboard = () => {
                   ) : error ? (
                     <h4>Error: {error}</h4>
                   ) : (
-                    <h4>Good Morning {patient ? patient.userName : 'Patient'}</h4>
+                    <h4>Good Morning {data ? data.name : 'Patient'}</h4>
                   )}
                   <p>How are you feeling</p>
                 </div>

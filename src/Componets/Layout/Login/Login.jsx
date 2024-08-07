@@ -23,8 +23,10 @@ const Login = () => {
 
       if (response.meta.requestStatus === 'fulfilled') {
         const role = response.payload.role;
+        const {  token, userId } = response.payload;
        
-        localStorage.setItem('token', response.payload.token);
+        localStorage.setItem('token', token);
+        localStorage.setItem('userId', userId);
        
         if (role === 'patient') {
           console.log('Navigating with userId:', userId);

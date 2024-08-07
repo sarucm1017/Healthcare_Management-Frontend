@@ -66,7 +66,7 @@ export const userlogin = createAsyncThunk(
 const UserSlice = createSlice({
   name: "user",
   initialState: {
-    data: null,
+    data: [],
     email: null,
     role: null,
     userId: null,
@@ -98,6 +98,10 @@ const UserSlice = createSlice({
       })
       .addCase(userRegister.fulfilled, (state, action) => {
         state.loading = false;
+        state.userId = action.payload.userId;
+        state.data = action.payload.data;
+         // Store token in localStorage
+         localStorage.setItem("token", action.payload.token);
       })
       .addCase(userRegister.rejected, (state, action) => {
         state.loading = false;
@@ -125,7 +129,7 @@ const UserSlice = createSlice({
         state.email = action.payload.email;
         state.role = action.payload.role;
         state.userId = action.payload.userId;
-        state.data = action.payload;
+        state.data = action.payload.data;
         // Store token in localStorage
         localStorage.setItem("token", action.payload.token);
       })
