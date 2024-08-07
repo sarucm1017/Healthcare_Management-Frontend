@@ -9,6 +9,7 @@ import { fetchPatientData } from "../../../../Redux/Slices/PatientSlices/Dashboa
 const PatientsDashboard = ({userId}) => {
   const dispatch = useDispatch();
   const {patient, status, error} = useSelector((state) => state.patient);
+  console.log('state.patient:', patient);
 
   useEffect(() => {
     console.log('User ID in Component:', userId);

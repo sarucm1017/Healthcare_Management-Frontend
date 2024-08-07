@@ -25,13 +25,24 @@ export const submitDoctorForm = createAsyncThunk(
   }
 );
 
+/////////////////////////////fetching the doctors//////////////////////////
+
+export const fetchDoctors = createAsyncThunk('doctors/fetchDoctors', async () => {
+  const response = await axios.get('http://localhost:5001/doctor/forms'); // Endpoint to fetch all doctors
+  return response.data;
+});
+
+
+
 const DoctorSlice = createSlice({
   name: "doctor",
   initialState: {
-    data: {},
+    data: [],
     role: null,
     error: '',
     loading: false,
+    status: 'idle',
+    doctors: [],
   },
   reducers: {
     setRole(state, action) {
@@ -57,6 +68,18 @@ const DoctorSlice = createSlice({
         console.log("submitDoctorForm rejected");
         state.loading = false;
         state.error = action.payload || "error occurred";
+      })
+      ////////////////////////// fetching doctors ////////////////////
+      .addCase(fetchDoctors.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(fetchDoctors.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.doctors = action.payload;
+      })
+      .addCase(fetchDoctors.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.error.message;
       });
   }
 });

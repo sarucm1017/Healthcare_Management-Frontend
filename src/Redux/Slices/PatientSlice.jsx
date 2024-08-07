@@ -26,7 +26,7 @@ export const submitPatientForm = createAsyncThunk(
 const PatientSlice = createSlice({
   name: "patient",
   initialState: {
-    data: {},
+    data: [],
     role: null,
     error: '',
     loading: false,

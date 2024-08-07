@@ -11,7 +11,7 @@ export const fetchPatientData = createAsyncThunk('patient/fetchPatientData', asy
 const patientFetchdataSlice = createSlice({
   name: 'patient',
   initialState: {
-    patient: null,
+    patient: [],
     status: 'idle',
     error: null,
   },
