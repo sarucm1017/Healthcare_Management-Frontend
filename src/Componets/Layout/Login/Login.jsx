@@ -11,6 +11,8 @@ const Login = () => {
   const navigate = useNavigate();
   const role = useSelector((state) => state.user.role);
   const error = useSelector((state) => state.user.error);
+  const userId = useSelector((state) => state.user.userId);
+  console.log(userId);
 
   const onSubmit = async (data) => {
     try {
@@ -22,10 +24,13 @@ const Login = () => {
       if (response.meta.requestStatus === 'fulfilled') {
         const role = response.payload.role;
        
+       
         if (role === 'patient') {
-          navigate("/patientsDashboard");
+          console.log('Navigating with userId:', userId);
+          navigate(`/patientsDashboard/${userId}`);
+          console.log('Navigating with userId:', userId);
         } else if (role === 'doctor') {
-          navigate("/doctorsDashboard");
+          navigate(`/doctorsDashboard/${userId}`);
         }
       } else {
         console.error("Login failed:", response.payload);
@@ -36,12 +41,14 @@ const Login = () => {
     }
   };
   useEffect(() => {
+    console.log('Role in useEffect:', role);
+    console.log('User ID in useEffect:', userId);
     if (role === 'patient') {
-      navigate("/patientsDashboard");
+      navigate(`/patientsDashboard/${userId}`);
     } else if (role === 'doctor') {
-      navigate("/doctorsDashboard");
+      navigate(`/doctorsDashboard/${userId}`);
     }
-  }, [role, navigate]);
+  }, [role, userId, navigate]);
 
   return (
     <div className="container-fluid">

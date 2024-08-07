@@ -50,6 +50,7 @@ const UserSlice = createSlice({
         data: null, 
         email: null,
         role: null,
+        userId: null,
         token: null,
         error: '',
         loading: false,
@@ -65,6 +66,7 @@ const UserSlice = createSlice({
             state.data = null;
             state.email = null;
             state.role = null;
+            state.userId = null;
             state.token = null;
             state.error = '';
         }
@@ -99,9 +101,11 @@ const UserSlice = createSlice({
             })
             .addCase(userlogin.fulfilled, (state, action) => {
                 state.loading = false;
+                console.log('Login action payload:', action.payload); 
                 state.token = action.payload.token; 
                 state.email = action.payload.email;
                 state.role = action.payload.role; 
+                state.userId = action.payload.userId;
                 state.data = action.payload;
             })
             .addCase(userlogin.rejected, (state, action) => {

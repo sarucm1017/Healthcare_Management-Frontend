@@ -32,8 +32,8 @@ const MainRoutes = () => {
             <Route path ="/patientForm" element = {<PatientForm/>}></Route>
             <Route path ="/doctorsForm" element = {<DoctorsForm/>}></Route>
             <Route path="/login" element = {<Login/>}></Route>
-            <Route path ="/doctorsDashboard" element = {<DoctorsDashboard/>}></Route>
-            <Route path ="/patientsDashboard" element = {<PatientsDashboard/>}></Route>
+            <Route path ="/doctorsDashboard/:userId" element = {<DoctorsDashboard/>}></Route>
+            <Route path ="/patientsDashboard/:userId" element = {<PatientsDashboard/>}></Route>
             <Route path ="/appointmentSectionPatient" element = {<AppointmentSectionPatient/>}></Route>
             <Route path ="/bookappointmentPatient" element = {<BookAppointmentSection/>}></Route>
             <Route path ="/checkAvailability" element = {<CheckAvailability/>}></Route>

@@ -4,9 +4,11 @@ import welcomeimage from "./welcome image.png";
 import PatientsdashboardSidesection from "./PatientsdashboardSidesection";
 import DashboardCalendar from "../../AppointmentSection/Patients/DashboardCalendarPatient";
 import { useDispatch, useSelector } from "react-redux";
+import { useParams } from 'react-router-dom';
 import { fetchPatientData } from "../../../../Redux/Slices/PatientSlices/DashboardSlice";
 
-const PatientsDashboard = ({userId}) => {
+const PatientsDashboard = () => {
+  const { userId } = useParams();
   const dispatch = useDispatch();
   const {patient, status, error} = useSelector((state) => state.patient);
   console.log('state.patient:', patient);
