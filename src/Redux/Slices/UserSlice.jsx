@@ -132,6 +132,7 @@ const UserSlice = createSlice({
         state.data = action.payload.data;
         // Store token in localStorage
         localStorage.setItem("token", action.payload.token);
+        localStorage.setItem("data", action.payload.data);
       })
       .addCase(userlogin.rejected, (state, action) => {
         state.loading = false;
