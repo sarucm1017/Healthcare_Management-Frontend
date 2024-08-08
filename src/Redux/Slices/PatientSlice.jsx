@@ -121,5 +121,5 @@ const PatientSlice = createSlice({
   }
 });
 
-export const { setRole, setUserData, clearRole } = PatientSlice.actions;
+export const { setRole,  setUserData,  clearRole } = PatientSlice.actions;
 export default PatientSlice.reducer;

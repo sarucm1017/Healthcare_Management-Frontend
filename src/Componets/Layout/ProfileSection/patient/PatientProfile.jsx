@@ -45,7 +45,7 @@ const PatientProfile = () => {
                         </div>
                         <div className="btn_foredit col-md-6">
                         <i class="fa-solid fa-pen"></i>
-                           <p>Edit</p>
+                           <a href="/patientProfileEdit"><p>Edit</p></a>
                         </div>
                     </div>
                     <div className="profileBottom">

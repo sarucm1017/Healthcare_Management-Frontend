@@ -99,6 +99,10 @@ const UserSlice = createSlice({
       state.userId = null;
       state.token = null;
       state.error = "";
+      localStorage.removeItem('userData');
+      localStorage.removeItem('userId');
+      localStorage.removeItem('token');
+      localStorage.removeItem('role');
     },
   },
   extraReducers: (builder) => {

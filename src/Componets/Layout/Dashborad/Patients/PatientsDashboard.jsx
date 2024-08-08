@@ -20,13 +20,27 @@ const PatientsDashboard = () => {
     console.log('User ID in Component:', userId);
     if (userId) {
       const token = localStorage.getItem('token');
-      const storedUserData = JSON.parse(localStorage.getItem('userData'));
+      const storedUserData = localStorage.getItem('userData'); // Note: Directly get stringified data
       const role = localStorage.getItem('role');
-      if (storedUserData && token && role) {
-        dispatch(setUserData({ userData: storedUserData, userId, token, role }));
+      
+      // Parse JSON safely
+      let parsedUserData = null;
+      try {
+        parsedUserData = JSON.parse(storedUserData);
+      } catch (e) {
+        console.error('Error parsing user data:', e);
+      }
+      
+      if (parsedUserData && token && role) {
+        dispatch(setUserData({ userData: parsedUserData, userId, token, role }));
+      } else {
+        console.error("Invalid data for local storage", { parsedUserData, token, role });
       }
     }
   }, [dispatch, userId]);
+
+  
+  
 
   useEffect(() => {
     console.log('Patient Data:', patient);

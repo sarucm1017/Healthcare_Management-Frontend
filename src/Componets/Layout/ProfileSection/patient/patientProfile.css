@@ -1,7 +1,7 @@
 .profilefullSection{
     display: flex;
     flex-direction: column;
-    min-height: 87vh;
+    min-height: 86vh;
     background-color: #ffffff86;
     border-radius: 15px;
 }
@@ -25,11 +25,17 @@
 .profile_maininput p{
     color: #9B9797;
     font-size: 12px;
-    font-weight: 600;
+    font-weight: 500;
 }
 .profile_inputBox{
-    padding: 5px 0;
-    border-bottom: 1px solid #9B9797;
+    padding: 2px 0;
+    border-bottom: 1px solid #302a2a;
+}
+.profile_inputBox p {
+    font-size: 13px;
+    font-weight: 700;
+    color: #031F85;
+    
 }
 .profile_maininput{
     padding: 12px 0;
@@ -69,4 +75,9 @@
 .btn_foredit i {
     font-size: 15px;
     color: #9B9797; 
+}
+.profile_inputBox input{
+    border: none;
+    background-color: transparent;
+    width: 100%;
 }
