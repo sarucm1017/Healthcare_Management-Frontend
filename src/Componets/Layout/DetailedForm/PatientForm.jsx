@@ -177,7 +177,7 @@ const PatientForm = () => {
                     <input
                       id="health_insurance_provider"
                       type="text"
-                      {...register("couhealth_insurance_providerntry", {
+                      {...register("health_insurance_provider", {
                         required: true,
                       })}
                     />

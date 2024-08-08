@@ -23,6 +23,21 @@ export const submitPatientForm = createAsyncThunk(
   }
 );
 
+
+
+/////////////////patientslice to get patient details////////////////
+
+export const fetchPatientById = createAsyncThunk("patient/fetchPatientById",
+  async (userId,thunkAPI) => {
+    try {
+      const response = await axios.get(`http://localhost:5001/patient/forms/${userId}`);
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.response.data);
+    }
+  }
+)
+
 const PatientSlice = createSlice({
   name: "patient",
   initialState: {
@@ -54,7 +69,20 @@ const PatientSlice = createSlice({
       .addCase(submitPatientForm.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload || "error occurred";
-      });
+      })
+      /////////////////////////////////
+      .addCase(fetchPatientById.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+    })
+    .addCase(fetchPatientById.fulfilled, (state, action) => {
+        state.data = action.payload;
+        state.loading = false;
+    })
+    .addCase(fetchPatientById.rejected, (state, action) => {
+        state.error = action.payload;
+        state.loading = false;
+    });
   }
 });
 
