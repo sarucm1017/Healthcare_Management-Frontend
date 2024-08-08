@@ -3,7 +3,7 @@ import UserSlice from "../Slices/UserSlice";
 import PatientSlice from "../Slices/PatientSlice"
 import DoctorSlice from "../Slices/DoctorSlice";
 import calendarReducer from '../Slices/CalendarSlice';
-import DashboardSlice from "../Slices/PatientSlices/DashboardSlice";
+
 
 
 
@@ -13,7 +13,7 @@ const store = configureStore({
         patient: PatientSlice,
         doctor: DoctorSlice,
         calendar: calendarReducer,
-        patientFetchdata:DashboardSlice,
+       
 
         
 
