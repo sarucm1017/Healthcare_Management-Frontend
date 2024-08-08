@@ -154,5 +154,5 @@ const UserSlice = createSlice({
   },
 });
 
-export const { setRole, setEmail,setUserData, clearUser } = UserSlice.actions;
+export const { setRole, setEmail, setUserData, clearUser } = UserSlice.actions;
 export default UserSlice.reducer;

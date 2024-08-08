@@ -22,6 +22,8 @@ export const submitPatientForm = createAsyncThunk(
     }
   }
 );
+/////////////////////////getting the oid for the patient ///////////////
+
 
 
 
@@ -44,6 +46,8 @@ const PatientSlice = createSlice({
     data: [],
     role: null,
     error: '',
+    userId: null,
+    token: null,
     loading: false,
   },
   reducers: {
@@ -52,6 +56,25 @@ const PatientSlice = createSlice({
     },
     clearRole(state) {
       state.role = null;
+    },
+    setUserData: (state, action) => {
+      state.userData = action.payload.userData;
+      state.userId = action.payload.userId;
+      state.token = action.payload.token;
+      state.role = action.payload.role;
+      // Store user data in local storage
+      localStorage.setItem('userData', JSON.stringify(action.payload.userData));
+      localStorage.setItem('userId', action.payload.userId);
+      localStorage.setItem('token', action.payload.token);
+      localStorage.setItem('role', action.payload.role);
+    },
+    clearUser(state) {
+      state.data = null;
+      state.email = null;
+      state.role = null;
+      state.userId = null;
+      state.token = null;
+      state.error = "";
     },
   },
   extraReducers: (builder) => {
@@ -65,6 +88,18 @@ const PatientSlice = createSlice({
         console.log("submitDoctorForm fulfilled");
         state.loading = false;
         state.data = action.payload;
+
+        state.userData = action.payload.data;
+        state.userId = action.payload.userId;
+        state.token = action.payload.token;
+        state.role = action.payload.role;
+        state.error = null;
+
+        // Store user data in local storage
+        localStorage.setItem('userData', JSON.stringify(action.payload.data));
+        localStorage.setItem('userId', action.payload.userId);
+        localStorage.setItem('token', action.payload.token);
+        localStorage.setItem('role', action.payload.role);
       })
       .addCase(submitPatientForm.rejected, (state, action) => {
         state.loading = false;
@@ -86,5 +121,5 @@ const PatientSlice = createSlice({
   }
 });
 
-export const { setRole, clearRole } = PatientSlice.actions;
+export const { setRole, setUserData, clearRole } = PatientSlice.actions;
 export default PatientSlice.reducer;

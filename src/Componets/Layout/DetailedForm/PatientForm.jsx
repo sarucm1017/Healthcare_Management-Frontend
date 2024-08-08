@@ -3,7 +3,7 @@ import "./form.css";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
-import { submitPatientForm } from "../../../Redux/Slices/PatientSlice";
+import { submitPatientForm, setUserData } from "../../../Redux/Slices/PatientSlice";
 
 const PatientForm = () => {
   const {register, handleSubmit, formState: { errors }} = useForm();
@@ -27,9 +27,14 @@ const PatientForm = () => {
 
     try {
       const response = await dispatch(submitPatientForm(payload));
-      if (!response.error) {
-  
-        navigate("/patientsDashboard");
+
+      if (response.meta.requestStatus === 'fulfilled') {
+        const { role, token, userId, data: userData } = response.payload;
+        
+        // Dispatch setUserData action
+        dispatch(setUserData({ userData, userId, token, role }));
+
+        navigate(`/patientsDashboard/${userId}`);
       } else {
         console.error("Error saving patient data:", response.error);
       }
