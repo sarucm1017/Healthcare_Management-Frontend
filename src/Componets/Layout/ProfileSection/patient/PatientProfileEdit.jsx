@@ -36,6 +36,7 @@ const PatientProfileEdit = () => {
                                             <p>Edit</p>
                                         </div>
                                     </div>
+                                    <form action="">
                                     <div className="profileBottom">
                                         <div className="col-md-5 body_content-section">
                                             <div className="profile-heading"><h5>Contact Informations</h5></div>
@@ -116,6 +117,7 @@ const PatientProfileEdit = () => {
                                             </div>
                                         </div>
                                     </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
