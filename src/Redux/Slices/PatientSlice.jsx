@@ -40,6 +40,17 @@ export const fetchPatientById = createAsyncThunk("patient/fetchPatientById",
   }
 )
 
+/////////////////////////////////////////update//////////////////
+
+// Thunk to update patient data
+export const updatePatient = createAsyncThunk(
+  'patient/updatePatient',
+  async ({ userId, ...updatedData }) => {
+      const response = await axios.put(`/api/patients/${userId}`, updatedData);
+      return response.data;
+  }
+);
+
 const PatientSlice = createSlice({
   name: "patient",
   initialState: {
@@ -117,7 +128,18 @@ const PatientSlice = createSlice({
     .addCase(fetchPatientById.rejected, (state, action) => {
         state.error = action.payload;
         state.loading = false;
-    });
+    })
+    .addCase(updatePatient.pending, (state) => {
+      state.status = 'loading';
+  })
+  .addCase(updatePatient.fulfilled, (state, action) => {
+      state.status = 'succeeded';
+      state.data = action.payload; // Update patient data in the store
+  })
+  .addCase(updatePatient.rejected, (state, action) => {
+      state.status = 'failed';
+      state.error = action.error.message;
+  });
   }
 });
 
