@@ -32,8 +32,7 @@ const PatientProfileEdit = () => {
                                             <div className="profile_name"><p>Amal</p></div>
                                         </div>
                                         <div className="btn_foredit col-md-6">
-                                            <i className="fa-solid fa-pen"></i>
-                                            <p>Edit</p>
+                                            <button>saveChanges</button>
                                         </div>
                                     </div>
                                     <form action="">

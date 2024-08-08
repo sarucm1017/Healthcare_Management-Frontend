@@ -81,3 +81,12 @@
     background-color: transparent;
     width: 100%;
 }
+.btn_foredit button{
+    border: none;
+    padding: 10px;
+    background-color: blue;
+    color: white;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 14px;
+}
