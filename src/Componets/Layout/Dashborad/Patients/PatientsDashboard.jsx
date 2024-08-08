@@ -4,6 +4,7 @@ import welcomeimage from "./welcome image.png";
 import PatientsdashboardSidesection from "./PatientsdashboardSidesection";
 import DashboardCalendar from "../../AppointmentSection/Patients/DashboardCalendarPatient";
 import { useDispatch, useSelector } from "react-redux";
+import { setUserData } from "../../../../Redux/Slices/UserSlice";
 
 
 const PatientsDashboard = () => {
@@ -11,16 +12,21 @@ const PatientsDashboard = () => {
   
   const dispatch = useDispatch();
   const {patient, status, error} = useSelector((state) => state.patient);
-  const { data } = useSelector((state) => state.user);
+  // const { data } = useSelector((state) => state.user);
   console.log('state.patient:', patient);
+  const { userData } = useSelector((state) => state.user);
 
   useEffect(() => {
     console.log('User ID in Component:', userId);
-    if(userId){
+    if (userId) {
       const token = localStorage.getItem('token');
-     
+      const storedUserData = JSON.parse(localStorage.getItem('userData'));
+      const role = localStorage.getItem('role');
+      if (storedUserData && token && role) {
+        dispatch(setUserData({ userData: storedUserData, userId, token, role }));
+      }
     }
-  }, [dispatch, userId])
+  }, [dispatch, userId]);
 
   useEffect(() => {
     console.log('Patient Data:', patient);
@@ -40,7 +46,8 @@ const PatientsDashboard = () => {
                   ) : error ? (
                     <h4>Error: {error}</h4>
                   ) : (
-                    <h4>Good Morning {data ? data.name : 'Patient'}</h4>
+                    <h4>Good Morning {userData
+                       ? userData.name : 'Patient'}</h4>
                   )}
                   <p>How are you feeling</p>
                 </div>

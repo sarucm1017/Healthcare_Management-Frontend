@@ -3,7 +3,7 @@ import "./login.css";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { userlogin } from "../../../Redux/Slices/UserSlice";
+import { userlogin, setUserData} from "../../../Redux/Slices/UserSlice";
 
 const Login = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -22,12 +22,10 @@ const Login = () => {
       }));
 
       if (response.meta.requestStatus === 'fulfilled') {
-        const role = response.payload.role;
-        const {  token, userId,data } = response.payload;
-       
-        localStorage.setItem('token', token);
-        localStorage.setItem('userId', userId);
-        localStorage.setItem('data', data);
+        const { role, token, userId, data: userData } = response.payload;
+        
+        // Dispatch setUserData action
+        dispatch(setUserData({ userData, userId, token, role }));
         
        
         if (role === 'patient') {

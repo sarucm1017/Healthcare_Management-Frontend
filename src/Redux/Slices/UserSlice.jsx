@@ -81,6 +81,17 @@ const UserSlice = createSlice({
     setEmail(state, action) {
       state.email = action.payload;
     },
+    setUserData: (state, action) => {
+      state.userData = action.payload.userData;
+      state.userId = action.payload.userId;
+      state.token = action.payload.token;
+      state.role = action.payload.role;
+      // Store user data in local storage
+      localStorage.setItem('userData', JSON.stringify(action.payload.userData));
+      localStorage.setItem('userId', action.payload.userId);
+      localStorage.setItem('token', action.payload.token);
+      localStorage.setItem('role', action.payload.role);
+    },
     clearUser(state) {
       state.data = null;
       state.email = null;
@@ -125,14 +136,16 @@ const UserSlice = createSlice({
       .addCase(userlogin.fulfilled, (state, action) => {
         state.loading = false;
         console.log("Login action payload:", action.payload);
-        state.token = action.payload.token;
-        state.email = action.payload.email;
-        state.role = action.payload.role;
+        state.userData = action.payload.data;
         state.userId = action.payload.userId;
-        state.data = action.payload.data;
-        // Store token in localStorage
-        localStorage.setItem("token", action.payload.token);
-        localStorage.setItem("data", action.payload.data);
+        state.token = action.payload.token;
+        state.role = action.payload.role;
+        state.error = null;
+        // Store user data in local storage
+        localStorage.setItem('userData', JSON.stringify(action.payload.data));
+        localStorage.setItem('userId', action.payload.userId);
+        localStorage.setItem('token', action.payload.token);
+        localStorage.setItem('role', action.payload.role);
       })
       .addCase(userlogin.rejected, (state, action) => {
         state.loading = false;
@@ -141,5 +154,5 @@ const UserSlice = createSlice({
   },
 });
 
-export const { setRole, setEmail, clearUser } = UserSlice.actions;
+export const { setRole, setEmail,setUserData, clearUser } = UserSlice.actions;
 export default UserSlice.reducer;
