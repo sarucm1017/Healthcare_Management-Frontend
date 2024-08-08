@@ -13,7 +13,7 @@ const PatientsdashboardSidesection = () => {
         <div className="dashboard_menu">
           <div className="menu overview">
             <i className="fa-solid fa-house"></i>
-            <a href="/patientsDashboard">
+            <a href="/patientsDashboard/:userId">
               <p>Overview</p>
             </a>
           </div>
