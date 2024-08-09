@@ -42,6 +42,8 @@ const MainRoutes = () => {
             <Route path ="/patientProfile" element = {<PatientProfile/>}></Route>
             <Route path ="/patientProfileEdit" element = {<PatientProfileEdit/>}></Route>
             <Route path ="/patientmessage" element = {<PatientMessage/>}></Route>
+            //////////////////////////////////////////////////////////////////
+            
         </Routes>
         </>
     )
