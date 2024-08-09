@@ -18,6 +18,7 @@ import ReportDetailsPatient from "../Layout/ReportSection/Patients/ReportDetails
 import PatientProfile from "../Layout/ProfileSection/patient/PatientProfile";
 import PatientProfileEdit from "../Layout/ProfileSection/patient/PatientProfileEdit";
 import PatientMessage from "../Layout/Message/Patient/PatientMessage";
+import DoctorProfile from "../Layout/ProfileSection/Doctor/DoctorProfile";
 
 
 const MainRoutes = () => {
@@ -30,9 +31,7 @@ const MainRoutes = () => {
             <Route path ="/otpVerify" element = {<OtpVerify/>}></Route>
             <Route path ="/popup" element = {<Popup/>}></Route>
             <Route path ="/patientForm" element = {<PatientForm/>}></Route>
-            <Route path ="/doctorsForm" element = {<DoctorsForm/>}></Route>
             <Route path="/login" element = {<Login/>}></Route>
-            <Route path ="/doctorsDashboard/:userId" element = {<DoctorsDashboard/>}></Route>
             <Route path ="/patientsDashboard/:userId" element = {<PatientsDashboard/>}></Route>
             <Route path ="/appointmentSectionPatient" element = {<AppointmentSectionPatient/>}></Route>
             <Route path ="/bookappointmentPatient" element = {<BookAppointmentSection/>}></Route>
@@ -42,8 +41,11 @@ const MainRoutes = () => {
             <Route path ="/patientProfile" element = {<PatientProfile/>}></Route>
             <Route path ="/patientProfileEdit" element = {<PatientProfileEdit/>}></Route>
             <Route path ="/patientmessage" element = {<PatientMessage/>}></Route>
-            //////////////////////////////////////////////////////////////////
-            
+            {/* ////////////////////////////////////////////////////////////////// */}
+            <Route path ="/doctorsForm" element = {<DoctorsForm/>}></Route>
+            <Route path ="/doctorsDashboard/:userId" element = {<DoctorsDashboard/>}></Route>
+            <Route path ="/doctorProfile" element = {<DoctorProfile/>}></Route>
+
         </Routes>
         </>
     )
