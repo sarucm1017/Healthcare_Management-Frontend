@@ -46,7 +46,7 @@ export const fetchPatientById = createAsyncThunk("patient/fetchPatientById",
 export const updatePatient = createAsyncThunk(
   'patient/updatePatient',
   async ({ userId, ...updatedData }) => {
-      const response = await axios.put(`/api/patients/${userId}`, updatedData);
+      const response = await axios.put(`http://localhost:5001/patient/forms/${userId}`, updatedData);
       return response.data;
   }
 );

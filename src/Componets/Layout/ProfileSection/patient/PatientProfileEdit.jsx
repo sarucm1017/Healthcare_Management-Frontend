@@ -59,6 +59,7 @@ const PatientProfileEdit = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const userId = localStorage.getItem('userId');
+        console.log("Updating user with ID:", userId);
         if (userId) {
             dispatch(updatePatient({ userId, ...formData }));
         }
