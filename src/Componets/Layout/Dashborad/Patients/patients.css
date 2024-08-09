@@ -178,6 +178,7 @@ th , td {
     padding: 50px 10px 34px 10px;
     color: white;
     margin-top: 90px;
+    position: relative;
 }
 .helpcenter_section h4{
     font-size: 15px;
@@ -191,8 +192,8 @@ th , td {
     width: 60px;
     background-color: #031F85;
     position: absolute;
-    bottom: 15%;
-    left: 6%;
+    bottom: 81%;
+    left: 38%;
     padding: 6px 10px;
     text-align: center;
     border-radius: 50pc;

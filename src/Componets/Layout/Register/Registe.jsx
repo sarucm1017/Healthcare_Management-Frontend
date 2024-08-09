@@ -38,6 +38,9 @@ const Register = () => {
       );
 
       if (!response.error) {
+
+        const userId = response.payload.userId; // Adjust according to your actual response structure
+        localStorage.setItem("userId", userId);
         dispatch(setEmail(data.email));
         
         navigate("/otpVerify", { state: { email: data.email } });

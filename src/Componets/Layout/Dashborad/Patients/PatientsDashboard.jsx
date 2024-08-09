@@ -208,13 +208,13 @@ const PatientsDashboard = () => {
                         <p>Reports</p>
                       </div>
                       <div className="report_icon">
-                        <i class="fa-solid fa-chart-simple"></i>
+                        <i className="fa-solid fa-chart-simple"></i>
                       </div>
                     </div>
                     <div className="reports_section">
                       <div className="report_name_section">
                         <div className="section_icon">
-                          <i class="fa-regular fa-file-lines"></i>
+                          <i className="fa-regular fa-file-lines"></i>
                         </div>
                         <div className="report_name">
                           <p>Glucose</p>
@@ -227,7 +227,7 @@ const PatientsDashboard = () => {
                     <div className="reports_section">
                       <div className="report_name_section">
                         <div className="section_icon">
-                          <i class="fa-regular fa-file-lines"></i>
+                          <i className="fa-regular fa-file-lines"></i>
                         </div>
                         <div className="report_name">
                           <p>Glucose</p>
@@ -240,7 +240,7 @@ const PatientsDashboard = () => {
                     <div className="reports_section">
                       <div className="report_name_section">
                         <div className="section_icon">
-                          <i class="fa-regular fa-file-lines"></i>
+                          <i className="fa-regular fa-file-lines"></i>
                         </div>
                         <div className="report_name">
                           <p>Glucose</p>

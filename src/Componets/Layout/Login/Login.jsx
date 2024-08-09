@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { userlogin, setUserData} from "../../../Redux/Slices/UserSlice";
+import {setUserdata} from "../../../Redux/Slices/PatientSlice";
 
 const Login = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -12,7 +13,9 @@ const Login = () => {
   const role = useSelector((state) => state.user.role);
   const error = useSelector((state) => state.user.error);
   const userId = useSelector((state) => state.user.userId);
+  const userid = useSelector((state) => state.patient.userid)
   console.log(userId);
+  console.log(userid)
 
   const onSubmit = async (data) => {
     try {
@@ -23,14 +26,16 @@ const Login = () => {
 
       if (response.meta.requestStatus === 'fulfilled') {
         const { role, token, userId, data: userData } = response.payload;
+        const { data: userdata } = response.payload;
         
         // Dispatch setUserData action
         dispatch(setUserData({ userData, userId, token, role }));
+        dispatch(setUserdata({ userdata, userId, token, role }));
         
        
         if (role === 'patient') {
           console.log('Navigating with userId:', userId);
-          navigate(`/patientsDashboard/${userId}`);
+          navigate(`/patientsDashboard/${userId}`||`/patientsDashboard/${userid}`);
           console.log('Navigating with userId:', userId);
         } else if (role === 'doctor') {
           navigate(`/doctorsDashboard/${userId}`);

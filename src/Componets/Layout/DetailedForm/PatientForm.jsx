@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./form.css";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -9,27 +9,43 @@ const PatientForm = () => {
   const {register, handleSubmit, formState: { errors }} = useForm();
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [userId, setUserId] = useState(null);
   const email = useSelector((state) => state.user.email);
   const { loading, error } = useSelector((state) => state.patient);
-  const userId = useSelector((state) => state.user.userId);
+  
+
+  useEffect(() => {
+    // Retrieve userId from local storage
+    const storedUserId = localStorage.getItem('userId');
+    if (storedUserId) {
+      setUserId(storedUserId);
+    }
+  }, []);
 
   useEffect(() => {
     console.log("User email:", email);
   }, [email]);
 
   const onSubmit = async (data) => {
-    if (!email) {
+    if (!email || !userId) {
       console.error("User email is not available.");
       return;
     }
-    const payload = { ...data, userEmail: email };
+    const payload = { ...data, userEmail: email};
     console.log("Submitting Data:", payload);
 
     try {
       const response = await dispatch(submitPatientForm(payload));
+      console.log("Dispatch response:", response);
       if (!response.error) {
-  
-        navigate("/login");
+        const { userId } = response.payload;
+        if (userId) {
+          localStorage.setItem("userId", userId); // Ensure userId is stored
+          console.log("Form submission successful. Navigating to login page...");
+          navigate("/login"); // Navigate to login page
+        } else {
+          console.error("User ID is not available in response.");
+        }
       } else {
         console.error("Error saving patient data:", response.error);
       }

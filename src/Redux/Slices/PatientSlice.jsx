@@ -10,7 +10,11 @@ export const submitPatientForm = createAsyncThunk(
       const response = await axios.post(
         "http://localhost:5001/patient/forms", payload
       );
+
+      console.log(response.data);
       return response.data;
+    
+      
     } catch (error) {
       if (error.response) {
         console.error("Response error data:", error.response.data);
@@ -68,7 +72,7 @@ const PatientSlice = createSlice({
     clearRole(state) {
       state.role = null;
     },
-    setUserData: (state, action) => {
+    setUserdata: (state, action) => {
       state.userData = action.payload.userData;
       state.userId = action.payload.userId;
       state.token = action.payload.token;
@@ -99,6 +103,7 @@ const PatientSlice = createSlice({
         console.log("submitDoctorForm fulfilled");
         state.loading = false;
         state.data = action.payload;
+        console.log("106",action.payload);
 
         state.userData = action.payload.data;
         state.userId = action.payload.userId;
@@ -111,6 +116,10 @@ const PatientSlice = createSlice({
         localStorage.setItem('userId', action.payload.userId);
         localStorage.setItem('token', action.payload.token);
         localStorage.setItem('role', action.payload.role);
+
+        console.log('116', action.payload.userId);
+        
+
       })
       .addCase(submitPatientForm.rejected, (state, action) => {
         state.loading = false;
@@ -143,5 +152,5 @@ const PatientSlice = createSlice({
   }
 });
 
-export const { setRole,  setUserData,  clearRole } = PatientSlice.actions;
+export const { setRole,  setUserdata,  clearRole } = PatientSlice.actions;
 export default PatientSlice.reducer;

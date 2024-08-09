@@ -114,9 +114,12 @@ const UserSlice = createSlice({
       .addCase(userRegister.fulfilled, (state, action) => {
         state.loading = false;
         state.userId = action.payload.userId;
-        state.data = action.payload.data;
+        state.token = action.payload.token;
+        state.data = action.payload.userData;
          // Store token in localStorage
          localStorage.setItem("token", action.payload.token);
+         localStorage.setItem("userId", action.payload.userId);
+        localStorage.setItem("userData", JSON.stringify(action.payload.userData));
       })
       .addCase(userRegister.rejected, (state, action) => {
         state.loading = false;
