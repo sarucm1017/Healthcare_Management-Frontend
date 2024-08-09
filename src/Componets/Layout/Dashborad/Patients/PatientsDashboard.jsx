@@ -5,7 +5,7 @@ import PatientsdashboardSidesection from "./PatientsdashboardSidesection";
 import DashboardCalendar from "../../AppointmentSection/Patients/DashboardCalendarPatient";
 import { useDispatch, useSelector } from "react-redux";
 import { setUserData } from "../../../../Redux/Slices/UserSlice";
-
+import { setUserdata } from "../../../../Redux/Slices/PatientSlice";
 
 const PatientsDashboard = () => {
   const userId = localStorage.getItem('userId');
