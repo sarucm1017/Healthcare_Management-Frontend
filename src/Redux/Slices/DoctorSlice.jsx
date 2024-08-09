@@ -51,6 +51,7 @@ const DoctorSlice = createSlice({
     clearRole(state) {
       state.role = null;
     },
+    
   },
   extraReducers: (builder) => {
     builder
