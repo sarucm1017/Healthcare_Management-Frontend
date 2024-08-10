@@ -10,6 +10,7 @@ export const submitPatientForm = createAsyncThunk(
       const response = await axios.post(
         "http://localhost:5001/patient/forms", payload
       );
+      console.log("Response data:", response.data);
 
       console.log(response.data);
       return response.data;

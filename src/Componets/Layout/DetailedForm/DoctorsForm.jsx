@@ -27,8 +27,11 @@ const DoctorsForm = () => {
     try {
       const response = await dispatch(submitDoctorForm(payload)).unwrap();
       if (!response.error) {
+        localStorage.setItem("userID", response.userID);
         
-        navigate("/doctorsDashboard");
+      
+         // Navigate to the login page
+         navigate("/login");
       } else {
         console.error("Error saving doctor data:", response.error);
       }

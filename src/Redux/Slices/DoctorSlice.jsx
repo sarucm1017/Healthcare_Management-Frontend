@@ -10,6 +10,10 @@ export const submitDoctorForm = createAsyncThunk(
       const response = await axios.post(
         "http://localhost:5001/doctor/forms", payload
       );
+
+      const { userId } = response.data;
+      // Save the userId to local storage
+      localStorage.setItem("userId", userId);
       return response.data;
 
     } catch (error) {

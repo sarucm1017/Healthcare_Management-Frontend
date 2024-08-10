@@ -9,25 +9,16 @@ const PatientForm = () => {
   const {register, handleSubmit, formState: { errors }} = useForm();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [userId, setUserId] = useState(null);
   const email = useSelector((state) => state.user.email);
-  const { loading, error } = useSelector((state) => state.patient);
+  const { loading, error, } = useSelector((state) => state.patient);
   
-
-  useEffect(() => {
-    // Retrieve userId from local storage
-    const storedUserId = localStorage.getItem('userId');
-    if (storedUserId) {
-      setUserId(storedUserId);
-    }
-  }, []);
 
   useEffect(() => {
     console.log("User email:", email);
   }, [email]);
 
   const onSubmit = async (data) => {
-    if (!email || !userId) {
+    if (!email) {
       console.error("User email is not available.");
       return;
     }
@@ -37,19 +28,20 @@ const PatientForm = () => {
     try {
       const response = await dispatch(submitPatientForm(payload));
       console.log("Dispatch response:", response);
-      if (!response.error) {
+
+      if (response.error) {
+        console.error("Error saving patient data:", response.error.message);
+      } else {
         const { userId } = response.payload;
         if (userId) {
-          localStorage.setItem("userId", userId); // Ensure userId is stored
+          localStorage.setItem("userId", userId);
           console.log("Form submission successful. Navigating to login page...");
-          navigate("/login"); // Navigate to login page
+          navigate("/login");
         } else {
           console.error("User ID is not available in response.");
         }
-      } else {
-        console.error("Error saving patient data:", response.error);
       }
-    } catch (error) {
+    }  catch (error) {
       console.error("Error saving patient data:", error);
     }
   };
