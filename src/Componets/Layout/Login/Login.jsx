@@ -50,15 +50,15 @@ const Login = () => {
     }
   };
 
-  useEffect(() => {
-    console.log('Role in useEffect:', role);
-    console.log('User ID in useEffect:', userId);
-    if (role === 'patient') {
-      navigate(`/patientsDashboard/${userId}`);
-    } else if (role === 'doctor') {
-      navigate(`/doctorsDashboard/${userId}`);
-    }
-  }, [role, userId, navigate]);
+  // useEffect(() => {
+  //   console.log('Role in useEffect:', role);
+  //   console.log('User ID in useEffect:', userId);
+  //   if (role === 'patient') {
+  //     navigate(`/patientsDashboard/${userId}`);
+  //   } else if (role === 'doctor') {
+  //     navigate(`/doctorsDashboard/${userId}`);
+  //   }
+  // }, [role, userId, navigate]);
 
   return (
     <div className="container-fluid">

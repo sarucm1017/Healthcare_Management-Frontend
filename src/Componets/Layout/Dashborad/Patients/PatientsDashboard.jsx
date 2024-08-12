@@ -5,16 +5,16 @@ import PatientsdashboardSidesection from "./PatientsdashboardSidesection";
 import DashboardCalendar from "../../AppointmentSection/Patients/DashboardCalendarPatient";
 import { useDispatch, useSelector } from "react-redux";
 import { setUserData } from "../../../../Redux/Slices/UserSlice";
-import { setUserdata } from "../../../../Redux/Slices/PatientSlice";
+
 
 const PatientsDashboard = () => {
   const userId = localStorage.getItem('userId');
   
   const dispatch = useDispatch();
   const {patient, status, error} = useSelector((state) => state.patient);
-  // const { data } = useSelector((state) => state.user);
-  console.log('state.patient:', patient);
-  const { userData } = useSelector((state) => state.user);
+  const userData  = useSelector((state) => state.user);
+  console.log(userData, "20");
+  
 
   useEffect(() => {
     console.log('User ID in Component:', userId);
@@ -33,6 +33,7 @@ const PatientsDashboard = () => {
       
       if (parsedUserData && token && role) {
         dispatch(setUserData({ userData: parsedUserData, userId, token, role }));
+        console.log('userData from Redux state 40:', userData);
       } else {
         console.error("Invalid data for local storage", { parsedUserData, token, role });
       }
@@ -60,8 +61,7 @@ const PatientsDashboard = () => {
                   ) : error ? (
                     <h4>Error: {error}</h4>
                   ) : (
-                    <h4>Good Morning {userData
-                       ? userData.name : 'Patient'}</h4>
+                    <h4>Good Morning {userData.userData.name || 'Patient'}</h4>
                   )}
                   <p>How are you feeling</p>
                 </div>

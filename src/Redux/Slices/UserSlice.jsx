@@ -73,6 +73,7 @@ const UserSlice = createSlice({
     token: null,
     error: "",
     loading: false,
+    userData:[]
   },
   reducers: {
     setRole(state, action) {
