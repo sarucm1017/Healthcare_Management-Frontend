@@ -79,7 +79,7 @@ const Register = () => {
                       autoComplete="off"
                       {...register("name", {
                         pattern: {
-                          value: /^[A-Za-z]+$/,
+                          value: /^[A-Za-z\s]+$/,
                           message: "Invalid name format",
                         },
                         required: "Name is required",
