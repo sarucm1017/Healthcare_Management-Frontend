@@ -10,7 +10,7 @@
     justify-content:space-around
 }
 .profile_input_title{
-    padding: 13px 0;
+    padding: 10px 0;
 }
 .profile_inputValue{
     padding: 10px 0;
@@ -20,7 +20,7 @@
     color: #9B9797;
     font-size: 12px;
     font-weight: 500;
-    padding-bottom: 8px;
+    padding-bottom: 2px;
 }
 .main_bannersection{
     padding: 0 30px ;

@@ -1,9 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import DoctorsDashboardSideSection from "../../Dashborad/Doctors/DoctorsDashboardSideSection";
 import defaultimage from "./defaultimage.jpg";
+import { fetchDoctorsDetailsById } from "../../../../Redux/Slices/DoctorSlice";
 import "./doctorprofile.css";
 
 const DoctorProfile = () => {
+    const dispatch = useDispatch();
+    const {
+        data: doctorData,
+        loading,
+        error,
+      } = useSelector((state) => state.doctor);
+      useEffect(() => {
+        const userId = localStorage.getItem("userId");
+        if (userId) {
+          dispatch(fetchDoctorsDetailsById(userId));
+        }
+      }, [dispatch]);
   return (
     <>
       <div className="container-fluid">
@@ -30,7 +44,7 @@ const DoctorProfile = () => {
                         <img src={defaultimage} alt="" />
                       </div>
                       <div className="profile_name_section">
-                        <p>name</p>
+                        <p>{doctorData.userName}</p>
                       </div>
                     </div>
                     <div className="btn_foredit col-md-6">
@@ -45,37 +59,37 @@ const DoctorProfile = () => {
                       <div className="profile_input_title">
                         <p>Specialization</p>
                         <div className="profile_inputValue">
-                          <p></p>
+                          <p>{doctorData.specialization}</p>
                         </div>
                       </div>
                       <div className="profile_input_title">
                         <p>Qualification</p>
                         <div className="profile_inputValue">
-                          <p></p>
+                          <p>{doctorData.qualification}</p>
                         </div>
                       </div>
                       <div className="profile_input_title">
                         <p>Medical License Number</p>
                         <div className="profile_inputValue">
-                          <p></p>
+                          <p>{doctorData.medicalLicenseNumber}</p>
                         </div>
                       </div>
                       <div className="profile_input_title">
                         <p>Year of Experience</p>
                         <div className="profile_inputValue">
-                          <p></p>
+                          <p>{doctorData.yearsOfExperience}</p>
                         </div>
                       </div>
                       <div className="profile_input_title">
                         <p>Board Certification</p>
                         <div className="profile_inputValue">
-                          <p></p>
+                          <p>{doctorData.boardCertification}</p>
                         </div>
                       </div>
                       <div className="profile_input_title">
                         <p>Currently Working Hospital Name</p>
                         <div className="profile_inputValue">
-                          <p></p>
+                          <p>{doctorData.currentlyWorkingHospitalName}</p>
                         </div>
                       </div>
                     </div>
@@ -83,31 +97,31 @@ const DoctorProfile = () => {
                     <div className="profile_input_title">
                         <p>Consultation Hours</p>
                         <div className="profile_inputValue">
-                          <p></p>
+                          <p>{doctorData.consultationHours}</p>
                         </div>
                       </div>
                       <div className="profile_input_title">
                         <p>Available days</p>
                         <div className="profile_inputValue">
-                          <p></p>
+                          <p>{doctorData.availableDays}</p>
                         </div>
                       </div>
                       <div className="profile_input_title">
-                        <p>Resideny Program  </p>
+                        <p>Resideny Program</p>
                         <div className="profile_inputValue">
-                          <p></p>
+                          <p>{doctorData.residencyProgram}</p>
                         </div>
                       </div>
                       <div className="profile_input_title">
                         <p>Professional Membership</p>
                         <div className="profile_inputValue">
-                          <p></p>
+                          <p>{doctorData.professionalMembership}</p>
                         </div>
                       </div>
                       <div className="profile_input_title">
-                        <p>Work Place Contact Number </p>
+                        <p>Work Place Contact Number</p>
                         <div className="profile_inputValue">
-                          <p></p>
+                          <p>{doctorData.workPlaceContactNumber}</p>
                         </div>
                       </div>
                       <div className="profile_input_title">
