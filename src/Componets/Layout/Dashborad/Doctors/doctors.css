@@ -34,7 +34,7 @@ p{
     justify-content: space-between;
     background-color: white;
     margin: 7px;
-    padding: 20px 25px;
+    padding: 12px 25px;
     border-radius: 10px;
 
 }
@@ -280,4 +280,14 @@ p{
     font-size: 10px;
     font-weight: 400;
 }
-
+.profile_img{
+    width: 6%;
+    margin-right: 9px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+.profile_img img {
+    width: 100%;
+    border-radius: 50%;
+}

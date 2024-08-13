@@ -1,6 +1,7 @@
 import React from "react";
 import "./doctors.css";
 import DoctorsDashboardSideSection from "./DoctorsDashboardSideSection";
+import defaultimage from "./defaultimage.jpg"
 
 const DoctorsDashboard = () => {
   return (
@@ -13,11 +14,11 @@ const DoctorsDashboard = () => {
               <div className="main_navbar">
                 <div className="semi_profile">
                   <div className="profile_img">
-                    <img src="" alt="" />
+                  <img src={defaultimage} alt="" />
                   </div>
                   <div className="title">
-                    Dr.Sonna
-                    Cardiologist
+                    <h5>Dr.Sonna</h5>
+                  <p>Cardiologist</p>
                   </div>
                 </div>
                 <div className="searchbar">
