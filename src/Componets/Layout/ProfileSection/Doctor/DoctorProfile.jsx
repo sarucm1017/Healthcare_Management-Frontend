@@ -1,6 +1,7 @@
 import React from "react";
 import DoctorsDashboardSideSection from "../../Dashborad/Doctors/DoctorsDashboardSideSection";
 import defaultimage from "./defaultimage.jpg";
+import "./doctorprofile.css";
 
 const DoctorProfile = () => {
   return (

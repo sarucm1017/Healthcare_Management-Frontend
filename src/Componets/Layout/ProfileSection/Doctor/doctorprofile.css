@@ -1,0 +1,26 @@
+.maincontentsection{
+    display: flex;
+    flex-direction: column;
+    min-height: 86vh;
+    background-color: #ffffff86;
+    border-radius: 15px;
+}
+.profileContent_section{
+    display: flex;
+    justify-content:space-around
+}
+.profile_input_title{
+    padding: 20px 0;
+}
+.profile_inputValue{
+    padding: 10px 0;
+    border-bottom: 1px solid #3f3a3a;
+}
+.profile_input_title p{
+    color: #9B9797;
+    font-size: 12px;
+    font-weight: 500;
+}
+.main_bannersection{
+    padding: 0 30px ;
+}
