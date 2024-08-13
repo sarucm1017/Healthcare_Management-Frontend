@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { userlogin, setUserData } from "../../../Redux/Slices/UserSlice";
 import { setUserdata } from "../../../Redux/Slices/PatientSlice";
 
+
 const Login = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const dispatch = useDispatch();
@@ -14,7 +15,8 @@ const Login = () => {
    // Directly use useSelector in the component
    const userIdFromUserSlice = useSelector((state) => state.user.userId);
    const userIdFromPatientSlice = useSelector((state) => state.patient.userId);
-   const userId = userIdFromUserSlice || userIdFromPatientSlice;
+   const userIdFromDoctorSlice = useSelector((state) => state.doctor.userId)
+   const userId = userIdFromUserSlice || userIdFromPatientSlice || userIdFromDoctorSlice;
  
    const role = useSelector((state) => state.user.role);
    const error = useSelector((state) => state.user.error);

@@ -36,7 +36,28 @@ export const fetchDoctors = createAsyncThunk('doctors/fetchDoctors', async () =>
   return response.data;
 });
 
+////////////////////////fetch doctor by id///////////
 
+export const fetchDoctorData = createAsyncThunk(
+  'doctor/fetchDoctorData',
+  async (userId, { rejectWithValue }) => {
+    try {
+      const response = await fetch(`http://localhost:5001/doctor/${userId}`, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+        },
+      });
+
+      const data = await response.json();
+      if (!response.ok) {
+        return rejectWithValue(data.message || "Failed to fetch doctor data");
+      }
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
 
 const DoctorSlice = createSlice({
   name: "doctor",
@@ -47,13 +68,34 @@ const DoctorSlice = createSlice({
     loading: false,
     status: 'idle',
     doctors: [],
+    doctorData: [],
   },
   reducers: {
     setRole(state, action) {
       state.role = action.payload;
     },
+    setDoctorData(state, action) {
+      state.doctorData = action.payload;
+    },
+    setUserdata: (state, action) => {
+      state.userData = action.payload.userData;
+      state.userId = action.payload.userId;
+      state.token = action.payload.token;
+      state.role = action.payload.role;
+      // Store user data in local storage
+      localStorage.setItem('userData', JSON.stringify(action.payload.userData));
+      localStorage.setItem('userId', action.payload.userId);
+      localStorage.setItem('token', action.payload.token);
+      localStorage.setItem('role', action.payload.role);
+    },
     clearRole(state) {
       state.role = null;
+    },
+
+    clearDoctorData: (state) => {
+      state.doctorData = null;
+      state.status = 'idle';
+      state.error = null;
     },
     
   },
@@ -68,6 +110,22 @@ const DoctorSlice = createSlice({
         console.log("submitDoctorForm fulfilled");
         state.loading = false;
         state.data = action.payload;
+
+        console.log("106",action.payload);
+
+        state.userData = action.payload.data;
+        state.userId = action.payload.userId;
+        state.token = action.payload.token;
+        state.role = action.payload.role;
+        state.error = null;
+
+        // Store user data in local storage
+        localStorage.setItem('userData', JSON.stringify(action.payload.data));
+        localStorage.setItem('userId', action.payload.userId);
+        localStorage.setItem('token', action.payload.token);
+        localStorage.setItem('role', action.payload.role);
+
+        console.log('116', action.payload.userId);
       })
       .addCase(submitDoctorForm.rejected, (state, action) => {
         console.log("submitDoctorForm rejected");
@@ -85,10 +143,25 @@ const DoctorSlice = createSlice({
       .addCase(fetchDoctors.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.error.message;
+      })
+      //////////fetch doctor by id///////
+      .addCase(fetchDoctorData.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(fetchDoctorData.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.doctorData = action.payload;
+        console.log(state.doctorData , "150");
+        console.log("Doctor data fetched:", state.doctorData); 
+        
+      })
+      .addCase(fetchDoctorData.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.payload || action.error.message;
       });
   }
 });
 
-export const { setRole, clearRole } = DoctorSlice.actions;
+export const { setRole, clearRole, setUserdata, clearDoctorData } = DoctorSlice.actions;
 export default DoctorSlice.reducer;
 

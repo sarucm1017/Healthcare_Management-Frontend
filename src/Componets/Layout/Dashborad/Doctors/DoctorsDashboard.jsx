@@ -4,34 +4,54 @@ import DoctorsDashboardSideSection from "./DoctorsDashboardSideSection";
 import defaultimage from "./defaultimage.jpg";
 import { useDispatch, useSelector } from "react-redux";
 import { setUserData } from "../../../../Redux/Slices/UserSlice";
+import { fetchDoctorData, clearDoctorData } from "../../../../Redux/Slices/DoctorSlice";
 
 const DoctorsDashboard = () => {
   const userId = localStorage.getItem('userId');
+  console.log(userId);
+  
   const dispatch = useDispatch();
-  const userData  = useSelector((state) => state.user);
-  console.log(userData, "20");
+  // const userData  = useSelector((state) => state.user);
+  // const { doctorData, status, error } = useSelector((state) => state.doctor);
+  const doctorData = useSelector((state) => state.doctor.doctorData);
+  const doctorStatus = useSelector((state) => state.doctor);
+  console.log(doctorData, "doctorData in component");
+ 
   
   
-  useEffect ( () => {
-    if(userId) {
-      const token = localStorage.getItem("token");
-      const storedUserData = localStorage.getItem('userData');
-      const role = localStorage.getItem('role');
+  // useEffect ( () => {
+  //   if(userId) {
+  //     const token = localStorage.getItem("token");
+  //     const storedUserData = localStorage.getItem('userData');
+  //     const role = localStorage.getItem('role');
 
-      let parsedUserData = null;
-      try {
-        parsedUserData = JSON.parse(storedUserData);
-      } catch (e) {
-        console.error('Error parsing user data:', e);
-      }
-      if (parsedUserData && token && role) {
-        dispatch(setUserData({ userData: parsedUserData, userId, token, role }));
-        console.log('userData from Redux state 40:', userData);
-      } else {
-        console.error("Invalid data for local storage", { parsedUserData, token, role });
-      }
+  //     let parsedUserData = null;
+  //     try {
+  //       parsedUserData = JSON.parse(storedUserData);
+  //     } catch (e) {
+  //       console.error('Error parsing user data:', e);
+  //     }
+  //     if (parsedUserData && token && role) {
+  //       dispatch(setUserData({ userData: parsedUserData, userId, token, role }));
+  //       console.log('userData from Redux state 40:', userData);
+  //     } else {
+  //       console.error("Invalid data for local storage", { parsedUserData, token, role });
+  //     }
+  //   }
+  // }, [dispatch, userId])
+
+  useEffect(() => {
+    if (userId ) {
+      dispatch(fetchDoctorData(userId));
     }
-  }, [dispatch, userId])
+  }, [dispatch, userId]);
+
+  // Clear doctor data when component unmounts
+  // useEffect(() => {
+  //   return () => {
+  //     dispatch(clearDoctorData());
+  //   };
+  // }, [dispatch]);
   return (
     <>
       <div className="container-fluid">
@@ -45,8 +65,8 @@ const DoctorsDashboard = () => {
                   <img src={defaultimage} alt="" />
                   </div>
                   <div className="title">
-                    <h4>{userData.userData.name || 'Doctor'}</h4>
-                  <p>{userData.userData.specialization || 'Doctor'}</p>
+                    <h4>{doctorData.userName ||'Doctor'}</h4>
+                  <p>{doctorData.specialization || 'Doctor'}</p>
                   </div>
                 </div>
                 <div className="searchbar">
@@ -57,7 +77,7 @@ const DoctorsDashboard = () => {
                 <div className="col-md-4 information_box">
                   <div className="icon_head">
                     <div className="icon_box">
-                      <i class="fa-solid fa-hospital-user"></i>
+                      <i className="fa-solid fa-hospital-user"></i>
                     </div>
                   </div>
                   <div className="information">
@@ -67,7 +87,7 @@ const DoctorsDashboard = () => {
                 <div className="col-md-4 information_box">
                   <div className="icon_head">
                     <div className="icon_box">
-                      <i class="fa-solid fa-hospital-user"></i>
+                      <i className="fa-solid fa-hospital-user"></i>
                     </div>
                   </div>
                   <div className="information">
@@ -77,7 +97,7 @@ const DoctorsDashboard = () => {
                 <div className="col-md-4 information_box">
                   <div className="icon_head">
                     <div className="icon_box">
-                      <i class="fa-solid fa-hospital-user"></i>
+                      <i className="fa-solid fa-hospital-user"></i>
                     </div>
                   </div>
                   <div className="information">
