@@ -9,13 +9,29 @@ const DoctorsDashboard = () => {
   const userId = localStorage.getItem('userId');
   const dispatch = useDispatch();
   const userData  = useSelector((state) => state.user);
+  console.log(userData, "20");
+  
   
   useEffect ( () => {
     if(userId) {
       const token = localStorage.getItem("token");
       const storedUserData = localStorage.getItem('userData');
+      const role = localStorage.getItem('role');
+
+      let parsedUserData = null;
+      try {
+        parsedUserData = JSON.parse(storedUserData);
+      } catch (e) {
+        console.error('Error parsing user data:', e);
+      }
+      if (parsedUserData && token && role) {
+        dispatch(setUserData({ userData: parsedUserData, userId, token, role }));
+        console.log('userData from Redux state 40:', userData);
+      } else {
+        console.error("Invalid data for local storage", { parsedUserData, token, role });
+      }
     }
-  })
+  }, [dispatch, userId])
   return (
     <>
       <div className="container-fluid">
@@ -29,8 +45,8 @@ const DoctorsDashboard = () => {
                   <img src={defaultimage} alt="" />
                   </div>
                   <div className="title">
-                    <h4>Dr.Sonna</h4>
-                  <p>Cardiologist</p>
+                    <h4>{userData.userData.name || 'Doctor'}</h4>
+                  <p>{userData.userData.specialization || 'Doctor'}</p>
                   </div>
                 </div>
                 <div className="searchbar">
