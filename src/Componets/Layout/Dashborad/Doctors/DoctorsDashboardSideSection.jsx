@@ -29,7 +29,7 @@ const DoctorsDashboardSideSection = () => {
           </div>
           <div className="menu Profile">
             <i className="fa-solid fa-user"></i>
-            <a href="/"><p>Profile</p></a>
+            <a href="/doctorProfile"><p>Profile</p></a>
           </div>
           <div className="menu Reports">
             <i className="fa-solid fa-chart-simple"></i>
