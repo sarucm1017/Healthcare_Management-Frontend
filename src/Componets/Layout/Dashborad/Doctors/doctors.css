@@ -43,9 +43,15 @@ p{
     display: flex;
 }
 .searchbar{
-    padding-right: 20px;
-    padding-top: 9px;
+    display: flex;
+    align-items: center;
 }
+.searchbar input{
+    border-radius: 10px;
+    border: 1px solid #c7c3c3;
+    padding: 3px 0;
+}
+
 .icon_head{
     background-color: #d9d9d9bd;
     border-radius: 81%;
@@ -252,7 +258,7 @@ p{
     color: #031F85;
 }
 .title p{
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 600;
     color: #1E1AE4;
 }
@@ -290,4 +296,9 @@ p{
 .profile_img img {
     width: 100%;
     border-radius: 50%;
+}
+.title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

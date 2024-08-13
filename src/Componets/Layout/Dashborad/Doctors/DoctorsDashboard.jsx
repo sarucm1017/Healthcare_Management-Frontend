@@ -1,9 +1,21 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "./doctors.css";
 import DoctorsDashboardSideSection from "./DoctorsDashboardSideSection";
-import defaultimage from "./defaultimage.jpg"
+import defaultimage from "./defaultimage.jpg";
+import { useDispatch, useSelector } from "react-redux";
+import { setUserData } from "../../../../Redux/Slices/UserSlice";
 
 const DoctorsDashboard = () => {
+  const userId = localStorage.getItem('userId');
+  const dispatch = useDispatch();
+  const userData  = useSelector((state) => state.user);
+  
+  useEffect ( () => {
+    if(userId) {
+      const token = localStorage.getItem("token");
+      const storedUserData = localStorage.getItem('userData');
+    }
+  })
   return (
     <>
       <div className="container-fluid">
@@ -17,7 +29,7 @@ const DoctorsDashboard = () => {
                   <img src={defaultimage} alt="" />
                   </div>
                   <div className="title">
-                    <h5>Dr.Sonna</h5>
+                    <h4>Dr.Sonna</h4>
                   <p>Cardiologist</p>
                   </div>
                 </div>
