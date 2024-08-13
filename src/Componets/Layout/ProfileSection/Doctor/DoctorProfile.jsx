@@ -43,37 +43,37 @@ const DoctorProfile = () => {
                   <div className="profileContent_section">
                     <div className=" col-md-5 body_content-section">
                       <div className="profile_input_title">
-                        <p>Age</p>
+                        <p>Specialization</p>
                         <div className="profile_inputValue">
                           <p></p>
                         </div>
                       </div>
                       <div className="profile_input_title">
-                        <p>Age</p>
+                        <p>Qualification</p>
                         <div className="profile_inputValue">
                           <p></p>
                         </div>
                       </div>
                       <div className="profile_input_title">
-                        <p>Age</p>
+                        <p>Medical License Number</p>
                         <div className="profile_inputValue">
                           <p></p>
                         </div>
                       </div>
                       <div className="profile_input_title">
-                        <p>Age</p>
+                        <p>Year of Experience</p>
                         <div className="profile_inputValue">
                           <p></p>
                         </div>
                       </div>
                       <div className="profile_input_title">
-                        <p>Age</p>
+                        <p>Board Certification</p>
                         <div className="profile_inputValue">
                           <p></p>
                         </div>
                       </div>
                       <div className="profile_input_title">
-                        <p>Age</p>
+                        <p>Currently Working Hospital Name</p>
                         <div className="profile_inputValue">
                           <p></p>
                         </div>
@@ -81,37 +81,37 @@ const DoctorProfile = () => {
                     </div>
                     <div className=" col-md-5 body_content-section">
                     <div className="profile_input_title">
-                        <p>Age</p>
+                        <p>Consultation Hours</p>
                         <div className="profile_inputValue">
                           <p></p>
                         </div>
                       </div>
                       <div className="profile_input_title">
-                        <p>Age</p>
+                        <p>Available days</p>
                         <div className="profile_inputValue">
                           <p></p>
                         </div>
                       </div>
                       <div className="profile_input_title">
-                        <p>Age</p>
+                        <p>Resideny Program  </p>
                         <div className="profile_inputValue">
                           <p></p>
                         </div>
                       </div>
                       <div className="profile_input_title">
-                        <p>Age</p>
+                        <p>Professional Membership</p>
                         <div className="profile_inputValue">
                           <p></p>
                         </div>
                       </div>
                       <div className="profile_input_title">
-                        <p>Age</p>
+                        <p>Work Place Contact Number </p>
                         <div className="profile_inputValue">
                           <p></p>
                         </div>
                       </div>
                       <div className="profile_input_title">
-                        <p>Age</p>
+                        <p>Address</p>
                         <div className="profile_inputValue">
                           <p></p>
                         </div>
