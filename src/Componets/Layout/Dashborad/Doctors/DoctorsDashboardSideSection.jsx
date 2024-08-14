@@ -13,7 +13,7 @@ const DoctorsDashboardSideSection = () => {
         <div className="dashboard_menu">
           <div className="menu overview">
             <i className="fa-solid fa-house"></i>
-            <a href="/">
+            <a href="/doctorsDashboard/:userId">
               <p>Overview</p>
             </a>
           </div>
@@ -33,7 +33,7 @@ const DoctorsDashboardSideSection = () => {
           </div>
           <div className="menu Reports">
             <i className="fa-solid fa-chart-simple"></i>
-            <a href=""><p>Reports</p></a>
+            <a href="/reportOfPatients"><p>Reports</p></a>
           </div>
           <div className="menu Logout">
             <i className="fa-solid fa-right-from-bracket"></i>
