@@ -1,11 +1,69 @@
-import React , {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {}
+import {
+  fetchDoctorsDetailsById,
+  updateDoctor,
+} from "../../../../Redux/Slices/DoctorSlice";
+import DoctorsDashboardSideSection from "../../Dashborad/Doctors/DoctorsDashboardSideSection";
+import defaultimage from "./defaultimage.jpg";
 
+const DoctorProfileUpdate = () => {
+  const dispatch = useDispatch();
+  const { data: doctorData } = useSelector((state) => state.doctor);
+  const [formData, setFormData] = useState({
+    specialization: "",
+    qualification: "",
+    medicalLicenseNumber: "",
+    yearsOfExperience: "",
+    boardCertification: "",
+    currentlyWorkingHospitalName: "",
+    workPlaceContactNumber: "",
+    consultationHours: "",
+    availableDays: "",
+    residencyProgram: "",
+    professionalMembership: "",
+    location: "",
+  });
+  useEffect(() => {
+    const userId = localStorage.getItem("userId");
+    if (userId) {
+      dispatch(fetchDoctorsDetailsById(userId));
+    }
+  }, [dispatch]);
+  useEffect(() => {
+    if (doctorData) {
+      setFormdData({
+        specialization: doctorData.specialization || "",
+        qualification: doctorData.qualification || "",
+        medicalLicenseNumber: doctorData.medicalLicenseNumber || "",
+        yearsOfExperience: doctorData.yearsOfExperience || "",
+        boardCertification: doctorData.boardCertification || "",
+        currentlyWorkingHospitalName:doctorData.currentlyWorkingHospitalName || "",
+        workPlaceContactNumber: doctorData.workPlaceContactNumber || "",
+        consultationHours: doctorData.consultationHours || "",
+        availableDays: doctorData.availableDays || "",
+        residencyProgram: doctorData.residencyProgram || "",
+        professionalMembership: doctorData.professionalMembership || "",
+        location: doctorData.location,
+      });
+    }
+  }, [doctorData]);
 
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
 
-
-return(
+  const handlleSubmit = (e) => {
+    e.preventDefault();
+    const userId = localStorage.getItem("userId");
+    if (userId) {
+      dispatch(updateDoctorDetails({ userId, ...formData }));
+    }
+  };
+  return (
     <>
       <div className="container-fluid">
         <div className="col-md-12 full_container">
@@ -25,100 +83,159 @@ return(
               </div>
               <div className="main_bannersection">
                 <div className="col-md-12 maincontentsection">
-                  <div className="profileHeader">
-                    <div className="profileimage-navbarSection col-md-6">
-                      <div className="profileImage_box">
-                        <img src={defaultimage} alt="" />
+                  <form action="" onSubmit={handleSubmit}>
+                    <div className="profileHeader">
+                      <div className="profileimage-navbarSection col-md-6">
+                        <div className="profileImage_box">
+                          <img src={defaultimage} alt="" />
+                        </div>
+                        <div className="profile_name_section">
+                          <p>{doctorData.userName}</p>
+                        </div>
                       </div>
-                      <div className="profile_name_section">
-                        <p>{doctorData.userName}</p>
+                      <div className="btn_foredit col-md-6">
+                      <button onClick={handleSubmit}>Save Changes</button>
                       </div>
                     </div>
-                    <div className="btn_foredit col-md-6">
-                      <i class="fa-solid fa-pen"></i>
-                      <a href="/">
-                        <p>Edit</p>
-                      </a>
+                    <div className="profileContent_section">
+                      <div className=" col-md-5 body_content-section">
+                        <div className="profile_input_title">
+                          <p>Specialization</p>
+                          <div className="profile_inputValue">
+                          <input
+                              type="text"
+                              name="specialization"
+                              value={formData.specialization}
+                              onChange={handleChange}
+                            />
+                          </div>
+                        </div>
+                        <div className="profile_input_title">
+                          <p>Qualification</p>
+                          <div className="profile_inputValue">
+                          <input
+                              type="text"
+                              name="qualification"
+                              value={formData.qualification}
+                              onChange={handleChange}
+                            />
+                          </div>
+                        </div>
+                        <div className="profile_input_title">
+                          <p>Medical License Number</p>
+                          <div className="profile_inputValue">
+                          <input
+                              type="text"
+                              name="medicalLicenseNumber"
+                              value={formData.medicalLicenseNumber}
+                              onChange={handleChange}
+                            />
+                          </div>
+                        </div>
+                        <div className="profile_input_title">
+                          <p>Year of Experience</p>
+                          <div className="profile_inputValue">
+                          <input
+                              type="text"
+                              name="yearsOfExperience"
+                              value={formData.yearsOfExperience}
+                              onChange={handleChange}
+                            />
+                          </div>
+                        </div>
+                        <div className="profile_input_title">
+                          <p>Board Certification</p>
+                          <div className="profile_inputValue">
+                          <input
+                              type="text"
+                              name="boardCertification"
+                              value={formData.boardCertification}
+                              onChange={handleChange}
+                            />
+                          </div>
+                        </div>
+                        <div className="profile_input_title">
+                          <p>Currently Working Hospital Name</p>
+                          <div className="profile_inputValue">
+                          <input
+                              type="text"
+                              name="currentlyWorkingHospitalName"
+                              value={formData.currentlyWorkingHospitalName}
+                              onChange={handleChange}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div className=" col-md-5 body_content-section">
+                        <div className="profile_input_title">
+                          <p>Consultation Hours</p>
+                          <div className="profile_inputValue">
+                          <input
+                              type="text"
+                              name="consultationHours"
+                              value={formData.consultationHours}
+                              onChange={handleChange}
+                            />
+                          </div>
+                        </div>
+                        <div className="profile_input_title">
+                          <p>Available days</p>
+                          <div className="profile_inputValue">
+                          <input
+                              type="text"
+                              name="availableDays"
+                              value={formData.availableDays}
+                              onChange={handleChange}
+                            />
+                          </div>
+                        </div>
+                        <div className="profile_input_title">
+                          <p>Resideny Program</p>
+                          <div className="profile_inputValue">
+                          <input
+                              type="text"
+                              name="residencyProgram"
+                              value={formData.residencyProgram}
+                              onChange={handleChange}
+                            />
+                          </div>
+                        </div>
+                        <div className="profile_input_title">
+                          <p>Professional Membership</p>
+                          <div className="profile_inputValue">
+                          <input
+                              type="text"
+                              name="professionalMembership"
+                              value={formData.professionalMembership}
+                              onChange={handleChange}
+                            />
+                          </div>
+                        </div>
+                        <div className="profile_input_title">
+                          <p>Work Place Contact Number</p>
+                          <div className="profile_inputValue">
+                          <input
+                              type="text"
+                              name="workPlaceContactNumber"
+                              value={formData.workPlaceContactNumber}
+                              onChange={handleChange}
+                            />
+                          </div>
+                        </div>
+                        <div className="profile_input_title">
+                          <p>Location</p>
+                          <div className="profile_inputValue">
+                          <input
+                              type="text"
+                              name="location"
+                              value={formData.location}
+                              onChange={handleChange}
+                            />
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                  <div className="profileContent_section">
-                    <div className=" col-md-5 body_content-section">
-                      <div className="profile_input_title">
-                        <p>Specialization</p>
-                        <div className="profile_inputValue">
-                          <p>{doctorData.specialization}</p>
-                        </div>
-                      </div>
-                      <div className="profile_input_title">
-                        <p>Qualification</p>
-                        <div className="profile_inputValue">
-                          <p>{doctorData.qualification}</p>
-                        </div>
-                      </div>
-                      <div className="profile_input_title">
-                        <p>Medical License Number</p>
-                        <div className="profile_inputValue">
-                          <p>{doctorData.medicalLicenseNumber}</p>
-                        </div>
-                      </div>
-                      <div className="profile_input_title">
-                        <p>Year of Experience</p>
-                        <div className="profile_inputValue">
-                          <p>{doctorData.yearsOfExperience}</p>
-                        </div>
-                      </div>
-                      <div className="profile_input_title">
-                        <p>Board Certification</p>
-                        <div className="profile_inputValue">
-                          <p>{doctorData.boardCertification}</p>
-                        </div>
-                      </div>
-                      <div className="profile_input_title">
-                        <p>Currently Working Hospital Name</p>
-                        <div className="profile_inputValue">
-                          <p>{doctorData.currentlyWorkingHospitalName}</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className=" col-md-5 body_content-section">
-                    <div className="profile_input_title">
-                        <p>Consultation Hours</p>
-                        <div className="profile_inputValue">
-                          <p>{doctorData.consultationHours}</p>
-                        </div>
-                      </div>
-                      <div className="profile_input_title">
-                        <p>Available days</p>
-                        <div className="profile_inputValue">
-                          <p>{doctorData.availableDays}</p>
-                        </div>
-                      </div>
-                      <div className="profile_input_title">
-                        <p>Resideny Program</p>
-                        <div className="profile_inputValue">
-                          <p>{doctorData.residencyProgram}</p>
-                        </div>
-                      </div>
-                      <div className="profile_input_title">
-                        <p>Professional Membership</p>
-                        <div className="profile_inputValue">
-                          <p>{doctorData.professionalMembership}</p>
-                        </div>
-                      </div>
-                      <div className="profile_input_title">
-                        <p>Work Place Contact Number</p>
-                        <div className="profile_inputValue">
-                          <p>{doctorData.workPlaceContactNumber}</p>
-                        </div>
-                      </div>
-                      <div className="profile_input_title">
-                        <p>Location</p>
-                        <div className="profile_inputValue">
-                          <p>{doctorData.location}</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  </form>
                 </div>
               </div>
             </div>
@@ -126,4 +243,7 @@ return(
         </div>
       </div>
     </>
-)
+  );
+};
+
+export default DoctorProfileUpdate;
