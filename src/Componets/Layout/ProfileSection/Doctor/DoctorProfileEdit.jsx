@@ -6,6 +6,7 @@ import {
 } from "../../../../Redux/Slices/DoctorSlice";
 import DoctorsDashboardSideSection from "../../Dashborad/Doctors/DoctorsDashboardSideSection";
 import defaultimage from "./defaultimage.jpg";
+import './doctorprofile.css';
 
 const DoctorProfileUpdate = () => {
   const dispatch = useDispatch();

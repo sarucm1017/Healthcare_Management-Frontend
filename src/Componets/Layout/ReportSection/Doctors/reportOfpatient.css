@@ -1,0 +1,40 @@
+.banner_section-header{
+    display: flex;
+    padding: 17px 25px;
+    gap: 22px;
+    background-color: white;
+    width: 53%;
+    margin: 16px 17px;
+    border-radius: 7px;
+}
+.headerClassification{
+    padding: 8px 20px;
+    border-radius: 6px;
+}
+.headerClassification.all{
+    padding: 8px 40px;
+    background-color: navy;
+}
+.headerClassification.all p{
+    color: white;
+}
+
+.table-header,.tableValues {
+    padding: 18px 54px;
+    text-align: center;
+}
+.table-header{
+    font-size: 15px;
+    font-weight: 700;
+   color: #564646bd;
+}
+.tableValues{
+    font-size: 14px;
+    font-weight: 700;
+    color:#0e0ed5;
+}
+.headerClassification p{
+    font-size: 13px;
+    font-weight: 700;
+    color: darkblue;
+}

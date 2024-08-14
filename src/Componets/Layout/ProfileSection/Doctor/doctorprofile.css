@@ -13,7 +13,7 @@
     padding: 8px 0;
 }
 .profile_inputValue{
-    padding: 10px 0;
+    padding: 8px 0;
     border-bottom: 1px solid #3f3a3a;
 }
 .profile_input_title p{
@@ -29,4 +29,13 @@
     font-size: 13px;
     font-weight: 700;
     color: #031F85;
+}
+.profile_inputValue input{
+    border: none;
+    background-color: transparent;
+    font-size: 13px;
+    color: #031F85;
+    font-weight: 700;
+    width: 95%;
+    padding: 3px 0;
 }
