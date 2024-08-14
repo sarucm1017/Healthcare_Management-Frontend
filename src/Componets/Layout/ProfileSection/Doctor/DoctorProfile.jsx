@@ -125,9 +125,9 @@ const DoctorProfile = () => {
                         </div>
                       </div>
                       <div className="profile_input_title">
-                        <p>Address</p>
+                        <p>Location</p>
                         <div className="profile_inputValue">
-                          <p></p>
+                          <p>{doctorData.location}</p>
                         </div>
                       </div>
                     </div>

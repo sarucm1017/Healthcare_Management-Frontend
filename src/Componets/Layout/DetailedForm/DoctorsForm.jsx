@@ -157,6 +157,15 @@ const DoctorsForm = () => {
                           />
                           {errors.professionalMembership && <p className="error">This field is required</p>}
                         </div>
+                        <div className="form_Fileds">
+                          <label htmlFor="location">Location</label>
+                          <input
+                            id="location"
+                            type="text"
+                            {...register('location', { required: true })}
+                          />
+                          {errors.location && <p className="error">This field is required</p>}
+                        </div>
                       </div>
                     </div>
                   </div>
