@@ -70,7 +70,16 @@ export const fetchDoctorsDetailsById = createAsyncThunk("doctor/fetchDoctorDetai
       return thunkAPI.rejectWithValue(error.response.data);
     }
   }
-)
+);
+
+/////////////////update profile////////////
+
+export const updateDoctor = createAsyncThunk('doctor/updateDoctor',
+  async({userId, ...updateData}) =>  {
+    const response = await axios.put(`http://localhost:5001/doctor/${userId}`, updateData);
+    return response.data;
+  }
+);
 
 const DoctorSlice = createSlice({
   name: "doctor",
@@ -183,6 +192,17 @@ const DoctorSlice = createSlice({
     .addCase(fetchDoctorsDetailsById.rejected, (state, action) => {
         state.error = action.payload;
         state.loading = false;
+    })
+    .addCase(updateDoctor.pending, (state) => {
+      state.status = "loading";
+    })
+    .addCase(updateDoctor.fulfilled, (state, action) => {
+      state.status = "succeeded";
+      state.data = action.payload; // Update patient data in the store
+    })
+    .addCase(updateDoctor.rejected, (state, action) => {
+      state.status = "failed";
+      state.error = action.error.message;
     });
   }
 });

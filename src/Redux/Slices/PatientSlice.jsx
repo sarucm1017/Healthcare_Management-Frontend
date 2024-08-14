@@ -8,18 +8,18 @@ export const submitPatientForm = createAsyncThunk(
     console.log("Sending payload:", payload);
     try {
       const response = await axios.post(
-        "http://localhost:5001/patient/forms", payload
+        "http://localhost:5001/patient/forms",
+        payload
       );
       console.log("Response data:", response.data);
 
       console.log(response.data);
       return response.data;
-    
-      
     } catch (error) {
       if (error.response) {
         console.error("Response error data:", error.response.data);
-        const errorMsg = error.response.data.error || "An unexpected error occurred";
+        const errorMsg =
+          error.response.data.error || "An unexpected error occurred";
         return rejectWithValue(errorMsg);
       } else {
         return rejectWithValue("Network error");
@@ -29,30 +29,33 @@ export const submitPatientForm = createAsyncThunk(
 );
 /////////////////////////getting the oid for the patient ///////////////
 
-
-
-
 /////////////////patientslice to get patient details////////////////
 
-export const fetchPatientById = createAsyncThunk("patient/fetchPatientById",
-  async (userId,thunkAPI) => {
+export const fetchPatientById = createAsyncThunk(
+  "patient/fetchPatientById",
+  async (userId, thunkAPI) => {
     try {
-      const response = await axios.get(`http://localhost:5001/patient/forms/${userId}`);
+      const response = await axios.get(
+        `http://localhost:5001/patient/forms/${userId}`
+      );
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.response.data);
     }
   }
-)
+);
 
 /////////////////////////////////////////update//////////////////
 
 // Thunk to update patient data
 export const updatePatient = createAsyncThunk(
-  'patient/updatePatient',
+  "patient/updatePatient",
   async ({ userId, ...updatedData }) => {
-      const response = await axios.put(`http://localhost:5001/patient/forms/${userId}`, updatedData);
-      return response.data;
+    const response = await axios.put(
+      `http://localhost:5001/patient/forms/${userId}`,
+      updatedData
+    );
+    return response.data;
   }
 );
 
@@ -61,7 +64,7 @@ const PatientSlice = createSlice({
   initialState: {
     data: [],
     role: null,
-    error: '',
+    error: "",
     userId: null,
     token: null,
     loading: false,
@@ -79,10 +82,10 @@ const PatientSlice = createSlice({
       state.token = action.payload.token;
       state.role = action.payload.role;
       // Store user data in local storage
-      localStorage.setItem('userData', JSON.stringify(action.payload.userData));
-      localStorage.setItem('userId', action.payload.userId);
-      localStorage.setItem('token', action.payload.token);
-      localStorage.setItem('role', action.payload.role);
+      localStorage.setItem("userData", JSON.stringify(action.payload.userData));
+      localStorage.setItem("userId", action.payload.userId);
+      localStorage.setItem("token", action.payload.token);
+      localStorage.setItem("role", action.payload.role);
     },
     clearUser(state) {
       state.data = null;
@@ -104,7 +107,7 @@ const PatientSlice = createSlice({
         console.log("submitDoctorForm fulfilled");
         state.loading = false;
         state.data = action.payload;
-        console.log("106",action.payload);
+        console.log("106", action.payload);
 
         state.userData = action.payload.data;
         state.userId = action.payload.userId;
@@ -113,14 +116,12 @@ const PatientSlice = createSlice({
         state.error = null;
 
         // Store user data in local storage
-        localStorage.setItem('userData', JSON.stringify(action.payload.data));
-        localStorage.setItem('userId', action.payload.userId);
-        localStorage.setItem('token', action.payload.token);
-        localStorage.setItem('role', action.payload.role);
+        localStorage.setItem("userData", JSON.stringify(action.payload.data));
+        localStorage.setItem("userId", action.payload.userId);
+        localStorage.setItem("token", action.payload.token);
+        localStorage.setItem("role", action.payload.role);
 
-        console.log('116', action.payload.userId);
-        
-
+        console.log("116", action.payload.userId);
       })
       .addCase(submitPatientForm.rejected, (state, action) => {
         state.loading = false;
@@ -130,28 +131,28 @@ const PatientSlice = createSlice({
       .addCase(fetchPatientById.pending, (state) => {
         state.loading = true;
         state.error = null;
-    })
-    .addCase(fetchPatientById.fulfilled, (state, action) => {
+      })
+      .addCase(fetchPatientById.fulfilled, (state, action) => {
         state.data = action.payload;
         state.loading = false;
-    })
-    .addCase(fetchPatientById.rejected, (state, action) => {
+      })
+      .addCase(fetchPatientById.rejected, (state, action) => {
         state.error = action.payload;
         state.loading = false;
-    })
-    .addCase(updatePatient.pending, (state) => {
-      state.status = 'loading';
-  })
-  .addCase(updatePatient.fulfilled, (state, action) => {
-      state.status = 'succeeded';
-      state.data = action.payload; // Update patient data in the store
-  })
-  .addCase(updatePatient.rejected, (state, action) => {
-      state.status = 'failed';
-      state.error = action.error.message;
-  });
-  }
+      })
+      .addCase(updatePatient.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(updatePatient.fulfilled, (state, action) => {
+        state.status = "succeeded";
+        state.data = action.payload; // Update patient data in the store
+      })
+      .addCase(updatePatient.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error.message;
+      });
+  },
 });
 
-export const { setRole,  setUserdata,  clearRole } = PatientSlice.actions;
+export const { setRole, setUserdata, clearRole } = PatientSlice.actions;
 export default PatientSlice.reducer;
