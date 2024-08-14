@@ -32,7 +32,7 @@ const DoctorProfileUpdate = () => {
   }, [dispatch]);
   useEffect(() => {
     if (doctorData) {
-      setFormdData({
+      setFormData({
         specialization: doctorData.specialization || "",
         qualification: doctorData.qualification || "",
         medicalLicenseNumber: doctorData.medicalLicenseNumber || "",
@@ -56,11 +56,11 @@ const DoctorProfileUpdate = () => {
     });
   };
 
-  const handlleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const userId = localStorage.getItem("userId");
     if (userId) {
-      dispatch(updateDoctorDetails({ userId, ...formData }));
+      dispatch(updateDoctor({ userId, ...formData }));
     }
   };
   return (

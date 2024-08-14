@@ -49,7 +49,7 @@ const DoctorProfile = () => {
                     </div>
                     <div className="btn_foredit col-md-6">
                       <i class="fa-solid fa-pen"></i>
-                      <a href="/">
+                      <a href="/doctorProfileupdate">
                         <p>Edit</p>
                       </a>
                     </div>

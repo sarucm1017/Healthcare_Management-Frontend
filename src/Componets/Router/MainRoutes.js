@@ -19,6 +19,7 @@ import PatientProfile from "../Layout/ProfileSection/patient/PatientProfile";
 import PatientProfileEdit from "../Layout/ProfileSection/patient/PatientProfileEdit";
 import PatientMessage from "../Layout/Message/Patient/PatientMessage";
 import DoctorProfile from "../Layout/ProfileSection/Doctor/DoctorProfile";
+import DoctorProfileUpdate from "../Layout/ProfileSection/Doctor/DoctorProfileEdit";
 
 
 const MainRoutes = () => {
@@ -45,6 +46,7 @@ const MainRoutes = () => {
             <Route path ="/doctorsForm" element = {<DoctorsForm/>}></Route>
             <Route path ="/doctorsDashboard/:userId" element = {<DoctorsDashboard/>}></Route>
             <Route path ="/doctorProfile" element = {<DoctorProfile/>}></Route>
+            <Route path ="/doctorProfileupdate" element = {<DoctorProfileUpdate/>}></Route>
 
         </Routes>
         </>
