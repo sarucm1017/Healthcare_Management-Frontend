@@ -7,6 +7,16 @@
     margin: 16px 17px;
     border-radius: 7px;
 }
+.btn-CreateReport{
+    background-color: #09099b;
+    color: white;
+    font-weight: 700;
+    font-size: 15px;
+    margin-right: 25px;
+    border: none;
+    padding: 9px 13px;
+    border-radius: 10px;
+}
 .banner_navbar{
     display: flex;
     align-items: center;
@@ -18,7 +28,7 @@
 }
 .headerClassification.all{
     padding: 8px 40px;
-    background-color: navy;
+    background-color: #09099b;
 }
 .headerClassification.all p{
     color: white;

@@ -31,7 +31,7 @@ const ReportOfpatient = () => {
                         <div className="headerClassification"><p>Cancled</p></div>
                     </div>
                     <div className="createbtn-report">
-                      <button className="btn btn-primary">Create Report</button>
+                      <button className="btn-CreateReport">Create Report</button>
                     </div>
                     </div>
                     <div className="bannerSection-content">
