@@ -7,7 +7,7 @@ export const createReport = createAsyncThunk(
             const reponse = await axios.post("http://localhost:5001/doctor/report", reportData);
             return reponse.data;
         } catch (error) {
-            return rejectWithValue(error.response.data); 
+            return rejectWithValue(error.response ? error.response.data : { message: 'An unknown error occurred.' });
         }
     }
 );

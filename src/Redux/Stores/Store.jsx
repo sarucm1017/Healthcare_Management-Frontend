@@ -3,6 +3,7 @@ import UserSlice from "../Slices/UserSlice";
 import PatientSlice from "../Slices/PatientSlice"
 import DoctorSlice from "../Slices/DoctorSlice";
 import calendarReducer from '../Slices/CalendarSlice';
+import ReportSlice from "../Slices/ReportSlice";
 
 
 
@@ -13,6 +14,7 @@ const store = configureStore({
         patient: PatientSlice,
         doctor: DoctorSlice,
         calendar: calendarReducer,
+        report:ReportSlice
        
 
         
