@@ -25,47 +25,51 @@ const CreateReport = () => {
                 <form action="">
                   <div className="col-md-12 maincontentsection">
                     <div className="save_report">
+                      <div className="name_part">
+                      <div className="report_inputMain">
+                          <p>Patient Name</p>
+                          <div className="report_inputBoxValues">
+                            <input type="text" />
+                          </div>
+                        </div>
+                      </div>
                       <button className="btn-saveReport">
                         <a href="/createReport">Create</a>
                       </button>
                     </div>
-
-                    <div className="name_part">
-                      <input type="text" />
-                    </div>
                     <div className="reportadding_section">
                       <div className=" col-md-5 body_content-section">
-                        <div className="report_maininput">
+                        <div className="report_inputMain">
                           <p>Blood Group</p>
                           <div className="report_inputBoxValues">
                             <input type="text" />
                           </div>
                         </div>
-                        <div className="report_maininput">
+                        <div className="report_inputMain">
                           <p>Pulse Rate</p>
                           <div className="report_inputBoxValues">
                             <input type="text" />
                           </div>
                         </div>
-                        <div className="report_maininput">
+                        <div className="report_inputMain">
                           <p>Breathing Rate</p>
                           <div className="report_inputBoxValues">
                             <input type="text" />
                           </div>
                         </div>
-                        <div className="report_maininput">
+                        <div className="report_inputMain">
                           <p>Body Temperature</p>
                           <div className="report_inputBoxValues">
                             <input type="text" />
                           </div>
                         </div>
-                        <div className="report_maininput">
+                        <div className="report_inputMain">
                           <p>Blood Pressure</p>
                           <div className="report_inputBoxValues">
                             <input type="text" />
                           </div>
                         </div>
-                        <div className="report_maininput">
+                        <div className="report_inputMain">
                           <p>Oxygen Saturation</p>
                           <div className="report_inputBoxValues">
                             <input type="text" />
@@ -73,37 +77,37 @@ const CreateReport = () => {
                         </div>
                       </div>
                       <div className=" col-md-5 body_content-section">
-                        <div className="report_maininput">
+                        <div className="report_inputMain">
                           <p>Height</p>
                           <div className="report_inputBoxValues">
                             <input type="text" />
                           </div>
                         </div>
-                        <div className="report_maininput">
+                        <div className="report_inputMain">
                           <p>Weight</p>
                           <div className="report_inputBoxValues">
                             <input type="text" />
                           </div>
                         </div>
-                        <div className="report_maininput">
+                        <div className="report_inputMain">
                           <p>Diagnosis</p>
                           <div className="report_inputBoxValues">
                             <input type="text" />
                           </div>
                         </div>
-                        <div className="report_maininput">
+                        <div className="report_inputMain">
                           <p>Symptoms</p>
                           <div className="report_inputBoxValues">
                             <input type="text" />
                           </div>
                         </div>
-                        <div className="report_maininput">
+                        <div className="report_inputMain">
                           <p>Current Medications</p>
                           <div className="report_inputBoxValues">
                             <input type="text" />
                           </div>
                         </div>
-                        <div className="report_maininput">
+                        <div className="report_inputMain">
                           <p>Prescribed Treatment</p>
                           <div className="report_inputBoxValues">
                             <input type="text" />
