@@ -1,21 +1,24 @@
 .banner_section-header{
     display: flex;
-    padding: 17px 25px;
+    padding: 15px 18px;
     gap: 22px;
     background-color: white;
-    width: 53%;
+    width: 26%;
     margin: 16px 17px;
     border-radius: 7px;
 }
 .btn-CreateReport{
     background-color: #09099b;
-    color: white;
     font-weight: 700;
     font-size: 15px;
     margin-right: 25px;
     border: none;
     padding: 9px 13px;
     border-radius: 10px;
+}
+.btn-CreateReport a {
+    text-decoration: none;
+    color: white;
 }
 .banner_navbar{
     display: flex;
@@ -72,4 +75,46 @@
 .reportDetils-bodySection{
     display: flex;
     flex-direction: row;
+}
+
+/* ////////////////create report///////// */
+
+.btn-saveReport{
+    background-color: #09099b;
+    font-weight: 700;
+    font-size: 15px;
+    margin-right: 25px;
+    border: none;
+    padding: 9px 37px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
+}
+.save_report{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 10px 5px;
+}
+.btn-saveReport a {
+    text-decoration: none;
+    color: white;
+}
+.reportadding_section{
+    display: flex;
+    justify-content: space-around;
+}
+.report_inputBoxValues{
+    padding: 2px 0;
+    border-bottom: 1px solid #9B9797;
+}
+.report_inputBoxValues input{
+    border: none;
+    width: 100%;
+    background-color: transparent;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 5px 0;
 }

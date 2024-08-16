@@ -23,85 +23,85 @@ const ReportOfpatient = () => {
               </div>
               <div className="main_bodybannersection">
                 <div className="col-md-12 maincontentsection">
-                    <div className="banner_navbar">
+                  <div className="banner_navbar">
                     <div className="banner_section-header">
-                        <div className="headerClassification all"><p>All</p></div>
-                        <div className="headerClassification"><p>New Appointment</p></div>
-                        <div className="headerClassification"><p>Upcoming</p></div>
-                        <div className="headerClassification"><p>Cancled</p></div>
+                      <div className="headerClassification all">
+                        <p>All</p>
+                      </div>
+                      <div className="headerClassification">
+                        <p>Newly Added</p>
+                      </div>
                     </div>
                     <div className="createbtn-report">
-                      <button className="btn-CreateReport">Create Report</button>
+                      <button className="btn-CreateReport">
+                        <a href="/createReport">Create Report</a>
+                      </button>
                     </div>
-                    </div>
-                    <div className="bannerSection-content">
+                  </div>
+                  <div className="bannerSection-content">
                     <table className="reportTable">
-                        <thead>
-                            <tr>
-                                <th className="table-header">Patient Name</th>
-                                <th className="table-header">Pulse</th>
-                                <th className="table-header">Body Temperature</th>
-                                <th className="table-header">Blood Pressure</th>
-                                <th className="table-header">Breathing Rate</th>
-                                
-                            </tr>
-                        </thead>
-                     
+                      <thead>
+                        <tr>
+                          <th className="table-header">Patient Name</th>
+                          <th className="table-header">Pulse</th>
+                          <th className="table-header">Body Temperature</th>
+                          <th className="table-header">Blood Pressure</th>
+                          <th className="table-header">Breathing Rate</th>
+                        </tr>
+                      </thead>
+
                       <tbody className="table-bodyContent">
-                            <tr>
-                                <td className="tableValues">Shahul</td>
-                                <td className="tableValues">86 bpm</td>
-                                <td className="tableValues">36.4 C</td>
-                                <td className="tableValues">97/60 mm Hg</td>
-                                <td className="tableValues">15 bpm</td>
-                            </tr>
-                            <tr>
-                                <td className="tableValues">Shahul</td>
-                                <td className="tableValues">86 bpm</td>
-                                <td className="tableValues">36.4 C</td>
-                                <td className="tableValues">97/60 mm Hg</td>
-                                <td className="tableValues">15 bpm</td>
-                            </tr>
-                            <tr>
-                                <td className="tableValues">Shahul</td>
-                                <td className="tableValues">86 bpm</td>
-                                <td className="tableValues">36.4 C</td>
-                                <td className="tableValues">97/60 mm Hg</td>
-                                <td className="tableValues">15 bpm</td>
-                            </tr>
-                            <tr>
-                                <td className="tableValues">Shahul</td>
-                                <td className="tableValues">86 bpm</td>
-                                <td className="tableValues">36.4 C</td>
-                                <td className="tableValues">97/60 mm Hg</td>
-                                <td className="tableValues">15 bpm</td>
-                            </tr>
-                            <tr>
-                                <td className="tableValues">Shahul</td>
-                                <td className="tableValues">86 bpm</td>
-                                <td className="tableValues">36.4 C</td>
-                                <td className="tableValues">97/60 mm Hg</td>
-                                <td className="tableValues">15 bpm</td>
-                            </tr>
-                            <tr>
-                                <td className="tableValues">Shahul</td>
-                                <td className="tableValues">86 bpm</td>
-                                <td className="tableValues">36.4 C</td>
-                                <td className="tableValues">97/60 mm Hg</td>
-                                <td className="tableValues">15 bpm</td>
-                            </tr>
-                           
-                        </tbody>
-                      
+                        <tr>
+                          <td className="tableValues">Shahul</td>
+                          <td className="tableValues">86 bpm</td>
+                          <td className="tableValues">36.4 C</td>
+                          <td className="tableValues">97/60 mm Hg</td>
+                          <td className="tableValues">15 bpm</td>
+                        </tr>
+                        <tr>
+                          <td className="tableValues">Shahul</td>
+                          <td className="tableValues">86 bpm</td>
+                          <td className="tableValues">36.4 C</td>
+                          <td className="tableValues">97/60 mm Hg</td>
+                          <td className="tableValues">15 bpm</td>
+                        </tr>
+                        <tr>
+                          <td className="tableValues">Shahul</td>
+                          <td className="tableValues">86 bpm</td>
+                          <td className="tableValues">36.4 C</td>
+                          <td className="tableValues">97/60 mm Hg</td>
+                          <td className="tableValues">15 bpm</td>
+                        </tr>
+                        <tr>
+                          <td className="tableValues">Shahul</td>
+                          <td className="tableValues">86 bpm</td>
+                          <td className="tableValues">36.4 C</td>
+                          <td className="tableValues">97/60 mm Hg</td>
+                          <td className="tableValues">15 bpm</td>
+                        </tr>
+                        <tr>
+                          <td className="tableValues">Shahul</td>
+                          <td className="tableValues">86 bpm</td>
+                          <td className="tableValues">36.4 C</td>
+                          <td className="tableValues">97/60 mm Hg</td>
+                          <td className="tableValues">15 bpm</td>
+                        </tr>
+                        <tr>
+                          <td className="tableValues">Shahul</td>
+                          <td className="tableValues">86 bpm</td>
+                          <td className="tableValues">36.4 C</td>
+                          <td className="tableValues">97/60 mm Hg</td>
+                          <td className="tableValues">15 bpm</td>
+                        </tr>
+                      </tbody>
                     </table>
-                    </div>
-                </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      
+      </div>
     </>
   );
 };
