@@ -12,11 +12,24 @@ export const createReport = createAsyncThunk(
     }
 );
 
+////////////fetching reportt by doctor id//////////
+
+export const  fetchReportsByDoctorId = createAsyncThunk(
+  'report/fetchReportsByDoctorId',
+  async (doctorId, thunkAPI) => {
+    try {
+        const response = await axios.get(`http://localhost:5001/doctor/report/${doctorId}`);
+        return response.data;
+    } catch (error) {
+        return thunkAPI.rejectWithValue(error.response.data);
+    }
+}
+);
 
 const reportSlice = createSlice({
     name: 'report',
   initialState: {
-    report: null,
+    report: [],
     loading: false,
     error: null,
   },
@@ -34,7 +47,18 @@ const reportSlice = createSlice({
       .addCase(createReport.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
-      });
+      })
+      .addCase(fetchReportsByDoctorId.pending, (state) => {
+        state.loading = true;
+    })
+    .addCase(fetchReportsByDoctorId.fulfilled, (state, action) => {
+        state.report = action.payload;
+        state.loading = false;
+    })
+    .addCase(fetchReportsByDoctorId.rejected, (state, action) => {
+        state.error = action.payload;
+        state.loading = false;
+    });
   },
 });
 
