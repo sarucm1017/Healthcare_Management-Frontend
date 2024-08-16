@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const createReport = createAsyncThunk(
-    'report/createReport',async (reportData, {rejectWithValues}) => {
+    'report/createReport',async (reportData, {rejectWithValue}) => {
         try {
             const reponse = await axios.post("http://localhost:5001/doctor/report", reportData);
             return reponse.data;
