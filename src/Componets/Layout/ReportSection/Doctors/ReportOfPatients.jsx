@@ -23,11 +23,16 @@ const ReportOfpatient = () => {
               </div>
               <div className="main_bodybannersection">
                 <div className="col-md-12 maincontentsection">
+                    <div className="banner_navbar">
                     <div className="banner_section-header">
                         <div className="headerClassification all"><p>All</p></div>
                         <div className="headerClassification"><p>New Appointment</p></div>
                         <div className="headerClassification"><p>Upcoming</p></div>
                         <div className="headerClassification"><p>Cancled</p></div>
+                    </div>
+                    <div className="createbtn-report">
+                      <button className="btn btn-primary">Create Report</button>
+                    </div>
                     </div>
                     <div className="bannerSection-content">
                     <table className="reportTable">
