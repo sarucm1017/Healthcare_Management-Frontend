@@ -35,7 +35,10 @@ const CreateReport = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const doctorId = localStorage.getItem("userId");
+    const doctorId = localStorage.getItem("doctorId");
+    const userId = localStorage.getItem("userId")
+   console.log(doctorId, "");
+   
     if (!doctorId) {
       // Handle the case where doctorId is not found
       console.error("Doctor ID is missing from local storage.");
@@ -43,7 +46,8 @@ const CreateReport = () => {
     }
     const extendedReportData = {
       ...reportData,
-      doctorId: doctorId, // Include doctor ID in report data
+      doctorId: doctorId,
+      userId:userId // Include doctor ID in report data
     };
 
     dispatch(createReport(extendedReportData))

@@ -28,6 +28,7 @@ const DoctorsForm = () => {
       const response = await dispatch(submitDoctorForm(payload)).unwrap();
       if (!response.error) {
         localStorage.setItem("userID", response.userID);
+        localStorage.setItem("doctorId", response.doctorId);
         
       
          // Navigate to the login page

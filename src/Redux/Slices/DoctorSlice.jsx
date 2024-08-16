@@ -11,9 +11,10 @@ export const submitDoctorForm = createAsyncThunk(
         "http://localhost:5001/doctor/forms", payload
       );
 
-      const { userId } = response.data;
+      const { userId, doctorId } = response.data;
       // Save the userId to local storage
       localStorage.setItem("userId", userId);
+      localStorage.setItem("doctorId", doctorId);
       return response.data;
 
     } catch (error) {
