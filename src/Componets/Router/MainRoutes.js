@@ -51,7 +51,7 @@ const MainRoutes = () => {
             <Route path ="/doctorProfile" element = {<DoctorProfile/>}></Route>
             <Route path ="/doctorProfileupdate" element = {<DoctorProfileUpdate/>}></Route>
             <Route path ="/reportOfPatients" element = {<ReportOfPatients/>}></Route>
-            <Route path ="/reportDetailsOfPatient" element = {<ReportDetailsOfPatients/>}></Route>
+            <Route path ="/reportDetailsOfPatient/:reportId" element = {<ReportDetailsOfPatients/>}></Route>
             <Route path ="/createReport" element = {<CreateReport/>}></Route>
         </Routes>
         </>

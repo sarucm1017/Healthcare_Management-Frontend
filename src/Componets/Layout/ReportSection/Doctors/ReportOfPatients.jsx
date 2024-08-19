@@ -1,11 +1,13 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import DoctorsDashboardSideSection from "../../Dashborad/Doctors/DoctorsDashboardSideSection";
 import "./reportOfpatient.css";
 import { fetchReportsByDoctorId } from "../../../../Redux/Slices/ReportSlice";
 
 const ReportOfpatient = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const {report, loading, error} = useSelector((state) => state.report);
 
   const  doctorId = localStorage.getItem("roleSpecificId");
@@ -15,6 +17,10 @@ const ReportOfpatient = () => {
       dispatch(fetchReportsByDoctorId(doctorId));
     }
   }, [dispatch, doctorId]);
+
+  const handleRowClick = (reportId) => {
+    navigate(`/reportDetailsOfPatient/${reportId}`);
+  };
 
   return (
     <>
@@ -69,7 +75,7 @@ const ReportOfpatient = () => {
                       </thead>
                       <tbody className="table-bodyContent">
                         {report.map((report) => (
-                          <tr key={report._id}>
+                          <tr key={report._id} onClick={() => handleRowClick(report._id)}>
                             <td className="tableValues">{report.patientName}</td>
                             <td className="tableValues">{report.pulseRate} bpm</td>
                             <td className="tableValues">{report.bodyTemperature} C</td>
