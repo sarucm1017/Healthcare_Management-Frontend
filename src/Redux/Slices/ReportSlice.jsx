@@ -67,6 +67,18 @@ const reportSlice = createSlice({
     .addCase(fetchReportsByDoctorId.rejected, (state, action) => {
         state.error = action.payload;
         state.loading = false;
+    })
+    .addCase(fetchReportById.pending, (state) => {
+      state.loading = true;
+      state.error = null;
+    })
+    .addCase(fetchReportById.fulfilled, (state, action) => {
+      state.loading = false;
+      state.report = action.payload;
+    })
+    .addCase(fetchReportById.rejected, (state, action) => {
+      state.loading = false;
+      state.error = action.error.message;
     });
   },
 });
