@@ -35,7 +35,7 @@ const CreateReport = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const doctorId = localStorage.getItem("doctorId");
+    const doctorId = localStorage.getItem("roleSpecificId");
     const userId = localStorage.getItem("userId")
    console.log(doctorId, "");
    

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./login.css";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
@@ -18,7 +18,7 @@ const Login = () => {
    const userIdFromDoctorSlice = useSelector((state) => state.doctor.userId)
    const userId = userIdFromUserSlice || userIdFromPatientSlice || userIdFromDoctorSlice;
  
-   const role = useSelector((state) => state.user.role);
+   
    const error = useSelector((state) => state.user.error);
 
   console.log("User ID:", userId);
@@ -31,11 +31,15 @@ const Login = () => {
       }));
 
       if (response.meta.requestStatus === 'fulfilled') {
-        const { role, token, userId, data: userData } = response.payload;
+        const { role, token, userId, roleSpecificId, data: userData } = response.payload;
 
+
+        localStorage.setItem('token', token);
+        localStorage.setItem('roleSpecificId', roleSpecificId);
         // Dispatch setUserData actions
         dispatch(setUserData({ userData, userId, token, role }));
         dispatch(setUserdata({ userData, userId, token, role }));
+       
 
         // Navigate based on role
         if (role === 'patient') {
@@ -51,16 +55,6 @@ const Login = () => {
       console.error("Error during login:", error);
     }
   };
-
-  // useEffect(() => {
-  //   console.log('Role in useEffect:', role);
-  //   console.log('User ID in useEffect:', userId);
-  //   if (role === 'patient') {
-  //     navigate(`/patientsDashboard/${userId}`);
-  //   } else if (role === 'doctor') {
-  //     navigate(`/doctorsDashboard/${userId}`);
-  //   }
-  // }, [role, userId, navigate]);
 
   return (
     <div className="container-fluid">

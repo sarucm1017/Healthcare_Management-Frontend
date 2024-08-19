@@ -302,3 +302,10 @@ p{
     flex-direction: column;
     align-items: center;
 }
+.logout-button {
+    background-color: transparent;
+    border: none;
+    color: #031F85;
+    font-size: 15px;
+    font-weight: 700;
+}

@@ -8,7 +8,7 @@ const ReportOfpatient = () => {
   const dispatch = useDispatch();
   const {report, loading, error} = useSelector((state) => state.report);
 
-  const  doctorId = localStorage.getItem("doctorId");
+  const  doctorId = localStorage.getItem("roleSpecificId");
 
   useEffect(() => {
     if (doctorId) {

@@ -53,7 +53,11 @@ export const userlogin = createAsyncThunk(
         `http://localhost:5001/users/userlogin`,
         credentials
       );
+      const { token, role, roleSpecificId } = response.data;
+      localStorage.setItem('token', token);
+      localStorage.setItem('roleSpecificId', roleSpecificId);
       return response.data;
+
     } catch (error) {
       const errorMessage =
         error.response?.data?.message || "An unexpected error occurred";
@@ -70,6 +74,7 @@ const UserSlice = createSlice({
     email: null,
     role: null,
     userId: null,
+    roleSpecificId: null,
     token: null,
     error: "",
     loading: false,
@@ -92,6 +97,21 @@ const UserSlice = createSlice({
       localStorage.setItem('userId', action.payload.userId);
       localStorage.setItem('token', action.payload.token);
       localStorage.setItem('role', action.payload.role);
+    },
+    logout(state) {
+      // Clear the user state on logout
+      state.email = null;
+      state.userId = null;
+      state.role = null;
+      state.token = null;
+      state.data = [];
+      state.userData = [];
+      state.error = "";
+      localStorage.removeItem('userData');
+      localStorage.removeItem('userId');
+      localStorage.removeItem('token');
+      localStorage.removeItem('role');
+      localStorage.removeItem('roleSpecificId');
     },
     clearUser(state) {
       state.data = null;
@@ -148,6 +168,8 @@ const UserSlice = createSlice({
         state.userId = action.payload.userId;
         state.token = action.payload.token;
         state.role = action.payload.role;
+        state.roleSpecificId = action.payload.roleSpecificId;
+
         state.error = null;
         // Store user data in local storage
         localStorage.setItem('userData', JSON.stringify(action.payload.data));
@@ -162,5 +184,5 @@ const UserSlice = createSlice({
   },
 });
 
-export const { setRole, setEmail, setUserData, clearUser } = UserSlice.actions;
+export const { setRole, setEmail, setUserData, clearUser, logout  } = UserSlice.actions;
 export default UserSlice.reducer;

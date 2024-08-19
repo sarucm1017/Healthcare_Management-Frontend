@@ -1,6 +1,21 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { logout } from "../../../../Redux/Slices/UserSlice";
 
 const DoctorsDashboardSideSection = () => {
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    
+    localStorage.removeItem("doctorId");
+    localStorage.removeItem("userID"); 
+    localStorage.removeItem("token");
+    dispatch(logout()); 
+    navigate("/login");
+  };
   return (
     <>
       <div className="col-md-2 side_section">
@@ -35,13 +50,15 @@ const DoctorsDashboardSideSection = () => {
             <i className="fa-solid fa-chart-simple"></i>
             <a href="/reportOfPatients"><p>Reports</p></a>
           </div>
-          <div className="menu Logout">
+          <div className="menu setting">
             <i className="fa-solid fa-right-from-bracket"></i>
            <a href="/"> <p>Settings</p></a>
           </div>
           <div className="menu Logout">
             <i className="fa-solid fa-right-from-bracket"></i>
-           <a href="/"> <p>Logout</p></a>
+            <button onClick={handleLogout} className="logout-button">
+            Logout
+          </button>
           </div>
         </div>
         <div className="helpcenter_container">
