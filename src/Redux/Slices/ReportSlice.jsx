@@ -26,6 +26,15 @@ export const  fetchReportsByDoctorId = createAsyncThunk(
 }
 );
 
+////////////fetchreport by report id /////////
+
+export const fetchReportById = createAsyncThunk(
+  'report/fetchReportById',async(reportId) => {
+    const reponse = await axios.get(`http://localhost:5001/doctor/reports/${reportId}`)
+    return reponse.data;
+  }
+);
+
 const reportSlice = createSlice({
     name: 'report',
   initialState: {
