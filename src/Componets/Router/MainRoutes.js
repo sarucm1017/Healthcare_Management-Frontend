@@ -23,6 +23,7 @@ import DoctorProfileUpdate from "../Layout/ProfileSection/Doctor/DoctorProfileEd
 import ReportOfPatients from "../Layout/ReportSection/Doctors/ReportOfPatients";
 import ReportDetailsOfPatients from "../Layout/ReportSection/Doctors/ReportDeatilsOfPatients";
 import CreateReport from "../Layout/ReportSection/Doctors/CreateReport";
+import AppointmentSectionDoctor from "../Layout/AppointmentSection/Doctors/AppointmentSectionDoctor";
 
 
 const MainRoutes = () => {
@@ -53,6 +54,7 @@ const MainRoutes = () => {
             <Route path ="/reportOfPatients" element = {<ReportOfPatients/>}></Route>
             <Route path ="/reportDetailsOfPatient/:reportId" element = {<ReportDetailsOfPatients/>}></Route>
             <Route path ="/createReport" element = {<CreateReport/>}></Route>
+            <Route path ="/appointmentSectionDoctor" element = {<AppointmentSectionDoctor/>}></Route>
         </Routes>
         </>
     )
