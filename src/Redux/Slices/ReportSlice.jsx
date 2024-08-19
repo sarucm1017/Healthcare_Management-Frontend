@@ -29,10 +29,16 @@ export const  fetchReportsByDoctorId = createAsyncThunk(
 ////////////fetchreport by report id /////////
 
 export const fetchReportById = createAsyncThunk(
-  'report/fetchReportById',async(reportId) => {
-    const reponse = await axios.get(`http://localhost:5001/doctor/reports/${reportId}`)
-    return reponse.data;
-  }
+  'report/fetchReportById',
+  async (reportId, thunkAPI) => {
+    try {
+        const response = await axios.get(`http://localhost:5001/doctor/reports/${reportId}`);
+        return response.data;
+    } catch (error) {
+        return thunkAPI.rejectWithValue(error.response.data);
+    }
+}
+
 );
 
 const reportSlice = createSlice({

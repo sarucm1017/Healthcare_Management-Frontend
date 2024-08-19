@@ -8,6 +8,7 @@ import { fetchReportById } from "../../../../Redux/Slices/ReportSlice";
 
 const ReportDetailsOfPatients = () => {
   const {reportId} = useParams();
+  
   const dispatch = useDispatch();
   const {report,  loading, error } = useSelector((state)  => state.report);
 
