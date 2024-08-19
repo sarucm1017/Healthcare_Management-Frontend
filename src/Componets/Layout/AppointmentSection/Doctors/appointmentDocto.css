@@ -1,0 +1,52 @@
+.appointmentNavbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 15px;
+}
+.appointmentnavbar-left{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    background-color: white;
+    padding: 17px 20px;
+    border-radius: 13px;
+}
+.appointmentClass{
+    padding: 8px 15px ;
+    
+}
+.appointmentClass.all{
+    padding: 8px 40px;
+    background-color: darkblue;
+    border-radius: 10px;
+}
+.appointmentClass.all p{
+    color: white;
+}
+.appointmentClass p {
+    color: darkblue;
+    font-size: 15px;
+    font-weight: 700;
+}
+.classAppointment{
+    padding: 13px 15px ;
+    border-radius: 10px;
+    background-color: darkblue;
+}
+.classAppointment p {
+    font-size: 15px;
+    font-weight: 700;
+    color: white;
+
+}
+.Appointment-table-header{
+    font-size: 15px;
+    font-weight: 700;
+    color: #564646bd;
+}
+.Appointment-table-header, 
+.Appointment-tableValues{
+    padding: 15px 75px ;
+  text-align: center;
+}

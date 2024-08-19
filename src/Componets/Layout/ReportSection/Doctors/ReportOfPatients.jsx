@@ -77,10 +77,10 @@ const ReportOfpatient = () => {
                         {report.map((report) => (
                           <tr key={report._id} onClick={() => handleRowClick(report._id)}>
                             <td className="tableValues">{report.patientName}</td>
-                            <td className="tableValues">{report.pulseRate} bpm</td>
-                            <td className="tableValues">{report.bodyTemperature} C</td>
+                            <td className="tableValues">{report.pulseRate}</td>
+                            <td className="tableValues">{report.bodyTemperature}</td>
                             <td className="tableValues">{report.bloodPressure}</td>
-                            <td className="tableValues">{report.breathingRate} bpm</td>
+                            <td className="tableValues">{report.breathingRate}</td>
                           </tr>
                         ))}
                       </tbody>
