@@ -51,7 +51,7 @@ const DoctorsDashboardSideSection = () => {
             <a href="/reportOfPatients"><p>Reports</p></a>
           </div>
           <div className="menu setting">
-            <i className="fa-solid fa-right-from-bracket"></i>
+          <i className="fa-solid fa-gears"></i>
            <a href="/"> <p>Settings</p></a>
           </div>
           <div className="menu Logout">
