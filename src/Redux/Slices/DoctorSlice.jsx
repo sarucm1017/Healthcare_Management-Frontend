@@ -82,6 +82,10 @@ export const updateDoctor = createAsyncThunk('doctor/updateDoctor',
   }
 );
 
+/////////fetching doctor by id ////////////
+
+export const
+
 const DoctorSlice = createSlice({
   name: "doctor",
   initialState: {
