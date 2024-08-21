@@ -1,12 +1,29 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams  } from "react-router-dom";
-
+import { fetchDoctorById } from "../../../../Redux/Slices/DoctorSlice";
 import "./appointmentSection.css";
 import PatientsdashboardSidesection from "../../Dashborad/Patients/PatientsdashboardSidesection";
 import Calendar from "./PaatientCalendar";
 
 const CheckAvailability = () => {
+  const dispatch = useDispatch();
+  const {doctorId} = useParams();
+  const doctor = useSelector((state) => state.doctor.selectedDoctor);
+  const doctorStatus = useSelector((state) => state.doctor.status);
+
+  useEffect(() => {
+    if (doctorId) {
+      dispatch(fetchDoctorById(doctorId));
+    }
+  }, [dispatch, doctorId]);
+
+  if (doctorStatus === "loading") {
+    return <p>Loading...</p>;
+  } else if (doctorStatus === "failed") {
+    return <p>Error fetching doctor details</p>;
+  }
+
   return (
     <>
       <div className="container-fluid">
@@ -32,10 +49,10 @@ const CheckAvailability = () => {
                   <div className="name_dep">
                     <div className="nameof_doc">
                       {" "}
-                      <p>Dr.Arya</p>
+                      <p>{doctor?.userName}</p>
                     </div>
                     <div className="nameof_dept">
-                      <p>Cardiologist</p>
+                    <p>{doctor?.specialization}</p>
                     </div>
                   </div>
                   </div>

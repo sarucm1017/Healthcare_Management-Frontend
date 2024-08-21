@@ -84,7 +84,10 @@ export const updateDoctor = createAsyncThunk('doctor/updateDoctor',
 
 /////////fetching doctor by id ////////////
 
-export const
+export const fetchDoctorById = createAsyncThunk("doctor/fetchDoctorbyId", async (doctorId) => {
+  const response = await axios.get(`http://localhost:5001/doctor/${doctorId}`);
+  return response.data;
+});
 
 const DoctorSlice = createSlice({
   name: "doctor",
@@ -95,6 +98,7 @@ const DoctorSlice = createSlice({
     loading: false,
     status: 'idle',
     doctors: [],
+    selectedDoctor: null,
     doctorData: [],
   },
   reducers: {
@@ -207,6 +211,18 @@ const DoctorSlice = createSlice({
     })
     .addCase(updateDoctor.rejected, (state, action) => {
       state.status = "failed";
+      state.error = action.error.message;
+    })
+    /////////////fetchdocby  id /////////////
+    .addCase(fetchDoctorById.pending, (state) => {
+      state.status = 'loading';
+    })
+    .addCase(fetchDoctorById.fulfilled, (state, action) => {
+      state.status = 'succeeded';
+      state.selectedDoctor = action.payload;
+    })
+    .addCase(fetchDoctorById.rejected, (state, action) => {
+      state.status = 'failed';
       state.error = action.error.message;
     });
   }
