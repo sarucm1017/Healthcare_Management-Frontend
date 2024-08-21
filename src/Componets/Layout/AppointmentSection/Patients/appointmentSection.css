@@ -86,7 +86,7 @@
 .body_content_section{
     background-color: #F6F4F4;
     border-radius: 15px;
-    padding: 0px 10px
+    padding: 10px 10px
 }
 .main_profile_section{
   display: grid;
@@ -342,4 +342,9 @@
   }
   .box_scetion_bodySection{
     width: 49% !important;
+  }
+  .check_btn a {
+    text-decoration: none;
+    color: white;
+    padding: 0px 10px;
   }

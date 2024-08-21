@@ -23,7 +23,8 @@ const CheckAvailability = () => {
                 <div className="right_section"></div>
               </div>
               <div className="body_content_section bodysection">
-                <div className="col-md-12 main_top_section">
+                <div className="col-md-12 ">
+                  <div className="main_top_section">
                   <div className="image_profile"></div>
                   <div className="name_dep">
                     <div className="nameof_doc">
@@ -33,6 +34,7 @@ const CheckAvailability = () => {
                     <div className="nameof_dept">
                       <p>Cardiologist</p>
                     </div>
+                  </div>
                   </div>
                 </div>
                 <div className="col-md-12 content_box-section">
