@@ -5,6 +5,7 @@ import { fetchDoctorById } from "../../../../Redux/Slices/DoctorSlice";
 import "./appointmentSection.css";
 import PatientsdashboardSidesection from "../../Dashborad/Patients/PatientsdashboardSidesection";
 import Calendar from "./PaatientCalendar";
+import PatientCalendar from "./PatientAppointmentCalendar";
 
 const CheckAvailability = () => {
   const dispatch = useDispatch();
@@ -63,7 +64,7 @@ console.log(doctorId);
                 </div>
                 <div className="col-md-12 content_box-section">
                   <div className="col-md-6 box_scetion_bodySection">
-                    <Calendar />
+                    <PatientCalendar />
                   </div>
                   <div className="col-md-6 time_section_main box_scetion_bodySection">
                     <div className="time_sections">
