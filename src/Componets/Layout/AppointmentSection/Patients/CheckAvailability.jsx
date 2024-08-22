@@ -9,6 +9,9 @@ import Calendar from "./PaatientCalendar";
 const CheckAvailability = () => {
   const dispatch = useDispatch();
   const {doctorId} = useParams();
+  console.log(doctorId, 'CheckAvailability doctorId');
+  console.log(doctorId, "12");
+  
   const doctor = useSelector((state) => state.doctor.selectedDoctor);
   const doctorStatus = useSelector((state) => state.doctor.status);
 
@@ -17,12 +20,13 @@ const CheckAvailability = () => {
       dispatch(fetchDoctorById(doctorId));
     }
   }, [dispatch, doctorId]);
+console.log(doctorId);
 
-  if (doctorStatus === "loading") {
-    return <p>Loading...</p>;
-  } else if (doctorStatus === "failed") {
-    return <p>Error fetching doctor details</p>;
-  }
+  // if (doctorStatus === "loading") {
+  //   return <p>Loading...</p>;
+  // } else if (doctorStatus === "failed") {
+  //   return <p>Error fetching doctor details</p>;
+  // }
 
   return (
     <>
@@ -34,7 +38,7 @@ const CheckAvailability = () => {
               <div className="nav_bar_section">
                 <div className="left_section">
                   <div className="icon_part">
-                    <i class="fa-solid fa-file-medical"></i>
+                    <i className="fa-solid fa-file-medical"></i>
                   </div>
                   <div className="title_part">
                     <h4>Book Appointment</h4>

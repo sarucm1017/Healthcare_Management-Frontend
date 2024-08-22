@@ -84,10 +84,19 @@ export const updateDoctor = createAsyncThunk('doctor/updateDoctor',
 
 /////////fetching doctor by id ////////////
 
-export const fetchDoctorById = createAsyncThunk("doctor/fetchDoctorbyId", async (doctorId) => {
-  const response = await axios.get(`http://localhost:5001/doctor/${doctorId}`);
-  return response.data;
-});
+export const fetchDoctorById = createAsyncThunk(
+  'doctor/fetchDoctorbyId',
+  async (doctorId, { rejectWithValue }) => {
+    try {
+      const response = await axios.get(`http://localhost:5001/doctor/data/${doctorId}`);
+      return response.data;
+    } catch (error) {
+      console.error('Error:', error);
+      // Use rejectWithValue to pass the error to the Redux action's payload
+      return rejectWithValue(error.response.data);
+    }
+  }
+);
 
 const DoctorSlice = createSlice({
   name: "doctor",

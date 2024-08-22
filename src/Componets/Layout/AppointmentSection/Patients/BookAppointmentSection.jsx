@@ -1,7 +1,6 @@
 
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link } from "react-router-dom";
 import { fetchDoctors } from "../../../../Redux/Slices/DoctorSlice";
 import PatientsdashboardSidesection from '../../Dashborad/Patients/PatientsdashboardSidesection';
 import './appointmentSection.css';
@@ -58,8 +57,7 @@ const BookAppointmentSection = () => {
               <i className="fa-solid fa-message"></i>
             </div>
             <div className="check_btn">
-            <Link to={`/checkAvailability/${doctor._id}`}>Check Availability</Link>
-              
+              <button><a href={`/checkAvailability/${doctor._id}`}>Check Availability</a></button>              
             </div>
           </div>
         </div>
